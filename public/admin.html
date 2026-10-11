@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Maison Ember — Staff Atelier &amp; Table Desk</title>
+  
+  <!-- Fonts: Playfair Display + Work Sans -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&amp;family=Work+Sans:ital,wght@0,300..700;1,300..700&amp;display=swap" rel="stylesheet"/>
+  
+  <!-- Material Symbols Outlined -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#fff8f5",
+            "surface-container": "#f6ece7",
+            "surface-container-high": "#f0e6e1",
+            "primary": "#7f3015",
+            "primary-container": "#9e472a",
+            "secondary": "#59614e",
+            "on-surface": "#1f1b18",
+            "on-surface-variant": "#55423d",
+            "outline": "#88726c",
+            "outline-variant": "#dcc1b9"
+          },
+          fontFamily: {
+            "headline": ["Playfair Display", "serif"],
+            "body": ["Work Sans", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20;
+      font-size: 18px;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  </style>
+  <link href="/css/custom.css" rel="stylesheet"/>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased selection:bg-primary-container selection:text-white">
+
+  <!-- Top Navigation -->
+  <header class="bg-surface-container border-b border-outline-variant sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-4">
+        <a class="font-headline text-2xl font-bold text-on-surface" href="/">Maison Ember</a>
+        <span class="text-xs uppercase tracking-widest text-primary font-semibold px-2 py-0.5 border border-primary-container rounded">
+          Table Desk &amp; Cellar Atelier
+        </span>
+      </div>
+      <div class="flex items-center space-x-4">
+        <a class="text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1" href="/" target="_blank">
+          <span>View Guest Website</span>
+          <span class="material-symbols-outlined text-sm">open_in_new</span>
+        </a>
+        <button class="bg-primary-container text-white text-xs uppercase tracking-wider px-4 py-2 rounded hover:bg-primary transition-colors flex items-center gap-1.5" id="open-walkin-modal-btn">
+          <span class="material-symbols-outlined text-sm">add</span>
+          <span>New Reservation</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-6 py-8 space-y-8">
+    
+    <!-- Operational Metrics Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" id="stats-grid">
+      <div class="bg-surface-container border border-outline-variant p-5 rounded space-y-2">
+        <span class="text-xs uppercase tracking-widest text-secondary font-medium">Tonight's Service</span>
+        <div class="flex justify-between items-baseline">
+          <span class="font-headline text-3xl font-semibold text-primary" id="stat-bookings-today">0</span>
+          <span class="text-xs text-on-surface-variant" id="stat-covers-today">0 Covers</span>
+        </div>
+        <p class="text-xs text-on-surface-variant">Active table bookings for tonight</p>
+      </div>
+
+      <div class="bg-surface-container border border-outline-variant p-5 rounded space-y-2">
+        <span class="text-xs uppercase tracking-widest text-secondary font-medium">Upcoming Demand</span>
+        <div class="flex justify-between items-baseline">
+          <span class="font-headline text-3xl font-semibold text-on-surface" id="stat-upcoming-bookings">0</span>
+          <span class="text-xs text-on-surface-variant" id="stat-upcoming-covers">0 Covers</span>
+        </div>
+        <p class="text-xs text-on-surface-variant">Confirmed future bookings on book</p>
+      </div>
+
+      <div class="bg-surface-container border border-outline-variant p-5 rounded space-y-2">
+        <span class="text-xs uppercase tracking-widest text-secondary font-medium">Ember Journal</span>
+        <div class="flex justify-between items-baseline">
+          <span class="font-headline text-3xl font-semibold text-secondary" id="stat-subscribers">0</span>
+          <span class="text-xs text-on-surface-variant">Subscribers</span>
+        </div>
+        <p class="text-xs text-on-surface-variant">Subscribed to wine and dining notes</p>
+      </div>
+
+      <div class="bg-surface-container border border-outline-variant p-5 rounded space-y-2">
+        <span class="text-xs uppercase tracking-widest text-secondary font-medium">Salon Inquiries</span>
+        <div class="flex justify-between items-baseline">
+          <span class="font-headline text-3xl font-semibold text-primary-container" id="stat-inquiries">0</span>
+          <span class="text-xs text-on-surface-variant">Pending</span>
+        </div>
+        <p class="text-xs text-on-surface-variant">Private cellar &amp; buyout requests</p>
+      </div>
+    </div>
+
+    <!-- Atelier Tabs -->
+    <div class="border-b border-outline-variant flex gap-6 text-sm">
+      <button class="tab-btn pb-3 border-b-2 border-primary font-medium text-primary uppercase tracking-wider text-xs" data-tab="reservations">
+        Reservations Folio
+      </button>
+      <button class="tab-btn pb-3 border-b-2 border-transparent font-medium text-on-surface-variant hover:text-on-surface uppercase tracking-wider text-xs" data-tab="menu">
+        Hearth Menu Management
+      </button>
+      <button class="tab-btn pb-3 border-b-2 border-transparent font-medium text-on-surface-variant hover:text-on-surface uppercase tracking-wider text-xs" data-tab="inquiries">
+        Private Salon Inquiries
+      </button>
+      <button class="tab-btn pb-3 border-b-2 border-transparent font-medium text-on-surface-variant hover:text-on-surface uppercase tracking-wider text-xs" data-tab="newsletter">
+        Journal Readers
+      </button>
+    </div>
+
+    <!-- TAB 1: Reservations Table -->
+    <div class="space-y-4" id="tab-reservations">
+      <!-- Controls Bar -->
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-surface-container p-4 border border-outline-variant rounded">
+        <div class="flex flex-wrap items-center gap-3">
+          <div>
+            <label class="text-xs text-on-surface-variant block mb-1">Service Date:</label>
+            <input class="bg-surface border border-outline-variant px-3 py-1.5 text-xs rounded focus:outline-none focus:border-primary" id="filter-date" type="date"/>
+          </div>
+          <div>
+            <label class="text-xs text-on-surface-variant block mb-1">Status:</label>
+            <select class="bg-surface border border-outline-variant px-3 py-1.5 text-xs rounded focus:outline-none focus:border-primary" id="filter-status">
+              <option value="all">All Statuses</option>
+              <option value="confirmed">Confirmed</option>
+              <option value="seated">Seated</option>
+              <option value="completed">Completed</option>
+              <option value="cancelled">Cancelled</option>
+            </select>
+          </div>
+          <div class="pt-4 sm:pt-4">
+            <button class="text-xs text-primary font-medium hover:underline" id="reset-filter-btn" type="button">Reset Filters</button>
+          </div>
+        </div>
+
+        <div class="w-full sm:w-auto">
+          <label class="text-xs text-on-surface-variant block mb-1">Search Guest:</label>
+          <div class="relative">
+            <input class="w-full sm:w-64 bg-surface border border-outline-variant px-3 py-1.5 pl-8 text-xs rounded focus:outline-none focus:border-primary" id="search-reservations" placeholder="Name, ref #, phone..." type="text"/>
+            <span class="material-symbols-outlined absolute left-2 top-2 text-xs text-on-surface-variant">search</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reservations Table -->
+      <div class="bg-surface border border-outline-variant rounded overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs">
+            <thead class="bg-surface-container border-b border-outline-variant uppercase text-on-surface-variant tracking-wider font-semibold">
+              <tr>
+                <th class="p-3.5">Ref #</th>
+                <th class="p-3.5">Guest &amp; Contact</th>
+                <th class="p-3.5">Date &amp; Sitting</th>
+                <th class="p-3.5">Guests &amp; Area</th>
+                <th class="p-3.5">Special Notes / Allergies</th>
+                <th class="p-3.5">Status</th>
+                <th class="p-3.5 text-right">Actions</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-outline-variant" id="reservations-tbody">
+              <!-- Loaded via JavaScript -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: Menu Management -->
+    <div class="hidden space-y-4" id="tab-menu">
+      <div class="flex justify-between items-center">
+        <div>
+          <h3 class="font-headline text-xl text-on-surface">Seasonal Hearth Dishes</h3>
+          <p class="text-xs text-on-surface-variant">Adjust pricing or toggle out-of-stock items in real time</p>
+        </div>
+        <button class="bg-primary-container text-white text-xs uppercase tracking-wider px-3 py-2 rounded hover:bg-primary transition-colors flex items-center gap-1" id="open-add-dish-btn">
+          <span class="material-symbols-outlined text-sm">add</span>
+          <span>Add Dish</span>
+        </button>
+      </div>
+
+      <div class="bg-surface border border-outline-variant rounded overflow-hidden">
+        <table class="w-full text-left text-xs">
+          <thead class="bg-surface-container border-b border-outline-variant uppercase text-on-surface-variant tracking-wider font-semibold">
+            <tr>
+              <th class="p-3.5">Category</th>
+              <th class="p-3.5">Dish Name &amp; Description</th>
+              <th class="p-3.5">Price</th>
+              <th class="p-3.5">Badge</th>
+              <th class="p-3.5">Status</th>
+              <th class="p-3.5 text-right">Action</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-outline-variant" id="menu-tbody">
+            <!-- Loaded via JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TAB 3: Private Salon Inquiries -->
+    <div class="hidden space-y-4" id="tab-inquiries">
+      <div>
+        <h3 class="font-headline text-xl text-on-surface">Private Dining &amp; Salon Requests</h3>
+        <p class="text-xs text-on-surface-variant">Manage incoming VIP cellar dinners and venue privatisation requests</p>
+      </div>
+
+      <div class="bg-surface border border-outline-variant rounded overflow-hidden">
+        <table class="w-full text-left text-xs">
+          <thead class="bg-surface-container border-b border-outline-variant uppercase text-on-surface-variant tracking-wider font-semibold">
+            <tr>
+              <th class="p-3.5">Guest</th>
+              <th class="p-3.5">Event Type</th>
+              <th class="p-3.5">Target Date</th>
+              <th class="p-3.5">Guests</th>
+              <th class="p-3.5">Message / Requirements</th>
+              <th class="p-3.5">Status</th>
+              <th class="p-3.5 text-right">Action</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-outline-variant" id="inquiries-tbody">
+            <!-- Loaded via JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TAB 4: Newsletter Subscribers -->
+    <div class="hidden space-y-4" id="tab-newsletter">
+      <div>
+        <h3 class="font-headline text-xl text-on-surface">The Ember Journal Subscribers</h3>
+        <p class="text-xs text-on-surface-variant">Patrons signed up for full-moon cellar dispatches</p>
+      </div>
+
+      <div class="bg-surface border border-outline-variant rounded overflow-hidden">
+        <table class="w-full text-left text-xs">
+          <thead class="bg-surface-container border-b border-outline-variant uppercase text-on-surface-variant tracking-wider font-semibold">
+            <tr>
+              <th class="p-3.5">#</th>
+              <th class="p-3.5">Email Address</th>
+              <th class="p-3.5">Subscription Date</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-outline-variant" id="newsletter-tbody">
+            <!-- Loaded via JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <!-- Walk-In / Desk Booking Modal -->
+  <div class="modal-overlay hidden" id="walkin-modal">
+    <div class="modal-content p-6 rounded space-y-5">
+      <div class="flex justify-between items-center border-b border-outline-variant pb-3">
+        <h3 class="font-headline text-lg font-bold">New Atelier Reservation</h3>
+        <button class="text-on-surface-variant hover:text-primary" id="close-walkin-btn" type="button">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+
+      <form class="space-y-4 text-xs" id="walkin-form">
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-medium mb-1">Guest Name *</label>
+            <input class="w-full bg-surface border border-outline-variant p-2 rounded focus:outline-none focus:border-primary" id="w-name" required="" type="text"/>
+          </div>
+          <div>
+            <label class="block font-medium mb-1">Email Address *</label>
+            <input class="w-full bg-surface border border-outline-variant p-2 rounded focus:outline-none focus:border-primary" id="w-email" required="" type="email"/>
+          </div>
+          <div>
+            <label class="block font-medium mb-1">Phone Number *</label>
+            <input class="w-full bg-surface border border-outline-variant p-2 rounded focus:outline-none focus:border-primary" id="w-phone" required="" type="tel"/>
+          </div>
+          <div>
+            <label class="block font-medium mb-1">Party Size</label>
+            <input class="w-full bg-surface border border-outline-variant p-2 rounded focus:outline-none focus:border-primary" id="w-party" max="8" min="1" type="number" value="2"/>
+          </div>
+          <div>
+            <label class="block font-medium mb-1">Seating Area</label>
+            <select class="w-full bg-surface border border-outline-variant p-2 rounded focus:outline-none focus:border-primary" id="w-area">
+              <option value="Main Dining Room">Main Dining Room</option>
+              <option value="Hearth Counter">Hearth Counter</option>
+              <option value="Wine Vault Salon">Wine Vault Salon</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-medium mb-1">Date</label>
+            <input class="w-full bg-surface border border-outline-variant p-2 rounded focus:outline-none focus:border-primary" id="w-date" required="" type="date"/>
+          </div>
+          <div class="col-span-2">
+            <label class="block font-medium mb-1">Sitting Time</label>
+            <select class="w-full bg-surface border border-outline-variant p-2 rounded focus:outline-none focus:border-primary" id="w-time">
+              <option value="18:30">18:30</option>
+              <option value="19:00">19:00</option>
+              <option value="19:45">19:45</option>
+              <option value="20:30">20:30</option>
+              <option value="21:15">21:15</option>
+              <option value="21:45">21:45</option>
+            </select>
+          </div>
+          <div class="col-span-2">
+            <label class="block font-medium mb-1">Dietary / Notes</label>
+            <input class="w-full bg-surface border border-outline-variant p-2 rounded focus:outline-none focus:border-primary" id="w-notes" placeholder="e.g. VIP, anniversary, allergies" type="text"/>
+          </div>
+        </div>
+
+        <div class="flex justify-end gap-2 pt-2">
+          <button class="bg-primary-container text-white px-5 py-2.5 rounded hover:bg-primary uppercase tracking-wider font-medium" type="submit">
+            Secure Table
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="/js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "name": "maison-ember-restaurant",
+  "version": "1.0.0",
+  "description": "Full-stack web application for Maison Ember — Open-Hearth Cooking & Natural Cellar (Paris 4e)",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node test/api.test.js"
+  },
+  "keywords": [
+    "restaurant",
+    "full-stack",
+    "reservations",
+    "paris",
+    "sqlite",
+    "express"
+  ],
+  "author": "Maison Ember Atelier Culinaire",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  }
+}

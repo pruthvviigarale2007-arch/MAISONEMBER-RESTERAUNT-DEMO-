@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Book Table — Maison Ember · Paris 4e</title>
+  
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&amp;family=Work+Sans:ital,wght@0,300..700;1,300..700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "error-container": "#ffdad6", "on-primary": "#ffffff", "inverse-surface": "#352f2c",
+            "error": "#ba1a1a", "surface": "#fff8f5", "on-error": "#ffffff",
+            "surface-container-high": "#f0e6e1", "tertiary-container": "#9a4a30", "on-background": "#1f1b18",
+            "outline": "#88726c", "on-tertiary-container": "#ffd4c7", "tertiary-fixed-dim": "#ffb59e",
+            "inverse-on-surface": "#f9efea", "surface-container-highest": "#ebe0db", "surface-container-lowest": "#ffffff",
+            "on-primary-container": "#ffd3c6", "tertiary-fixed": "#ffdbd0", "on-tertiary-fixed": "#3a0b00",
+            "primary-container": "#9e472a", "on-tertiary": "#ffffff", "surface-bright": "#fff8f5",
+            "primary": "#7f3015", "on-secondary-fixed": "#171e0f", "on-surface": "#1f1b18",
+            "on-secondary": "#ffffff", "inverse-primary": "#ffb59e", "on-secondary-fixed-variant": "#414938",
+            "surface-dim": "#e2d8d3", "on-tertiary-fixed-variant": "#783118", "on-surface-variant": "#55423d",
+            "primary-fixed": "#ffdbd0", "background": "#fff8f5", "surface-variant": "#ebe0db",
+            "tertiary": "#7c331b", "secondary-fixed": "#dde6ce", "primary-fixed-dim": "#ffb59e",
+            "on-primary-fixed": "#3a0b00", "on-secondary-container": "#5f6754", "secondary-fixed-dim": "#c1cab3",
+            "outline-variant": "#dcc1b9", "secondary": "#59614e", "surface-tint": "#9b4428",
+            "secondary-container": "#dde6ce", "surface-container-low": "#fcf2ec", "surface-container": "#f6ece7",
+            "on-primary-fixed-variant": "#7c2e13", "on-error-container": "#93000a"
+          },
+          "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+          "spacing": { "space-lg": "2rem", "gutter": "1.5rem", "space-sm": "0.75rem", "space-xs": "0.5rem", "gutter-desktop": "2.5rem", "margin": "1.25rem", "space-md": "1.25rem", "space-2xs": "0.25rem", "space-2xl": "5rem", "margin-desktop": "4rem", "space-xl": "3.5rem" },
+          "fontFamily": {
+            "headline-lg": ["Playfair Display"], "price-numeral": ["Work Sans"], "title-menu-item": ["Playfair Display"],
+            "headline-lg-mobile": ["Playfair Display"], "headline-md": ["Playfair Display"], "label-caption": ["Work Sans"],
+            "body-lg": ["Work Sans"], "body-md": ["Work Sans"], "label-uppercase": ["Work Sans"],
+            "headline-sm": ["Playfair Display"], "display-hero-mobile": ["Playfair Display"], "body-sm": ["Work Sans"], "display-hero": ["Playfair Display"]
+          },
+          "fontSize": {
+            "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "price-numeral": ["15px", { "lineHeight": "24px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "title-menu-item": ["18px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "500" }],
+            "label-caption": ["12px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "400" }],
+            "body-lg": ["17px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "body-md": ["15px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "label-uppercase": ["11px", { "lineHeight": "16px", "letterSpacing": "0.12em", "fontWeight": "600" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+            "display-hero-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "body-sm": ["13px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20; font-size: 18px; line-height: 1; display: inline-block; vertical-align: middle; }
+  </style>
+  <link href="/css/custom.css" rel="stylesheet"/>
+</head>
+<body class="bg-background text-on-surface antialiased selection:bg-primary-container selection:text-on-primary">
+
+  <!-- Announcement Ribbon -->
+  <aside class="w-full bg-surface-container border-b border-outline-variant py-2 px-margin text-center">
+    <p class="font-label-caption text-label-caption text-on-surface-variant tracking-wider">
+      Autumn hearth menu now serving · <a class="underline font-medium text-primary hover:text-on-surface transition-colors" href="/private-dining.html">Private dining salon inquiries open</a> for November &amp; December
+    </p>
+  </aside>
+
+  <!-- TopNavBar -->
+  <header class="bg-surface docked full-width top-0 sticky z-50 border-b border-outline-variant">
+    <div class="flex justify-between items-center w-full px-margin md:px-margin-desktop py-space-sm max-w-7xl mx-auto">
+      <div class="flex items-baseline space-x-3">
+        <a class="font-headline-md text-headline-md text-on-surface tracking-tight" href="/">Maison Ember</a>
+        <span class="hidden sm:inline font-label-uppercase text-label-uppercase text-on-surface-variant tracking-widest pl-2 border-l border-outline-variant">Paris · 4e</span>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center space-x-8">
+        <a class="text-on-surface-variant font-label-uppercase text-label-uppercase tracking-widest hover:text-primary transition-colors duration-150" href="/menu.html">Menu</a>
+        <a class="text-on-surface-variant font-label-uppercase text-label-uppercase tracking-widest hover:text-primary transition-colors duration-150" href="/cellar.html">Cellar</a>
+        <a class="text-on-surface-variant font-label-uppercase text-label-uppercase tracking-widest hover:text-primary transition-colors duration-150" href="/atmosphere.html">Atmosphere</a>
+        <a class="text-primary font-medium border-b border-primary pb-1 font-label-uppercase text-label-uppercase tracking-widest" href="/reservations.html">Reservations</a>
+        <a class="text-on-surface-variant font-label-uppercase text-label-uppercase tracking-widest hover:text-primary transition-colors duration-150" href="/private-dining.html">Private Dining</a>
+        <a class="text-secondary font-label-uppercase text-label-uppercase tracking-widest hover:text-primary transition-colors duration-150" href="/admin.html">Staff Desk</a>
+      </nav>
+
+      <div class="flex items-center space-x-5">
+        <a class="hidden lg:inline font-price-numeral text-price-numeral text-on-surface-variant hover:text-primary transition-colors duration-150" href="tel:0142685500">Tel: 01 42 68 55 00</a>
+        <span class="text-xs uppercase tracking-widest text-primary font-semibold px-3 py-1.5 border border-primary-container rounded">Bookings Open</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="w-full">
+    <!-- Header -->
+    <section class="max-w-7xl mx-auto px-margin md:px-margin-desktop pt-space-lg md:pt-space-xl pb-space-lg border-b border-outline-variant">
+      <div class="max-w-3xl space-y-3">
+        <span class="font-label-uppercase text-label-uppercase text-secondary tracking-widest">RÉSERVATIONS EN DIRECT</span>
+        <h1 class="font-display-hero text-display-hero-mobile md:text-display-hero text-on-surface tracking-tight">
+          Reserve Your Table at Maison Ember
+        </h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+          Bookings open 30 days in advance at 10:00 AM Paris time. All tables receive direct wood-fired tasting service. For salon takeovers exceeding 8 guests, consult our <a class="text-primary hover:underline" href="/private-dining.html">private dining concierge</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Interactive Multi-Step Reservation Suite -->
+    <section class="max-w-7xl mx-auto px-margin md:px-margin-desktop py-space-2xl">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter lg:gap-gutter-desktop">
+        
+        <!-- Interactive Booking Form (8 Cols) -->
+        <div class="lg:col-span-8 bg-surface border border-outline-variant p-6 sm:p-8 space-y-8">
+          
+          <!-- Step 1: Party Size & Seating Zone -->
+          <div>
+            <div class="flex items-center justify-between border-b border-outline-variant pb-2 mb-4">
+              <span class="font-label-uppercase text-label-uppercase text-primary tracking-widest">STEP 1 · PARTY SIZE &amp; ATMOSPHERE</span>
+              <span class="font-label-caption text-label-caption text-on-surface-variant">Dinner service Tue–Sat</span>
+            </div>
+
+            <!-- Party Size Selector Buttons -->
+            <label class="block font-body-sm text-body-sm text-on-surface font-medium mb-2">Number of Guests</label>
+            <div class="grid grid-cols-4 sm:grid-cols-8 gap-2 mb-6" id="party-size-selector">
+              <button class="party-btn py-2.5 text-center border border-outline-variant hover:border-primary font-price-numeral text-price-numeral rounded transition-colors" data-party="1" type="button">1</button>
+              <button class="party-btn py-2.5 text-center border border-primary-container bg-primary-container text-on-primary font-price-numeral text-price-numeral rounded transition-colors" data-party="2" type="button">2</button>
+              <button class="party-btn py-2.5 text-center border border-outline-variant hover:border-primary font-price-numeral text-price-numeral rounded transition-colors" data-party="3" type="button">3</button>
+              <button class="party-btn py-2.5 text-center border border-outline-variant hover:border-primary font-price-numeral text-price-numeral rounded transition-colors" data-party="4" type="button">4</button>
+              <button class="party-btn py-2.5 text-center border border-outline-variant hover:border-primary font-price-numeral text-price-numeral rounded transition-colors" data-party="5" type="button">5</button>
+              <button class="party-btn py-2.5 text-center border border-outline-variant hover:border-primary font-price-numeral text-price-numeral rounded transition-colors" data-party="6" type="button">6</button>
+              <button class="party-btn py-2.5 text-center border border-outline-variant hover:border-primary font-price-numeral text-price-numeral rounded transition-colors" data-party="7" type="button">7</button>
+              <button class="party-btn py-2.5 text-center border border-outline-variant hover:border-primary font-price-numeral text-price-numeral rounded transition-colors" data-party="8" type="button">8</button>
+            </div>
+
+            <!-- Seating Zone Radio Tiles -->
+            <label class="block font-body-sm text-body-sm text-on-surface font-medium mb-2">Preferred Seating Area</label>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3" id="seating-area-selector">
+              <div class="area-card border-2 border-primary-container bg-surface-container p-3.5 cursor-pointer rounded transition-all" data-area="Main Dining Room">
+                <div class="flex items-center justify-between">
+                  <span class="font-body-md text-body-md font-medium text-on-surface">Main Dining Room</span>
+                  <span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
+                </div>
+                <p class="font-label-caption text-label-caption text-on-surface-variant mt-1">Spacious banquettes, candlelit room</p>
+              </div>
+
+              <div class="area-card border border-outline-variant p-3.5 cursor-pointer rounded hover:border-outline transition-all" data-area="Hearth Counter">
+                <div class="flex items-center justify-between">
+                  <span class="font-body-md text-body-md font-medium text-on-surface">Hearth Counter</span>
+                  <span class="material-symbols-outlined text-on-surface-variant" data-icon="restaurant">restaurant</span>
+                </div>
+                <p class="font-label-caption text-label-caption text-on-surface-variant mt-1">High stools overlooking the coals</p>
+              </div>
+
+              <div class="area-card border border-outline-variant p-3.5 cursor-pointer rounded hover:border-outline transition-all" data-area="Wine Vault Salon">
+                <div class="flex items-center justify-between">
+                  <span class="font-body-md text-body-md font-medium text-on-surface">Wine Vault Salon</span>
+                  <span class="material-symbols-outlined text-on-surface-variant" data-icon="wine_bar">wine_bar</span>
+                </div>
+                <p class="font-label-caption text-label-caption text-on-surface-variant mt-1">Historic 17th-c. cellar room</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2: Date & Service Slots -->
+          <div>
+            <div class="flex items-center justify-between border-b border-outline-variant pb-2 mb-4">
+              <span class="font-label-uppercase text-label-uppercase text-primary tracking-widest">STEP 2 · DATE &amp; SERVICE TIME</span>
+              <span class="font-label-caption text-label-caption text-on-surface-variant">Live availability backed by API</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+              <div>
+                <label class="block font-body-sm text-body-sm text-on-surface font-medium mb-1" for="reservation-date">Select Evening</label>
+                <input class="w-full bg-surface border border-outline-variant px-3 py-2.5 text-on-surface font-body-md text-body-md rounded focus:outline-none focus:border-primary-container" id="reservation-date" type="date"/>
+              </div>
+              <div>
+                <label class="block font-body-sm text-body-sm text-on-surface font-medium mb-1">Service Type</label>
+                <div class="p-2.5 bg-surface-container border border-outline-variant text-on-surface font-body-sm text-body-sm rounded">
+                  Dinner Service · 18h00 to 23h30
+                </div>
+              </div>
+            </div>
+
+            <!-- Time Slots Grid -->
+            <label class="block font-body-sm text-body-sm text-on-surface font-medium mb-2">Available Sittings</label>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="time-slot-grid">
+              <!-- Rendered via app.js -->
+            </div>
+          </div>
+
+          <!-- Step 3: Guest Contact Details -->
+          <div>
+            <div class="flex items-center justify-between border-b border-outline-variant pb-2 mb-4">
+              <span class="font-label-uppercase text-label-uppercase text-primary tracking-widest">STEP 3 · GUEST INFORMATION</span>
+              <span class="font-label-caption text-label-caption text-on-surface-variant">Confidential verification</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block font-body-sm text-body-sm text-on-surface mb-1" for="guest-name">Full Name *</label>
+                <input class="w-full bg-surface border border-outline-variant px-3.5 py-2.5 text-on-surface font-body-md text-body-md rounded focus:outline-none focus:border-primary-container" id="guest-name" placeholder="e.g. Éléonore de la Tour" type="text" value="Éléonore de la Tour"/>
+              </div>
+              <div>
+                <label class="block font-body-sm text-body-sm text-on-surface mb-1" for="guest-email">Email Address *</label>
+                <input class="w-full bg-surface border border-outline-variant px-3.5 py-2.5 text-on-surface font-body-md text-body-md rounded focus:outline-none focus:border-primary-container" id="guest-email" placeholder="name@domaine.fr" type="email" value="eleonore.latour@paris.com"/>
+              </div>
+              <div>
+                <label class="block font-body-sm text-body-sm text-on-surface mb-1" for="guest-phone">Telephone (Mobile) *</label>
+                <input class="w-full bg-surface border border-outline-variant px-3.5 py-2.5 text-on-surface font-body-md text-body-md rounded focus:outline-none focus:border-primary-container" id="guest-phone" placeholder="+33 6 12 34 56 78" type="tel" value="+33 6 54 89 21 00"/>
+              </div>
+              <div>
+                <label class="block font-body-sm text-body-sm text-on-surface mb-1" for="guest-notes">Dietary &amp; Celebrations</label>
+                <input class="w-full bg-surface border border-outline-variant px-3.5 py-2.5 text-on-surface font-body-md text-body-md rounded focus:outline-none focus:border-primary-container" id="guest-notes" placeholder="Allergies, anniversary, wine preferences..." type="text" value="Anniversary celebration · 1 pescatarian guest"/>
+              </div>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="pt-2">
+            <button class="w-full bg-primary-container text-on-primary font-label-uppercase text-label-uppercase tracking-wider py-4 rounded hover:bg-primary transition-colors flex items-center justify-center space-x-2" id="confirm-reservation-btn" type="button">
+              <span>Complete Table Reservation</span>
+              <span class="material-symbols-outlined" data-icon="done">done</span>
+            </button>
+            <p class="font-label-caption text-label-caption text-on-surface-variant text-center mt-2.5">
+              Instant confirmation will be dispatched via SMS &amp; Email with calendar pass.
+            </p>
+          </div>
+        </div>
+
+        <!-- Live Reservation Folio Sidebar -->
+        <div class="lg:col-span-4 space-y-6">
+          <div class="bg-surface-container border border-outline-variant p-6 space-y-5">
+            <div class="border-b border-outline pb-3">
+              <span class="font-label-uppercase text-label-uppercase text-secondary tracking-widest">SUMMARY FOLIO</span>
+              <h3 class="font-headline-sm text-headline-sm text-on-surface mt-1">Your Evening at Ember</h3>
+            </div>
+
+            <!-- Dynamic Live Summary List -->
+            <dl class="space-y-3 font-body-sm text-body-sm">
+              <div class="flex justify-between py-1 border-b border-outline-variant">
+                <dt class="text-on-surface-variant">Guests</dt>
+                <dd class="font-medium text-on-surface" id="summary-party">2 Guests</dd>
+              </div>
+              <div class="flex justify-between py-1 border-b border-outline-variant">
+                <dt class="text-on-surface-variant">Date</dt>
+                <dd class="font-medium text-on-surface" id="summary-date">Today</dd>
+              </div>
+              <div class="flex justify-between py-1 border-b border-outline-variant">
+                <dt class="text-on-surface-variant">Service Time</dt>
+                <dd class="font-medium text-primary" id="summary-time">19:45 Sitting</dd>
+              </div>
+              <div class="flex justify-between py-1 border-b border-outline-variant">
+                <dt class="text-on-surface-variant">Seating Area</dt>
+                <dd class="font-medium text-on-surface" id="summary-area">Main Dining Room</dd>
+              </div>
+              <div class="flex justify-between py-1 border-b border-outline-variant">
+                <dt class="text-on-surface-variant">Table Hold</dt>
+                <dd class="text-on-surface">15 Minutes</dd>
+              </div>
+            </dl>
+
+            <!-- House Hospitality Policy -->
+            <div class="bg-surface p-4 border border-outline-variant space-y-2">
+              <div class="flex items-center space-x-1.5 text-on-surface">
+                <span class="material-symbols-outlined text-secondary" data-icon="info">info</span>
+                <h4 class="font-body-sm text-body-sm font-semibold">House Policy</h4>
+              </div>
+              <p class="font-label-caption text-label-caption text-on-surface-variant leading-relaxed">
+                Tables are held for 15 minutes past the reserved hour. Cancellations are welcomed up to 6 hours prior without fee.
+              </p>
+            </div>
+
+            <div class="text-center pt-2">
+              <p class="font-label-caption text-label-caption text-on-surface-variant">
+                Need bespoke arrangements? Call maitre d' at <br/>
+                <a class="text-primary font-medium hover:underline" href="tel:0142685500">01 42 68 55 00</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Confirmation Receipt Modal -->
+  <div class="modal-overlay hidden" id="reservation-receipt-modal">
+    <div class="modal-content p-6 sm:p-8 rounded-lg animate-fade-in space-y-6">
+      <div class="flex items-start justify-between border-b border-outline pb-4">
+        <div>
+          <span class="font-label-uppercase text-label-uppercase text-secondary tracking-widest">RÉSERVATION CONFIRMÉE</span>
+          <h3 class="font-headline-md text-headline-md text-on-surface mt-1">Table Secured at Ember</h3>
+        </div>
+        <div class="text-right">
+          <span class="font-label-caption text-label-caption text-on-surface-variant block">Reference Folio</span>
+          <span class="font-price-numeral text-xl font-bold text-primary tracking-wide" id="receipt-ref">EMB-8492</span>
+        </div>
+      </div>
+
+      <div class="bg-surface-container border border-outline-variant p-4 space-y-3">
+        <div class="flex justify-between py-1 border-b border-outline-variant font-body-sm">
+          <span class="text-on-surface-variant">Guest Name</span>
+          <span class="font-medium text-on-surface" id="receipt-name">—</span>
+        </div>
+        <div class="flex justify-between py-1 border-b border-outline-variant font-body-sm">
+          <span class="text-on-surface-variant">Date &amp; Sitting</span>
+          <span class="font-medium text-primary" id="receipt-datetime">—</span>
+        </div>
+        <div class="flex justify-between py-1 border-b border-outline-variant font-body-sm">
+          <span class="text-on-surface-variant">Party Size</span>
+          <span class="font-medium text-on-surface" id="receipt-party">—</span>
+        </div>
+        <div class="flex justify-between py-1 border-b border-outline-variant font-body-sm">
+          <span class="text-on-surface-variant">Seating Area</span>
+          <span class="font-medium text-on-surface" id="receipt-area">—</span>
+        </div>
+        <div class="flex justify-between py-1 font-body-sm">
+          <span class="text-on-surface-variant">Guest Notes</span>
+          <span class="font-medium text-on-surface text-right max-w-xs" id="receipt-notes">—</span>
+        </div>
+      </div>
+
+      <div class="p-4 bg-surface-container-low border border-outline-variant rounded font-label-caption text-on-surface-variant leading-relaxed">
+        <strong class="text-on-surface font-medium">House Note:</strong> Tables are held for 15 minutes past the sitting hour. We look forward to cooking for you over live fire.
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="modal-actions flex flex-wrap items-center justify-between gap-3 pt-2">
+        <div class="flex items-center gap-2">
+          <a class="inline-flex items-center gap-1.5 px-3 py-2 border border-outline-variant rounded text-on-surface font-body-sm hover:border-primary transition-colors" href="#" id="receipt-cal-btn" rel="noopener noreferrer" target="_blank">
+            <span class="material-symbols-outlined text-sm">calendar_today</span>
+            <span>Google Cal</span>
+          </a>
+          <button class="inline-flex items-center gap-1.5 px-3 py-2 border border-outline-variant rounded text-on-surface font-body-sm hover:border-primary transition-colors" id="receipt-ics-btn" type="button">
+            <span class="material-symbols-outlined text-sm">download</span>
+            <span>Apple / iCal</span>
+          </button>
+          <button class="inline-flex items-center gap-1.5 px-3 py-2 border border-outline-variant rounded text-on-surface font-body-sm hover:border-primary transition-colors" onclick="window.print()" type="button">
+            <span class="material-symbols-outlined text-sm">print</span>
+            <span>Print Folio</span>
+          </button>
+        </div>
+
+        <button class="bg-primary-container text-on-primary font-label-uppercase text-label-uppercase px-6 py-2.5 rounded hover:bg-primary transition-colors" id="close-receipt-btn" type="button">
+          Close &amp; Return
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="w-full bg-surface-container border-t border-outline-variant mt-16">
+    <div class="w-full px-margin md:px-margin-desktop py-space-xl max-w-7xl mx-auto space-y-8">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
+        <div class="md:col-span-4 space-y-3">
+          <a class="font-headline-md text-headline-md text-on-surface" href="/">Maison Ember</a>
+          <p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs">Open-hearth cooking &amp; natural cellar. 14 Rue des Tournelles, 75004 Paris.</p>
+        </div>
+        <div class="md:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <ul class="space-y-2">
+            <li><span class="text-on-surface-variant font-body-sm text-body-sm">Service Hours: Tue–Sat 18h00–23h30</span></li>
+            <li><span class="text-on-surface-variant font-body-sm text-body-sm">14 Rue des Tournelles, 75004 Paris</span></li>
+          </ul>
+          <ul class="space-y-2">
+            <li><a class="text-on-surface-variant font-body-sm text-body-sm hover:text-primary transition-colors" href="/menu.html">View Menu</a></li>
+            <li><a class="text-primary font-body-sm text-body-sm hover:underline transition-colors" href="/admin.html">Staff Atelier Desk</a></li>
+          </ul>
+        </div>
+        <div class="md:col-span-3 md:text-right space-y-3">
+          <a class="font-price-numeral text-price-numeral text-on-surface font-semibold hover:text-primary transition-colors" href="tel:0142685500">+33 (0)1 42 68 55 00</a>
+        </div>
+      </div>
+      <div class="pt-6 border-t border-outline-variant text-label-caption font-label-caption text-on-surface-variant">
+        <p>© Maison Ember Atelier Culinaire. All rights reserved. Open-hearth service &amp; cellar.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>

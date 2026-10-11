@@ -1,0 +1,82 @@
+/* Custom animations and modal styling for Maison Ember */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s ease-out forwards;
+}
+
+/* Modal backdrop & card */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(31, 27, 24, 0.72);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+}
+
+.modal-content {
+  background-color: #fff8f5;
+  border: 1px solid #88726c;
+  max-width: 580px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.08);
+}
+
+/* Toast alert feedback */
+.toast-notice {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 110;
+  padding: 1rem 1.5rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 14px;
+}
+
+.toast-success {
+  background-color: #59614e;
+  color: #ffffff;
+  border: 1px solid #c1cab3;
+}
+
+.toast-error {
+  background-color: #ba1a1a;
+  color: #ffffff;
+  border: 1px solid #ffdad6;
+}
+
+/* Print reservation folio style */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #reservation-receipt-modal, #reservation-receipt-modal * {
+    visibility: visible;
+  }
+  #reservation-receipt-modal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: none;
+    padding: 0;
+  }
+  .modal-actions {
+    display: none !important;
+  }
+}
