@@ -1,4 +1,242 @@
-// Maison Ember — Staff Atelier & Table Desk Controller
+// Maison Ember — Staff Atelier & Table Desk Controller (with Static / GitHub Pages Demo Mode)
+(function installMaisonEmberDemoApi() {
+  if (window.__maisonEmberDemoApiInstalled) return;
+  window.__maisonEmberDemoApiInstalled = true;
+
+  const STORAGE_KEY = 'maison_ember_demo_store_v1';
+  const TIME_SLOTS = ['18:30', '19:00', '19:45', '20:30', '21:15', '21:45'];
+  const AREA_CAPACITY = { 'Main Dining Room': 4, 'Hearth Counter': 3, 'Wine Vault Salon': 2 };
+
+  function getStore() {
+    const todayStr = new Date().toISOString().split('T')[0];
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (parsed && Array.isArray(parsed.menu_items) && parsed.menu_items.length > 0) {
+          return parsed;
+        }
+      }
+    } catch (e) {}
+
+    const initialMenu = [
+      ['starters', 'Saint-Vaast Oyster over Embers', 'Huîtres aux braises', 'Briefly kissed by beech fire, smoked marrow butter, verjus mignonette, pickled sea fennel.', 22, '€22', 'GF', 1],
+      ['starters', 'Brittany Scallop Crudo', 'Crudo de Saint-Jacques', 'Hand-dived, pressed walnut oil, charred blood orange vinegar, winter purslane.', 26, '€26', 'GF', 2],
+      ['starters', 'Charred Leeks & Smoked Ricotta', 'Poireaux brûlés & ricotta fumée', 'Roasted whole in oak ash, house-made sheep ricotta, toasted hazelnuts, elderflower capers.', 18, '€18', 'V', 3],
+      ['starters', 'Duck Rillettes & Hearth Brioche', 'Rillettes de canard confit', 'Maison-cured duck rillettes, spiced wild fig relish, pickled shallots, wood-fired toasted brioche.', 20, '€20', '', 4],
+      ['starters', 'Charred Morel Mushrooms & Sabayon', 'Morilles au feu de bois', 'Wild spring morels sautéed over open iron, vin jaune sabayon, grilled brioche crisps.', 24, '€24', 'V', 5],
+      ['mains', 'Line-Caught Turbot on the Bone', 'Turbot de ligne au feu de bois', 'Slow-grilled over embers, brown butter fumet, glazed young leeks, wild sorrel oil.', 46, '€46', 'GF', 1],
+      ['mains', 'Aveyron Lamb Saddle & Merguez', 'Selle d’agneau de l’Aveyron', 'Spit-roasted with rosemary twigs, ember-braised celtuce, smoked pepper jus.', 42, '€42', '', 2],
+      ['mains', 'Dry-Aged Normande Ribeye (For Two)', 'Côte de bœuf maturée (Pour deux)', '55 days dry-aged, seared over wild cherry wood, roasted garlic marrow butter, shallot confit.', 115, '€115', '800g', 3],
+      ['mains', 'Ash-Baked Delicata Squash', 'Courge Delicata cuite sous la cendre', 'Chestnut emulsion, toasted pumpkin seeds, crisp sage, vin jaune reductions.', 31, '€31', 'V / GF', 4],
+      ['mains', 'Wood-Roasted Challans Duck Breast', 'Magret de canard de Challans', 'Smoked honey glaze, roasted late cherries, parsnip purée, crushed juniper jus.', 44, '€44', 'GF', 5],
+      ['sides', 'Smoked Ratte Potato Purée', 'Purée de pommes Ratte fumées', 'Cultured butter, sea salt flakes, churned hazelnut oil.', 10, '€10', 'V / GF', 1],
+      ['sides', 'Ember-Charred Bitter Greens', 'Verdurettes braisées aux cendres', 'Seasonal chicory and brassicas kissed by coal, aged cider vinegar reduction.', 9, '€9', 'V / GF', 2],
+      ['sides', 'Natural Levain Bread & Smoked Butter', 'Pain au levain & beurre fumé', '36-hour fermented country boule, butter churned and smoked over hazelnut twigs.', 6, '€6', 'V', 3],
+      ['sides', 'Ash-Roasted Heritage Carrots', 'Carottes anciennes confites', 'Charred over Picardy birch, wildflower honey, cracked coriander seeds.', 11, '€11', 'V / GF', 4],
+      ['desserts', 'Fire-Roasted Quince & Bay Leaf Ice Cream', 'Coing rôti au feu & glace laurier', 'Slowly caramelized under embers, bay leaf infused crème glacée, buckwheat sablé.', 14, '€14', 'V', 1],
+      ['desserts', 'Smoked Dark Chocolate Mousse (72% Guanaja)', 'Mousse au chocolat fumé', 'Valrhona Guanaja chocolate, cold-smoked Maldon sea salt, raw olive oil drizzle.', 15, '€15', 'V', 2],
+      ['desserts', 'Raw Milk Comté (36 mo) Affinage', 'Comté affiné 36 mois', 'From Marcel Petite cellars, sourdough charcoal crackers, seasonal fig paste.', 16, '€16', 'V', 3],
+      ['desserts', 'Wood-Baked Apple Tart & Crème Crue', 'Tarte fine tiède au feu de bois', 'Thin caramelized crust baked in hearth ashes, Normandy unpasteurized raw cream.', 14, '€14', 'V', 4],
+      ['cellar', 'Domaine Courbet — Savagnin Maceration (Jura 2021)', 'Orange / Maceration', '3 weeks skin-contact, vibrant dried apricot, walnut smoke, deep living minerality.', 78, '€78 / €16 gls', 'Natural', 1],
+      ['cellar', 'Domaine de l’Écu — ‘Orthogneiss’ Muscadet (Loire 2022)', 'Blanc Nature', 'Biodynamic, sur lie aging in subterranean vats, crushed oyster shell, citrus flint.', 58, '€58 / €12 gls', 'Bio', 2],
+      ['cellar', 'Domaine Gramenon — ‘La Sagesse’ Côtes du Rhône (2022)', 'Rouge Nature', '60-year-old bush vine Grenache, natural amphora aging, wild garrigue, dark mulberry.', 72, '€72 / €15 gls', 'Biodynamic', 3],
+      ['cellar', 'Alice et Olivier de Moor — Chablis ‘Coteau de Rosette’ (2021)', 'Blanc Terroir', 'Unfiltered natural Chardonnay, crystalline limestone tension, wild orchard blossom.', 98, '€98 / €20 gls', 'Rare', 4],
+      ['cellar', 'Maison Ember Reserve Wild Ferment Cider (Normandy)', 'Cidre Vivant', 'Ancient heritage orchard apples, natural zero-sulfur bubbles, dry brioche and wood notes.', 32, '€32 / €8 gls', 'Artisanal', 5]
+    ].map((m, idx) => ({
+      id: idx + 1, category: m[0], title: m[1], french_subtitle: m[2], description: m[3],
+      price: m[4], price_display: m[5], badge: m[6], is_available: 1, sort_order: m[7]
+    }));
+
+    const nowIso = new Date().toISOString();
+    const initialReservations = [
+      { id: 1, reference: 'EMB-8491', guest_name: 'Éléonore de la Tour', guest_email: 'eleonore.latour@paris.com', guest_phone: '+33 6 54 89 21 00', guest_notes: 'Anniversary celebration · 1 pescatarian guest', party_size: 2, seating_area: 'Main Dining Room', reservation_date: todayStr, reservation_time: '19:45', status: 'confirmed', created_at: nowIso },
+      { id: 2, reference: 'EMB-8492', guest_name: 'Henri Rousseau', guest_email: 'h.rousseau@marais.fr', guest_phone: '+33 6 12 34 56 78', guest_notes: 'Quiet table preferred', party_size: 4, seating_area: 'Main Dining Room', reservation_date: todayStr, reservation_time: '19:45', status: 'confirmed', created_at: nowIso },
+      { id: 3, reference: 'EMB-8493', guest_name: 'Camille Delacroix', guest_email: 'camille.d@atelier.fr', guest_phone: '+33 6 98 76 54 32', guest_notes: 'Wine pairing voyage requested', party_size: 2, seating_area: 'Hearth Counter', reservation_date: todayStr, reservation_time: '20:30', status: 'confirmed', created_at: nowIso },
+      { id: 4, reference: 'EMB-8494', guest_name: 'Julien Moreau', guest_email: 'j.moreau@presse.com', guest_phone: '+33 6 45 67 89 01', guest_notes: 'Chef Alexandre tasting menu', party_size: 6, seating_area: 'Wine Vault Salon', reservation_date: todayStr, reservation_time: '20:30', status: 'confirmed', created_at: nowIso },
+      { id: 5, reference: 'EMB-8495', guest_name: 'Gaston Mercier', guest_email: 'gaston@vins-nature.org', guest_phone: '+33 6 33 22 11 00', guest_notes: 'Sommelier table booking', party_size: 2, seating_area: 'Hearth Counter', reservation_date: todayStr, reservation_time: '21:45', status: 'confirmed', created_at: nowIso },
+      { id: 6, reference: 'EMB-8496', guest_name: 'Sophie Laurent', guest_email: 'sophie.laurent@sorbonne.fr', guest_phone: '+33 6 88 99 00 11', guest_notes: 'Birthday dinner', party_size: 4, seating_area: 'Hearth Counter', reservation_date: todayStr, reservation_time: '21:45', status: 'confirmed', created_at: nowIso },
+      { id: 7, reference: 'EMB-8497', guest_name: 'Pierre Bertin', guest_email: 'p.bertin@design.fr', guest_phone: '+33 6 77 88 99 00', guest_notes: 'Gluten-free for 1 guest', party_size: 2, seating_area: 'Hearth Counter', reservation_date: todayStr, reservation_time: '21:45', status: 'confirmed', created_at: nowIso }
+    ];
+
+    const store = {
+      menu_items: initialMenu,
+      reservations: initialReservations,
+      newsletter_subscribers: [
+        { id: 1, email: 'sommelier.notes@maisonember.com', subscribed_at: nowIso },
+        { id: 2, email: 'gastronome@paris-eats.com', subscribed_at: nowIso }
+      ],
+      inquiries: [
+        { id: 1, name: 'Antoine de Saint-Germain', email: 'antoine@lux-foundation.fr', phone: '+33 1 44 55 66 77', event_type: 'Private Dining Salon', preferred_date: '2026-11-28', guest_count: 12, message: 'Private 6-course tasting menu with biodynamic wine pairings for our board dinner.', status: 'pending', created_at: nowIso }
+      ]
+    };
+    saveStore(store);
+    return store;
+  }
+
+  function saveStore(store) {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(store)); } catch (e) {}
+  }
+
+  function jsonResponse(obj, status = 200) {
+    return new Response(JSON.stringify(obj), {
+      status,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
+
+  function handleDemoApi(urlStr, options = {}) {
+    const store = getStore();
+    const method = (options.method || 'GET').toUpperCase();
+    const u = new URL(urlStr, window.location.origin);
+    const path = u.pathname.replace(/^.*\/api/, '/api');
+    let body = {};
+    if (options.body) {
+      try { body = JSON.parse(options.body); } catch (e) {}
+    }
+
+    if (path === '/api/menu' && method === 'GET') {
+      const items = store.menu_items;
+      const grouped = {
+        starters: items.filter(i => i.category === 'starters'),
+        mains: items.filter(i => i.category === 'mains'),
+        sides: items.filter(i => i.category === 'sides'),
+        desserts: items.filter(i => i.category === 'desserts'),
+        cellar: items.filter(i => i.category === 'cellar')
+      };
+      return jsonResponse({ success: true, total: items.length, items, grouped });
+    }
+
+    const menuMatch = path.match(/^\/api\/menu\/(\d+)$/);
+    if (menuMatch) {
+      const id = Number(menuMatch[1]);
+      if (method === 'PATCH') {
+        const item = store.menu_items.find(i => i.id === id);
+        if (item && body.is_available !== undefined) item.is_available = body.is_available ? 1 : 0;
+        saveStore(store);
+        return jsonResponse({ success: true });
+      }
+      if (method === 'DELETE') {
+        store.menu_items = store.menu_items.filter(i => i.id !== id);
+        saveStore(store);
+        return jsonResponse({ success: true });
+      }
+    }
+
+    if (path === '/api/reservations' && method === 'GET') {
+      const date = u.searchParams.get('date');
+      const status = u.searchParams.get('status');
+      const search = (u.searchParams.get('search') || '').toLowerCase();
+      let list = [...store.reservations];
+      if (date) list = list.filter(r => r.reservation_date === date);
+      if (status && status !== 'all') list = list.filter(r => r.status === status);
+      if (search) {
+        list = list.filter(r =>
+          (r.guest_name || '').toLowerCase().includes(search) ||
+          (r.guest_email || '').toLowerCase().includes(search) ||
+          (r.guest_phone || '').toLowerCase().includes(search) ||
+          (r.reference || '').toLowerCase().includes(search)
+        );
+      }
+      return jsonResponse({ success: true, count: list.length, reservations: list });
+    }
+
+    if (path === '/api/reservations' && method === 'POST') {
+      const ref = 'EMB-' + Math.floor(1000 + Math.random() * 9000);
+      const id = (store.reservations.reduce((m, r) => Math.max(m, r.id || 0), 0)) + 1;
+      const newRes = {
+        id,
+        reference: ref,
+        guest_name: body.guest_name,
+        guest_email: body.guest_email,
+        guest_phone: body.guest_phone,
+        guest_notes: body.guest_notes || '',
+        party_size: Number(body.party_size) || 2,
+        seating_area: body.seating_area || 'Main Dining Room',
+        reservation_date: body.reservation_date,
+        reservation_time: body.reservation_time,
+        status: 'confirmed',
+        created_at: new Date().toISOString()
+      };
+      store.reservations.unshift(newRes);
+      saveStore(store);
+      return jsonResponse({ success: true, reference: ref, reservation: newRes }, 201);
+    }
+
+    const resStatusMatch = path.match(/^\/api\/reservations\/(\d+)\/status$/);
+    if (resStatusMatch && method === 'PATCH') {
+      const id = Number(resStatusMatch[1]);
+      const r = store.reservations.find(x => x.id === id);
+      if (r && body.status) r.status = body.status;
+      saveStore(store);
+      return jsonResponse({ success: true });
+    }
+
+    const resDelMatch = path.match(/^\/api\/reservations\/(\d+)$/);
+    if (resDelMatch && method === 'DELETE') {
+      const id = Number(resDelMatch[1]);
+      store.reservations = store.reservations.filter(x => x.id !== id);
+      saveStore(store);
+      return jsonResponse({ success: true });
+    }
+
+    if (path === '/api/newsletter' && method === 'GET') {
+      return jsonResponse({ success: true, subscribers: store.newsletter_subscribers });
+    }
+
+    if (path === '/api/inquiries' && method === 'GET') {
+      return jsonResponse({ success: true, inquiries: store.inquiries });
+    }
+
+    const inqMatch = path.match(/^\/api\/inquiries\/(\d+)\/status$/);
+    if (inqMatch && method === 'PATCH') {
+      const id = Number(inqMatch[1]);
+      const inq = store.inquiries.find(x => x.id === id);
+      if (inq && body.status) inq.status = body.status;
+      saveStore(store);
+      return jsonResponse({ success: true });
+    }
+
+    if (path === '/api/stats' && method === 'GET') {
+      const todayStr = new Date().toISOString().split('T')[0];
+      const active = store.reservations.filter(r => r.status !== 'cancelled');
+      const todayList = active.filter(r => r.reservation_date === todayStr);
+      return jsonResponse({
+        success: true,
+        bookings_today: todayList.length,
+        covers_today: todayList.reduce((s, r) => s + Number(r.party_size || 0), 0),
+        upcoming_bookings: active.length,
+        upcoming_covers: active.reduce((s, r) => s + Number(r.party_size || 0), 0),
+        total_subscribers: store.newsletter_subscribers.length,
+        pending_inquiries: store.inquiries.filter(i => i.status === 'pending').length
+      });
+    }
+
+    return jsonResponse({ success: true });
+  }
+
+  const origFetch = window.fetch.bind(window);
+  window.fetch = async function(input, init) {
+    const urlStr = typeof input === 'string' ? input : (input && input.url ? input.url : '');
+    if (urlStr.includes('/api/')) {
+      const isStaticHost = window.location.hostname.endsWith('github.io') || window.location.protocol === 'file:';
+      if (isStaticHost) {
+        return handleDemoApi(urlStr, init);
+      }
+      try {
+        const res = await origFetch(input, init);
+        const ct = res.headers.get('content-type') || '';
+        if (res.ok && ct.includes('application/json')) {
+          return res;
+        }
+        return handleDemoApi(urlStr, init);
+      } catch (err) {
+        return handleDemoApi(urlStr, init);
+      }
+    }
+    return origFetch(input, init);
+  };
+})();
 
 document.addEventListener('DOMContentLoaded', () => {
   // Tabs Navigation
