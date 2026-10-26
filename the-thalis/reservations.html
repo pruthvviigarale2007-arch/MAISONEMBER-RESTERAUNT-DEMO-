@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Reserve Table — The Thalis · Kolhapuri Thali · Tarabai Park</title>
+  
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..800;1,400..800&amp;family=Work+Sans:ital,wght@0,300..700;1,300..700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { red: '#991b1b', crimson: '#7f1d1d', gold: '#d97706', amber: '#f59e0b', cream: '#fffbeb', sand: '#fef3c7', charcoal: '#1c1917' }
+          },
+          fontFamily: { serif: ['Playfair Display', 'serif'], sans: ['Work Sans', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link href="css/custom.css" rel="stylesheet"/>
+</head>
+<body class="bg-brand-cream text-stone-900 font-sans antialiased selection:bg-brand-red selection:text-white">
+
+  <!-- Header -->
+  <header class="bg-brand-cream/95 backdrop-blur sticky top-0 z-50 border-b border-amber-200/80 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 py-3.5 flex justify-between items-center">
+      <a class="flex items-center gap-3" href="index.html">
+        <div class="w-10 h-10 rounded-full bg-brand-red text-amber-300 flex items-center justify-center font-serif text-xl font-black shadow-inner border border-amber-400">
+          थ
+        </div>
+        <div>
+          <span class="font-serif text-xl sm:text-2xl font-black tracking-tight text-brand-red block leading-none">The Thalis</span>
+          <span class="text-[10px] uppercase font-bold tracking-widest text-amber-800">Table Reservations</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden lg:flex items-center space-x-7 text-xs font-semibold uppercase tracking-wider text-stone-800">
+        <a class="hover:text-brand-red transition-colors" href="index.html">Home</a>
+        <a class="hover:text-brand-red transition-colors" href="menu.html">Menu</a>
+        <a class="hover:text-brand-red transition-colors" href="order.html">Order Online</a>
+        <a class="text-brand-red border-b-2 border-brand-red pb-1" href="reservations.html">Reserve Table</a>
+        <a class="hover:text-brand-red transition-colors" href="reviews.html">Reviews (4.6★)</a>
+        <a class="hover:text-brand-red transition-colors" href="contact.html">Contact &amp; Map</a>
+        <a class="text-amber-800 hover:text-brand-red transition-colors" href="admin.html">Staff Desk</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a class="text-xs font-bold text-stone-800 hover:text-brand-red transition-colors flex items-center gap-1" href="tel:07744966966">
+          <span class="material-symbols-outlined text-sm text-brand-red">call</span>
+          <span>077449 66966</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-8 py-10">
+    <div class="text-center max-w-2xl mx-auto space-y-2 mb-10">
+      <span class="text-xs uppercase font-bold tracking-widest text-brand-red">DIRECT RESTAURANT BOOKING</span>
+      <h1 class="font-serif text-3xl sm:text-4xl font-black text-stone-900">Book Your Family Table</h1>
+      <p class="text-xs sm:text-sm text-stone-600">Reserve a table in advance to avoid waiting during peak lunch and dinner hours in Tarabai Park.</p>
+    </div>
+
+    <div class="max-w-3xl mx-auto bg-white border-2 border-brand-red rounded-xl p-8 shadow-md">
+      <form class="space-y-6 text-xs" id="thali-reservation-form">
+        
+        <!-- Step 1: Party Size & Seating Area -->
+        <div class="space-y-3 border-b border-amber-200 pb-5">
+          <div class="flex justify-between items-center">
+            <span class="font-bold text-sm text-brand-red uppercase tracking-wider">1. Party Size &amp; Seating Area</span>
+            <span class="text-stone-500">AC Hall &amp; Traditional Baithak</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block font-bold text-stone-800 mb-1">Number of Guests</label>
+              <input type="number" id="res-party" min="1" max="15" value="4" class="w-full bg-amber-50 border border-amber-300 p-2.5 rounded font-bold text-sm focus:outline-none focus:border-brand-red" />
+            </div>
+
+            <div>
+              <label class="block font-bold text-stone-800 mb-1">Seating Area</label>
+              <select id="res-area" class="w-full bg-amber-50 border border-amber-300 p-2.5 rounded font-bold text-xs focus:outline-none focus:border-brand-red">
+                <option value="Family AC Hall">Family AC Hall (Comfortable Chairs)</option>
+                <option value="Royal Baithak (Traditional Floor)">Royal Baithak (Traditional Floor Seating &amp; Brass Thalis)</option>
+                <option value="Open Garden Courtyard">Open Garden Courtyard (Fresh Evening Air)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Date & Service Slots -->
+        <div class="space-y-3 border-b border-amber-200 pb-5">
+          <div class="flex justify-between items-center">
+            <span class="font-bold text-sm text-brand-red uppercase tracking-wider">2. Select Date &amp; Service Sitting</span>
+            <span class="text-stone-500">Lunch (12:30–4 PM) &amp; Dinner (7–11:30 PM)</span>
+          </div>
+
+          <div>
+            <label class="block font-bold text-stone-800 mb-1">Service Evening / Afternoon</label>
+            <input type="date" id="res-date" class="w-full bg-amber-50 border border-amber-300 p-2.5 rounded font-bold text-xs focus:outline-none focus:border-brand-red" />
+          </div>
+
+          <div>
+            <label class="block font-bold text-stone-800 mb-2">Available Sittings (Live Capacity)</label>
+            <div class="grid grid-cols-3 sm:grid-cols-5 gap-2" id="res-time-slots">
+              <!-- Rendered via app.js -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3: Contact Details -->
+        <div class="space-y-3">
+          <span class="font-bold text-sm text-brand-red uppercase tracking-wider block">3. Guest Information</span>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block font-bold text-stone-800 mb-1">Full Name *</label>
+              <input type="text" id="res-name" required placeholder="e.g. Swati Patil" class="w-full bg-amber-50 border border-amber-300 p-2.5 rounded focus:outline-none focus:border-brand-red" />
+            </div>
+            <div>
+              <label class="block font-bold text-stone-800 mb-1">Mobile Telephone *</label>
+              <input type="tel" id="res-phone" required placeholder="e.g. 09822123456" class="w-full bg-amber-50 border border-amber-300 p-2.5 rounded focus:outline-none focus:border-brand-red" />
+            </div>
+            <div>
+              <label class="block font-bold text-stone-800 mb-1">Email Address (Optional)</label>
+              <input type="email" id="res-email" placeholder="name@domain.com" class="w-full bg-amber-50 border border-amber-300 p-2.5 rounded focus:outline-none focus:border-brand-red" />
+            </div>
+            <div>
+              <label class="block font-bold text-stone-800 mb-1">Special Occasion / Dietary Notes</label>
+              <input type="text" id="res-notes" placeholder="Anniversary, Mild spice for children..." class="w-full bg-amber-50 border border-amber-300 p-2.5 rounded focus:outline-none focus:border-brand-red" />
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="w-full bg-brand-red hover:bg-brand-crimson text-white font-bold uppercase tracking-wider py-4 rounded shadow-md transition-colors text-xs flex items-center justify-center gap-2">
+          <span>Confirm Table Reservation</span>
+          <span class="material-symbols-outlined text-sm">done_all</span>
+        </button>
+      </form>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-stone-950 text-stone-300 text-xs py-8 mt-16 border-t border-stone-800 text-center">
+    <p class="font-serif font-bold text-amber-400">The Thalis — Kolhapuri Thali</p>
+    <p class="text-stone-400 text-[11px] mt-1">
+      <a href="https://www.google.com/maps/dir/?api=1&destination=The+Thalis+-+Kolhapuri+Thali,+Kadamwadi+Rd,+opp.+to+hotel+lisha,+Laxminarayan+Nagar,+Tarabai+Park,+Kolhapur,+Maharashtra+416003" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 underline underline-offset-2">
+        📍 Kadamwadi Rd, Opp. Hotel Lisha, Tarabai Park, Kolhapur (Get Directions)
+      </a> · Phone <a href="tel:07744966966" class="hover:text-amber-400">077449 66966</a>
+    </p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

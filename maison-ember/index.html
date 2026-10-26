@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Maison Ember — Open-Hearth Cooking &amp; Natural Cellar · Paris 4e</title>
+  
+  <!-- Fonts: Playfair Display + Work Sans -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&amp;family=Work+Sans:ital,wght@0,300..700;1,300..700&amp;display=swap" rel="stylesheet"/>
+  
+  <!-- Material Symbols Outlined -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  
+  <!-- Tailwind CSS v3 -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  
+  <!-- Tailwind Configuration verbatim -->
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "error-container": "#ffdad6",
+            "on-primary": "#ffffff",
+            "inverse-surface": "#352f2c",
+            "error": "#ba1a1a",
+            "surface": "#fff8f5",
+            "on-error": "#ffffff",
+            "surface-container-high": "#f0e6e1",
+            "tertiary-container": "#9a4a30",
+            "on-background": "#1f1b18",
+            "outline": "#88726c",
+            "on-tertiary-container": "#ffd4c7",
+            "tertiary-fixed-dim": "#ffb59e",
+            "inverse-on-surface": "#f9efea",
+            "surface-container-highest": "#ebe0db",
+            "surface-container-lowest": "#ffffff",
+            "on-primary-container": "#ffd3c6",
+            "tertiary-fixed": "#ffdbd0",
+            "on-tertiary-fixed": "#3a0b00",
+            "primary-container": "#9e472a",
+            "on-tertiary": "#ffffff",
+            "surface-bright": "#fff8f5",
+            "primary": "#7f3015",
+            "on-secondary-fixed": "#171e0f",
+            "on-surface": "#1f1b18",
+            "on-secondary": "#ffffff",
+            "inverse-primary": "#ffb59e",
+            "on-secondary-fixed-variant": "#414938",
+            "surface-dim": "#e2d8d3",
+            "on-tertiary-fixed-variant": "#783118",
+            "on-surface-variant": "#55423d",
+            "primary-fixed": "#ffdbd0",
+            "background": "#fff8f5",
+            "surface-variant": "#ebe0db",
+            "tertiary": "#7c331b",
+            "secondary-fixed": "#dde6ce",
+            "primary-fixed-dim": "#ffb59e",
+            "on-primary-fixed": "#3a0b00",
+            "on-secondary-container": "#5f6754",
+            "secondary-fixed-dim": "#c1cab3",
+            "outline-variant": "#dcc1b9",
+            "secondary": "#59614e",
+            "surface-tint": "#9b4428",
+            "secondary-container": "#dde6ce",
+            "surface-container-low": "#fcf2ec",
+            "surface-container": "#f6ece7",
+            "on-primary-fixed-variant": "#7c2e13",
+            "on-error-container": "#93000a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-lg": "2rem",
+            "gutter": "1.5rem",
+            "space-sm": "0.75rem",
+            "space-xs": "0.5rem",
+            "gutter-desktop": "2.5rem",
+            "margin": "1.25rem",
+            "space-md": "1.25rem",
+            "space-2xs": "0.25rem",
+            "space-2xl": "5rem",
+            "margin-desktop": "4rem",
+            "space-xl": "3.5rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["Playfair Display"],
+            "price-numeral": ["Work Sans"],
+            "title-menu-item": ["Playfair Display"],
+            "headline-lg-mobile": ["Playfair Display"],
+            "headline-md": ["Playfair Display"],
+            "label-caption": ["Work Sans"],
+            "body-lg": ["Work Sans"],
+            "body-md": ["Work Sans"],
+            "label-uppercase": ["Work Sans"],
+            "headline-sm": ["Playfair Display"],
+            "display-hero-mobile": ["Playfair Display"],
+            "body-sm": ["Work Sans"],
+            "display-hero": ["Playfair Display"]
+          },
+          "fontSize": {
+            "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "price-numeral": ["15px", { "lineHeight": "24px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "title-menu-item": ["18px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "500" }],
+            "label-caption": ["12px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "400" }],
+            "body-lg": ["17px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "body-md": ["15px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "label-uppercase": ["11px", { "lineHeight": "16px", "letterSpacing": "0.12em", "fontWeight": "600" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+            "display-hero-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "body-sm": ["13px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20;
+      font-size: 18px;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .dotted-leader {
+      border-bottom: 1px dotted #88726c;
+      flex-grow: 1;
+      margin: 0 16px;
+      height: 14px;
+      opacity: 0.45;
+    }
+  </style>
+  <link href="css/custom.css" rel="stylesheet"/>
+</head>
+<body class="bg-background text-on-surface antialiased selection:bg-primary-container selection:text-on-primary">
+
+  <!-- Announcement Ribbon -->
+  <aside class="w-full bg-surface-container border-b border-outline-variant py-2 px-margin text-center">
+    <p class="font-label-caption text-label-caption text-on-surface-variant tracking-wider">
+      Autumn hearth menu now serving · <a class="underline font-medium text-primary hover:text-on-surface transition-colors" href="private-dining.html">Private dining salon inquiries open</a> for November &amp; December
+    </p>
+  </aside>
+
+  <!-- TopNavBar -->
+  <header class="bg-surface docked full-width top-0 sticky z-50 border-b border-outline-variant">
+    <div class="flex justify-between items-center w-full px-margin md:px-margin-desktop py-space-sm max-w-7xl mx-auto">
+      <!-- Brand & Location Lockup -->
+      <div class="flex items-baseline space-x-3">
+        <a class="font-headline-md text-headline-md text-on-surface tracking-tight" href="index.html">Maison Ember</a>
+        <span class="hidden sm:inline font-label-uppercase text-label-uppercase text-on-surface-variant tracking-widest pl-2 border-l border-outline-variant">Paris · 4e</span>
+      </div>
+
+      <!-- Desktop Navigation Links (Opening in dedicated pages) -->
+      <nav class="hidden md:flex items-center space-x-8">
+        <a class="text-on-surface-variant font-label-uppercase text-label-uppercase tracking-widest hover:text-primary transition-colors duration-150" href="menu.html">Menu</a>
+        <a class="text-on-surface-variant font-label-uppercase text-label-uppercase tracking-widest hover:text-primary transition-colors duration-150" href="cellar.html">Cellar</a>
+        <a class="text-on-surface-variant font-label-uppercase text-label-uppercase tracking-widest hover:text-primary transition-colors duration-150" href="atmosphere.html">Atmosphere</a>
+        <a class="text-on-surface-variant font-label-uppercase text-label-uppercase tracking-widest hover:text-primary transition-colors duration-150" href="reservations.html">Reservations</a>
+        <a class="text-on-surface-variant font-label-uppercase text-label-uppercase tracking-widest hover:text-primary transition-colors duration-150" href="private-dining.html">Private Dining</a>
+        <a class="text-secondary font-label-uppercase text-label-uppercase tracking-widest hover:text-primary transition-colors duration-150" href="admin.html">Staff Desk</a>
+      </nav>
+
+      <!-- Trailing Action Triggers -->
+      <div class="flex items-center space-x-5">
+        <a class="hidden lg:inline font-price-numeral text-price-numeral text-on-surface-variant hover:text-primary transition-colors duration-150" href="tel:0142685500">
+          Tel: 01 42 68 55 00
+        </a>
+        <a class="inline-flex items-center justify-center bg-primary-container text-on-primary font-label-uppercase text-label-uppercase tracking-wider px-5 py-3 rounded-lg hover:bg-primary transition-colors duration-150 ease-out shadow-none" href="reservations.html">
+          Reserve Table
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="w-full" id="top">
+    <!-- Hero Section -->
+    <section class="max-w-7xl mx-auto px-margin md:px-margin-desktop pt-space-lg md:pt-space-xl pb-space-2xl border-b border-outline-variant">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter lg:gap-gutter-desktop items-center">
+        <!-- Left: Cinematic Live Hearth Video (4:5 Ratio) -->
+        <div class="lg:col-span-5 order-2 lg:order-1">
+          <div class="relative p-2 bg-surface-container border border-outline-variant rounded">
+            <!-- Video Container with Gradient Overlay -->
+            <div class="relative w-full aspect-[4/5] overflow-hidden bg-black rounded">
+              <video
+                id="hero-hearth-video"
+                autoplay
+                loop
+                muted
+                playsinline
+                class="w-full h-full object-cover filter contrast-[1.05]"
+              >
+                <source src="videos/hearth.mp4" type="video/mp4" />
+                <source src="https://assets.mixkit.co/videos/42999/42999-720.mp4" type="video/mp4" />
+                Your browser does not support HTML5 video.
+              </video>
+              
+              <!-- Subtle Warmth & Contrast Overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none"></div>
+
+              <!-- Interactive Sound Toggle Button -->
+              <button
+                type="button"
+                id="toggle-video-sound"
+                class="absolute bottom-3 right-3 bg-surface/90 hover:bg-surface text-on-surface p-2 rounded backdrop-blur border border-outline-variant transition-colors z-10 flex items-center gap-1.5 text-xs px-2.5 shadow-sm"
+                title="Toggle hearth ember sound"
+              >
+                <span class="material-symbols-outlined text-sm text-primary" id="sound-icon">volume_off</span>
+                <span id="sound-text" class="font-label-caption text-[11px] font-medium">Sound On</span>
+              </button>
+
+              <!-- Live Hearth Indicator -->
+              <div class="absolute top-3 left-3 bg-primary-container text-on-primary font-label-uppercase text-[10px] px-2.5 py-1 rounded backdrop-blur-sm flex items-center gap-1.5">
+                <span class="inline-block w-1.5 h-1.5 rounded-full bg-red-400 animate-pulse"></span>
+                <span>Live Hearth Fire</span>
+              </div>
+            </div>
+
+            <div class="mt-2.5 flex justify-between items-center text-on-surface-variant px-1 font-label-caption text-label-caption">
+              <span>Hearth Fire No. 04 · Oak &amp; Beech Coal</span>
+              <span>18h00 Live Service</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Typographic Anchor & Service Manifesto -->
+        <div class="lg:col-span-7 order-1 lg:order-2 space-y-6">
+          <div class="inline-flex items-center space-x-2 border-b border-outline pb-1">
+            <span class="font-label-uppercase text-label-uppercase text-secondary tracking-widest">ATELIER CULINAIRE &amp; VINS VIVANTS</span>
+          </div>
+          <h1 class="font-display-hero text-display-hero-mobile md:text-display-hero text-on-surface tracking-tight max-w-xl">
+            Open-hearth cooking, wild herbs, and low-intervention wines.
+          </h1>
+          <p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg leading-relaxed">
+            Rooted in ancestral ember cookery and seasonal harvests from the Seine-et-Marne basin. Unhurried hospitality at the threshold of the Marais and Bastille.
+          </p>
+
+          <!-- Architectural Service Metadata Grid -->
+          <div class="pt-4 border-t border-outline-variant grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <p class="font-label-uppercase text-label-uppercase text-on-surface-variant tracking-wider">SERVICE HOURS</p>
+              <p class="font-body-md text-body-md text-on-surface mt-1">Tuesday – Saturday</p>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">18h00 — 23h30 (Last seating 21h45)</p>
+            </div>
+            <div>
+              <p class="font-label-uppercase text-label-uppercase text-on-surface-variant tracking-wider">ADDRESS &amp; QUARTIER</p>
+              <p class="font-body-md text-body-md text-on-surface mt-1">14 Rue des Tournelles</p>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">75004 Paris · Bastille / Saint-Paul</p>
+            </div>
+          </div>
+
+          <!-- Direct Operational CTAs -->
+          <div class="pt-2 flex flex-wrap items-center gap-4">
+            <a class="bg-primary-container text-on-primary font-label-uppercase text-label-uppercase px-6 py-3.5 rounded-lg hover:bg-primary transition-colors duration-150 inline-flex items-center gap-2" href="reservations.html">
+              <span>Book an Evening</span>
+              <span class="material-symbols-outlined" data-icon="north_east">north_east</span>
+            </a>
+            <a class="border border-on-surface text-on-surface font-label-uppercase text-label-uppercase px-6 py-3.5 rounded-lg hover:bg-surface-container transition-colors duration-150 inline-flex items-center gap-2" href="menu.html">
+              <span>Browse Today's Menu</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Narrative & Culinary Heritage -->
+    <section class="max-w-7xl mx-auto px-margin md:px-margin-desktop py-space-2xl border-b border-outline-variant" id="cellar">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter lg:gap-gutter-desktop items-start">
+        <div class="lg:col-span-4 space-y-4">
+          <span class="font-label-uppercase text-label-uppercase text-secondary tracking-widest">OUR PHILOSOPHY</span>
+          <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">
+            Cooking over embers since 2019.
+          </h2>
+          <div class="w-12 h-px bg-primary-container"></div>
+        </div>
+
+        <div class="lg:col-span-4 space-y-4">
+          <p class="font-body-md text-body-md text-on-surface leading-relaxed">
+            We do not use gas ranges or circulating water baths. Every cut of meat, winter brassica, and crustacean is exposed directly to hardwood coals of sessile oak and charred fruitwood sourced from sustainably managed groves in Picardy.
+          </p>
+          <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Our sourdough is fermented on-site for thirty-six hours using ancient stoneground flours from Seine-et-Marne, paired with cultured butter churned and smoked over hazelnut twigs twice weekly.
+          </p>
+        </div>
+
+        <div class="lg:col-span-4 bg-surface-container p-6 border border-outline-variant space-y-4">
+          <h3 class="font-headline-sm text-headline-sm text-on-surface">The Natural Cellar</h3>
+          <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Curated by head sommelier Camille Roy, our subterranean cellar shelters 420 references dedicated solely to low-intervention, biodynamic growers across the Loire, Jura, and northern Rhône. Unfiltered, honest expressions of living soil.
+          </p>
+          <div class="pt-2 flex items-center justify-between border-t border-outline-variant text-label-caption font-label-caption text-on-surface-variant">
+            <span>Current cellar holdings: 1,840 btls</span>
+            <span class="text-primary font-medium">Updated weekly</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Asymmetrical Kitchen Vignettes -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-gutter mt-space-xl">
+        <div class="space-y-2">
+          <div class="bg-surface-container border border-outline-variant p-1.5">
+            <img class="w-full aspect-[3/2] object-cover" data-alt="Levain boule and butter" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFO5GSTkchHYTxk7aMcbBn4RmtXum05PiKmRorJhFPqybypTOfgZ5J3O4itE6u0_ucdfcwEVTJF-v87VeSeybFlo9yf08iMKhvE0ahXBny1o_czIh0zFZ_iI8_i7luuWC0EyYsmD1CWzLkJOV5NsdAXNJnYA9LovG5F8-bXPQp0ARp6nQUuki81WHs93Ip9bwjyslv6cKS0tYjyvpYwl3ry8BFYDRQB9uQ5_uIA7LilgCzdwoHj329Bg"/>
+          </div>
+          <p class="font-label-caption text-label-caption text-on-surface-variant">36-hour natural levain boule &amp; hazelnut smoked butter</p>
+        </div>
+
+        <div class="space-y-2">
+          <div class="bg-surface-container border border-outline-variant p-1.5">
+            <img class="w-full aspect-[3/2] object-cover" data-alt="Leeks in coals" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_nBakLW5pgINOgOKveW-W1RkXTMbie5XzlHiZmX0jzm8gUYP945LZx32-FJ6BhmAtOX7wgTgm2abFJWN7QW2-VMvHr48JiyVWIKEzEjOfVTIRLkNHnbBO6JWC-iRkklPj-ZXeNooNLu9ZAFPPpmieof84CiS11zENq5WISdmhbvROBoa-DyJBBxXKeJN8nQ9Yu_seXpGZ_-OEExoj5va4nQ0tnKBfQMgi-J09aF3NVL5Xoaw2hpB8ug"/>
+          </div>
+          <p class="font-label-caption text-label-caption text-on-surface-variant">Winter leeks roasted directly in oak ash</p>
+        </div>
+
+        <div class="space-y-2">
+          <div class="bg-surface-container border border-outline-variant p-1.5">
+            <img class="w-full aspect-[3/2] object-cover" data-alt="Subterranean cellar bottle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxqGHTeN5UK44nPZn9YYXeRu2ZPnQShDJik05JBOc8-KwT0PBU0dtigmUVYYRDu8-vwa7pWQAodhlr9cA0a8J-vg8x5QeXuiz8FBobDj_IXHOc5vHokMCb7puZp1Rkd_iIq8dyIHI3uzZLDmqrsP_4P6AZ0PJ3GFuxrDQOc0D5eh3MXY0TEQPNZJDqJZSkuSFF2rLLfmT-2jj97202F96GHm29HcnShaZHArX5U1oOzGV0Ph1kIM6oqQ"/>
+          </div>
+          <p class="font-label-caption text-label-caption text-on-surface-variant">Maceration wine from Domaine Courbet, Jura</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Menu (Dynamic & Letterpress Brasserie Format) -->
+    <section class="max-w-7xl mx-auto px-margin md:px-margin-desktop py-space-2xl border-b border-outline-variant" id="menu">
+      <div class="text-center max-w-2xl mx-auto space-y-3 mb-space-lg">
+        <span class="font-label-uppercase text-label-uppercase text-secondary tracking-widest">CARTE DE SAISON</span>
+        <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Dinner Service at the Hearth</h2>
+        <p class="font-body-md text-body-md text-on-surface-variant">
+          Menus rotate based on morning market arrivals from Rungis and our Seine-et-Marne growers. Dishes are cooked to order over live fire.
+        </p>
+      </div>
+
+      <!-- Menu Category Tabs -->
+      <div class="flex flex-wrap items-center justify-center gap-2 mb-space-lg border-b border-outline-variant pb-4" id="menu-tabs">
+        <button class="menu-category-btn px-4 py-2 font-label-uppercase text-label-uppercase border border-primary-container bg-surface-container text-primary rounded-lg transition-colors" data-category="starters">
+          Starters &amp; Crudo
+        </button>
+        <button class="menu-category-btn px-4 py-2 font-label-uppercase text-label-uppercase border border-outline-variant bg-transparent text-on-surface-variant hover:text-on-surface rounded-lg transition-colors" data-category="mains">
+          Wood-Fired Mains
+        </button>
+        <button class="menu-category-btn px-4 py-2 font-label-uppercase text-label-uppercase border border-outline-variant bg-transparent text-on-surface-variant hover:text-on-surface rounded-lg transition-colors" data-category="sides">
+          Sides from the Ash
+        </button>
+        <button class="menu-category-btn px-4 py-2 font-label-uppercase text-label-uppercase border border-outline-variant bg-transparent text-on-surface-variant hover:text-on-surface rounded-lg transition-colors" data-category="desserts">
+          Cheeses &amp; Desserts
+        </button>
+        <button class="menu-category-btn px-4 py-2 font-label-uppercase text-label-uppercase border border-outline-variant bg-transparent text-on-surface-variant hover:text-on-surface rounded-lg transition-colors" data-category="cellar">
+          Selected Cellar
+        </button>
+      </div>
+
+      <!-- Menu Sheet (Dynamic Container) -->
+      <div class="max-w-4xl mx-auto bg-surface p-6 sm:p-12 border border-outline-variant shadow-none" id="dynamic-menu-container">
+        <!-- Loaded dynamically via API -->
+      </div>
+
+      <!-- Tasting Menu Note -->
+      <div class="max-w-4xl mx-auto mt-6 pt-4 border-t border-outline-variant flex flex-col sm:flex-row justify-between items-center text-label-caption font-label-caption text-on-surface-variant">
+        <p>Tasting Menu "Carte Blanche au Feu" (6 Courses) — €95 per guest / Wine pairing +€60</p>
+        <p class="mt-2 sm:mt-0">All taxes &amp; service included</p>
+      </div>
+    </section>
+
+    <!-- Atmosphere & The Spaces -->
+    <section class="max-w-7xl mx-auto px-margin md:px-margin-desktop py-space-2xl border-b border-outline-variant" id="atmosphere">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-space-lg">
+        <div>
+          <span class="font-label-uppercase text-label-uppercase text-secondary tracking-widest">ATMOSPHERE &amp; SPACES</span>
+          <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mt-1">An intimate room carved in limestone.</h2>
+        </div>
+        <p class="font-body-md text-body-md text-on-surface-variant max-w-md mt-4 md:mt-0">
+          Thirty-four covers centered around our cast-iron hearth, flanked by a polished brass counter and candlelit alcoves.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-stretch">
+        <div class="md:col-span-7 bg-surface-container border border-outline-variant p-2 flex flex-col justify-between">
+          <img class="w-full aspect-[16/10] object-cover" data-alt="Hearth dining room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5IYt-1WGPnCcFwfcgRCcVNXdsYkETpdA0L1hJcsYY9czx2QF7Jc5LD15j5fq1UZWGhspU0pd65UNIl2z8zu5a61iPRBIvfzJ1DR2dzCfQiFj2wsdnQfTOICMriw_sUF24Mm9vBPFAdwB2HFHp3uZJPPRmuEQzqZuzW0xMwfuEyArZRtGSsw-R0XJco_MEWyoaCBPhXxvP8n6uTXJNTUvNUCD4aE-V6SlUMcH1QoKtylsu5YkscnkRrw"/>
+          <div class="p-3">
+            <h4 class="font-headline-sm text-headline-sm text-on-surface">The Hearth Counter</h4>
+            <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">8 front-row seats watching chef Alexandre &amp; team manage live fire and plating.</p>
+          </div>
+        </div>
+
+        <div class="md:col-span-5 flex flex-col gap-gutter">
+          <div class="bg-surface-container border border-outline-variant p-2 flex-1">
+            <img class="w-full aspect-[16/9] object-cover" data-alt="Brass counter" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPx6H8EQN0WHt7vMQ33RgGH01VvgAY3aUWfDH4zpzlaLDFRJbfNf4sgq7adYFd8o6A18BNaAdvGCWH402n4XRwnU8UzzqK-o2nYyeaxr4ABuf4Fi2D0y8nDlrq5OSQVJjAKo0jRo8GgS3J0aLoBDh945s8Y-fkyv2KqoXR0tdRJdB0pbQ5OeywOAc_uJCyjkZoetus8rWAWLwwmRfqI101W_n3nLR0lCBpF1Ur-sDbpqot_LVUPpRiAg"/>
+            <div class="p-3">
+              <h4 class="font-title-menu-item text-title-menu-item text-on-surface">The Brass Bar &amp; Banquettes</h4>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">Low-key aperitifs, raw bar courses, and walk-in counter dining.</p>
+            </div>
+          </div>
+          <div class="bg-surface-container border border-outline-variant p-2 flex-1">
+            <img class="w-full aspect-[16/9] object-cover" data-alt="Vault cellar room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkxBmCORzK4VytccxjThaSFhopYZRozatAvxVD7vCNa-DOv--Ty93vYb4WZOJV6MyGKp6bTx15jyAGS9oW4NHBppzLjowDJMmp7ehgtfCi1bZjmGfL0XfH7C7hENfDc0tK7pRlSTZ1RBjVr3QYOH0ePBE1Eii1rZ3zMqsu_HS3IseLvcMdUbSmPUby9pbCyF6y2G6m8FcW54k0UC2wdaIAjOTTYQ6OM1GdL3YODIROaS_PiHTM2Dj9XA"/>
+            <div class="p-3">
+              <h4 class="font-title-menu-item text-title-menu-item text-on-surface">The Subterranean Vault</h4>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">Private communal dining for up to 12 guests surrounded by our grand cru bottles.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Multi-Step Reservation Suite Connected to Backend -->
+    <section class="max-w-7xl mx-auto px-margin md:px-margin-desktop py-space-2xl border-b border-outline-variant" id="reservations">
+      <div class="max-w-3xl mb-space-lg">
+        <span class="font-label-uppercase text-label-uppercase text-secondary tracking-widest">RESERVATION SUITE</span>
+        <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mt-1">Book your table at Maison Ember</h2>
+        <p class="font-body-md text-body-md text-on-surface-variant mt-2">
+          Reservations open 30 days in advance at 10:00 AM Paris time. For parties larger than 8 or cellar salon takeovers, please consult our private dining team.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter lg:gap-gutter-desktop">
+        <!-- Interactive Booking Form (8 Cols) -->
+        <div class="lg:col-span-8 bg-surface border border-outline-variant p-6 sm:p-8 space-y-8">
+          
+          <!-- Step 1: Party Size & Seating Zone -->
+          <div>
+            <div class="flex items-center justify-between border-b border-outline-variant pb-2 mb-4">
+              <span class="font-label-uppercase text-label-uppercase text-primary tracking-widest">STEP 1 · PARTY SIZE &amp; ATMOSPHERE</span>
+              <span class="font-label-caption text-label-caption text-on-surface-variant">Dinner service Tue–Sat</span>
+            </div>
+
+            <!-- Party Size Selector Buttons -->
+            <label class="block font-body-sm text-body-sm text-on-surface font-medium mb-2">Number of Guests</label>
+            <div class="grid grid-cols-4 sm:grid-cols-8 gap-2 mb-6" id="party-size-selector">
+              <button class="party-btn py-2.5 text-center border border-outline-variant hover:border-primary font-price-numeral text-price-numeral rounded transition-colors" data-party="1" type="button">1</button>
+              <button class="party-btn py-2.5 text-center border border-primary-container bg-primary-container text-on-primary font-price-numeral text-price-numeral rounded transition-colors" data-party="2" type="button">2</button>
+              <button class="party-btn py-2.5 text-center border border-outline-variant hover:border-primary font-price-numeral text-price-numeral rounded transition-colors" data-party="3" type="button">3</button>
+              <button class="party-btn py-2.5 text-center border border-outline-variant hover:border-primary font-price-numeral text-price-numeral rounded transition-colors" data-party="4" type="button">4</button>
+              <button class="party-btn py-2.5 text-center border border-outline-variant hover:border-primary font-price-numeral text-price-numeral rounded transition-colors" data-party="5" type="button">5</button>
+              <button class="party-btn py-2.5 text-center border border-outline-variant hover:border-primary font-price-numeral text-price-numeral rounded transition-colors" data-party="6" type="button">6</button>
+              <button class="party-btn py-2.5 text-center border border-outline-variant hover:border-primary font-price-numeral text-price-numeral rounded transition-colors" data-party="7" type="button">7</button>
+              <button class="party-btn py-2.5 text-center border border-outline-variant hover:border-primary font-price-numeral text-price-numeral rounded transition-colors" data-party="8" type="button">8</button>
+            </div>
+
+            <!-- Seating Zone Radio Tiles -->
+            <label class="block font-body-sm text-body-sm text-on-surface font-medium mb-2">Preferred Seating Area</label>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3" id="seating-area-selector">
+              <div class="area-card border-2 border-primary-container bg-surface-container p-3.5 cursor-pointer rounded transition-all" data-area="Main Dining Room">
+                <div class="flex items-center justify-between">
+                  <span class="font-body-md text-body-md font-medium text-on-surface">Main Dining Room</span>
+                  <span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
+                </div>
+                <p class="font-label-caption text-label-caption text-on-surface-variant mt-1">Spacious banquettes, candlelit room</p>
+              </div>
+
+              <div class="area-card border border-outline-variant p-3.5 cursor-pointer rounded hover:border-outline transition-all" data-area="Hearth Counter">
+                <div class="flex items-center justify-between">
+                  <span class="font-body-md text-body-md font-medium text-on-surface">Hearth Counter</span>
+                  <span class="material-symbols-outlined text-on-surface-variant" data-icon="restaurant">restaurant</span>
+                </div>
+                <p class="font-label-caption text-label-caption text-on-surface-variant mt-1">High stools overlooking the coals</p>
+              </div>
+
+              <div class="area-card border border-outline-variant p-3.5 cursor-pointer rounded hover:border-outline transition-all" data-area="Wine Vault Salon">
+                <div class="flex items-center justify-between">
+                  <span class="font-body-md text-body-md font-medium text-on-surface">Wine Vault Salon</span>
+                  <span class="material-symbols-outlined text-on-surface-variant" data-icon="wine_bar">wine_bar</span>
+                </div>
+                <p class="font-label-caption text-label-caption text-on-surface-variant mt-1">Historic 17th-c. cellar room</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2: Date & Service Slots -->
+          <div>
+            <div class="flex items-center justify-between border-b border-outline-variant pb-2 mb-4">
+              <span class="font-label-uppercase text-label-uppercase text-primary tracking-widest">STEP 2 · DATE &amp; SERVICE TIME</span>
+              <span class="font-label-caption text-label-caption text-on-surface-variant">Real-time availability backed by API</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+              <div>
+                <label class="block font-body-sm text-body-sm text-on-surface font-medium mb-1" for="reservation-date">Select Evening</label>
+                <input class="w-full bg-surface border border-outline-variant px-3 py-2.5 text-on-surface font-body-md text-body-md rounded focus:outline-none focus:border-primary-container" id="reservation-date" type="date"/>
+              </div>
+              <div>
+                <label class="block font-body-sm text-body-sm text-on-surface font-medium mb-1">Service Type</label>
+                <div class="p-2.5 bg-surface-container border border-outline-variant text-on-surface font-body-sm text-body-sm rounded">
+                  Dinner Service · 18h00 to 23h30
+                </div>
+              </div>
+            </div>
+
+            <!-- Time Slots Grid (Dynamically rendered from /api/reservations/availability) -->
+            <label class="block font-body-sm text-body-sm text-on-surface font-medium mb-2">Available Sittings</label>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="time-slot-grid">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+
+          <!-- Step 3: Guest Contact Details -->
+          <div>
+            <div class="flex items-center justify-between border-b border-outline-variant pb-2 mb-4">
+              <span class="font-label-uppercase text-label-uppercase text-primary tracking-widest">STEP 3 · GUEST INFORMATION</span>
+              <span class="font-label-caption text-label-caption text-on-surface-variant">Confidential verification</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block font-body-sm text-body-sm text-on-surface mb-1" for="guest-name">Full Name *</label>
+                <input class="w-full bg-surface border border-outline-variant px-3.5 py-2.5 text-on-surface font-body-md text-body-md rounded focus:outline-none focus:border-primary-container" id="guest-name" placeholder="e.g. Éléonore de la Tour" type="text" value="Éléonore de la Tour"/>
+              </div>
+              <div>
+                <label class="block font-body-sm text-body-sm text-on-surface mb-1" for="guest-email">Email Address *</label>
+                <input class="w-full bg-surface border border-outline-variant px-3.5 py-2.5 text-on-surface font-body-md text-body-md rounded focus:outline-none focus:border-primary-container" id="guest-email" placeholder="name@domaine.fr" type="email" value="eleonore.latour@paris.com"/>
+              </div>
+              <div>
+                <label class="block font-body-sm text-body-sm text-on-surface mb-1" for="guest-phone">Telephone (Mobile) *</label>
+                <input class="w-full bg-surface border border-outline-variant px-3.5 py-2.5 text-on-surface font-body-md text-body-md rounded focus:outline-none focus:border-primary-container" id="guest-phone" placeholder="+33 6 12 34 56 78" type="tel" value="+33 6 54 89 21 00"/>
+              </div>
+              <div>
+                <label class="block font-body-sm text-body-sm text-on-surface mb-1" for="guest-notes">Dietary &amp; Celebrations</label>
+                <input class="w-full bg-surface border border-outline-variant px-3.5 py-2.5 text-on-surface font-body-md text-body-md rounded focus:outline-none focus:border-primary-container" id="guest-notes" placeholder="Allergies, anniversary, wine preferences..." type="text" value="Anniversary celebration · 1 pescatarian guest"/>
+              </div>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="pt-2">
+            <button class="w-full bg-primary-container text-on-primary font-label-uppercase text-label-uppercase tracking-wider py-4 rounded hover:bg-primary transition-colors flex items-center justify-center space-x-2" id="confirm-reservation-btn" type="button">
+              <span>Complete Table Reservation</span>
+              <span class="material-symbols-outlined" data-icon="done">done</span>
+            </button>
+            <p class="font-label-caption text-label-caption text-on-surface-variant text-center mt-2.5">
+              Instant confirmation will be dispatched via SMS &amp; Email with calendar pass.
+            </p>
+          </div>
+        </div>
+
+        <!-- Live Reservation Folio / Summary Sidebar -->
+        <div class="lg:col-span-4 space-y-6">
+          <div class="bg-surface-container border border-outline-variant p-6 space-y-5">
+            <div class="border-b border-outline pb-3">
+              <span class="font-label-uppercase text-label-uppercase text-secondary tracking-widest">SUMMARY FOLIO</span>
+              <h3 class="font-headline-sm text-headline-sm text-on-surface mt-1">Your Evening at Ember</h3>
+            </div>
+
+            <!-- Dynamic Live Summary List -->
+            <dl class="space-y-3 font-body-sm text-body-sm">
+              <div class="flex justify-between py-1 border-b border-outline-variant">
+                <dt class="text-on-surface-variant">Guests</dt>
+                <dd class="font-medium text-on-surface" id="summary-party">2 Guests</dd>
+              </div>
+              <div class="flex justify-between py-1 border-b border-outline-variant">
+                <dt class="text-on-surface-variant">Date</dt>
+                <dd class="font-medium text-on-surface" id="summary-date">Today</dd>
+              </div>
+              <div class="flex justify-between py-1 border-b border-outline-variant">
+                <dt class="text-on-surface-variant">Service Time</dt>
+                <dd class="font-medium text-primary" id="summary-time">19:45 Sitting</dd>
+              </div>
+              <div class="flex justify-between py-1 border-b border-outline-variant">
+                <dt class="text-on-surface-variant">Seating Area</dt>
+                <dd class="font-medium text-on-surface" id="summary-area">Main Dining Room</dd>
+              </div>
+              <div class="flex justify-between py-1 border-b border-outline-variant">
+                <dt class="text-on-surface-variant">Table Hold</dt>
+                <dd class="text-on-surface">15 Minutes</dd>
+              </div>
+            </dl>
+
+            <!-- House Hospitality Policy -->
+            <div class="bg-surface p-4 border border-outline-variant space-y-2">
+              <div class="flex items-center space-x-1.5 text-on-surface">
+                <span class="material-symbols-outlined text-secondary" data-icon="info">info</span>
+                <h4 class="font-body-sm text-body-sm font-semibold">House Policy</h4>
+              </div>
+              <p class="font-label-caption text-label-caption text-on-surface-variant leading-relaxed">
+                Tables are held for 15 minutes past the reserved hour. Cancellations are welcomed up to 6 hours prior without fee. We look forward to cooking for you.
+              </p>
+            </div>
+
+            <!-- Concierge Contact Direct -->
+            <div class="text-center pt-2">
+              <p class="font-label-caption text-label-caption text-on-surface-variant">
+                Need bespoke arrangements? Call maitre d' at <br/>
+                <a class="text-primary font-medium hover:underline" href="tel:0142685500">01 42 68 55 00</a>
+              </p>
+            </div>
+          </div>
+
+          <!-- Wine Cellar Tasting Notice -->
+          <div class="p-5 border border-outline-variant bg-surface space-y-2">
+            <span class="font-label-uppercase text-label-uppercase text-secondary tracking-widest">SOMMELIER NOTE</span>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">
+              Interested in our pairing voyage? Camille Roy pairs rare Jura and Savennières magnums directly with your selected hearth courses upon arrival.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location, Hours & Practical Transit -->
+    <section class="max-w-7xl mx-auto px-margin md:px-margin-desktop py-space-2xl border-b border-outline-variant" id="location">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter lg:gap-gutter-desktop items-start">
+        <div class="lg:col-span-5 space-y-6">
+          <div>
+            <span class="font-label-uppercase text-label-uppercase text-secondary tracking-widest">FINDING MAISON EMBER</span>
+            <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mt-1">14 Rue des Tournelles</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant">75004 Paris, France</p>
+          </div>
+
+          <div class="space-y-4 border-t border-outline-variant pt-4">
+            <div>
+              <h4 class="font-label-uppercase text-label-uppercase text-on-surface">Weekly Service Schedule</h4>
+              <ul class="mt-2 space-y-1 font-body-sm text-body-sm text-on-surface-variant">
+                <li class="flex justify-between"><span>Tuesday – Friday:</span> <span class="font-price-numeral text-on-surface">18h00 — 23h30</span></li>
+                <li class="flex justify-between"><span>Saturday:</span> <span class="font-price-numeral text-on-surface">12h30 — 15h00 &amp; 18h00 — 23h30</span></li>
+                <li class="flex justify-between"><span>Sunday &amp; Monday:</span> <span class="text-outline">Closed for hearth rest</span></li>
+              </ul>
+            </div>
+
+            <div class="border-t border-outline-variant pt-4">
+              <h4 class="font-label-uppercase text-label-uppercase text-on-surface">Access &amp; Transport</h4>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                <strong class="text-on-surface">Metro:</strong> Bastille (Lines 1, 5, 8) — 3 min walk. <br/>
+                Saint-Paul (Line 1) — 6 min walk along Rue Saint-Antoine. <br/>
+                <strong class="text-on-surface">Public Parking:</strong> Parking Indigo Bastille (Rue Saint-Antoine).
+              </p>
+            </div>
+
+            <div class="border-t border-outline-variant pt-4">
+              <h4 class="font-label-uppercase text-label-uppercase text-on-surface">Dress Code &amp; Atmosphere</h4>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                Casual elegance; come as you are. Well-behaved hounds welcomed at the front hearth counter.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Architectural Location Vignette Map Frame -->
+        <div class="lg:col-span-7 bg-surface-container border border-outline-variant p-2">
+          <img class="w-full aspect-[16/10] object-cover" data-alt="Rue des Tournelles street view" data-location="Paris" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEwW_eUOUZKdnfAtf83ndMDXGK-OZJZrG_ysf8eWPtNFOrH_GwbPBAKr9zLr9igxkKrFgUuWIB4QERxLf_NY_5A5sTdeA9jk0gBYUaXM1PJNO-zBLs-LOOBnnF1A5ensVSQ_QM5Qx3gKT-itBfzxGk-1M47pan-sPTTG2tCXDmu5VigTcBl9MzxfOdqv0eEgqdYw2JufWLGswElrID4vkxTOdgJqeV7Uv6MvQwF3ctD1yI5hal9Hp3_w"/>
+          <div class="p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+            <span class="font-body-sm text-body-sm text-on-surface font-medium">Located on the historic boundary of the Marais and Bastille</span>
+            <a class="font-label-uppercase text-label-uppercase text-primary hover:underline inline-flex items-center gap-1" href="https://maps.google.com" rel="noopener noreferrer" target="_blank">
+              <span>Open in Maps</span>
+              <span class="material-symbols-outlined text-xs" data-icon="open_in_new">open_in_new</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Editorial Guestbook & Cellar Notes Newsletter Connected to Backend -->
+    <section class="max-w-7xl mx-auto px-margin md:px-margin-desktop py-space-xl">
+      <div class="bg-surface-container border border-outline-variant p-8 md:p-12">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+          <div class="md:col-span-7 space-y-2">
+            <span class="font-label-uppercase text-label-uppercase text-secondary tracking-widest">THE EMBER JOURNAL</span>
+            <h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">
+              Cellar notes, wild foraging dispatches, and private salon dates.
+            </h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant max-w-xl">
+              Published once a month on the full moon. No promotional noise—only reports on current vintage arrivals and upcoming winemaker dinners.
+            </p>
+          </div>
+
+          <div class="md:col-span-5">
+            <form class="space-y-3" id="newsletter-form">
+              <div class="flex flex-col sm:flex-row gap-2">
+                <input class="flex-1 bg-surface border border-outline-variant px-4 py-3 text-on-surface font-body-sm text-body-sm rounded focus:outline-none focus:border-primary-container" id="newsletter-email" placeholder="Enter your email address" required="" type="email"/>
+                <button class="bg-primary-container text-on-primary font-label-uppercase text-label-uppercase px-6 py-3 rounded hover:bg-primary transition-colors whitespace-nowrap" type="submit">
+                  Join Guestbook
+                </button>
+              </div>
+              <span class="hidden" id="newsletter-feedback"></span>
+              <p class="font-label-caption text-label-caption text-on-surface-variant">
+                Unsubscribe at any moment with one click. We guard your privacy scrupulously.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full bg-surface-container border-t border-outline-variant">
+    <div class="w-full px-margin md:px-margin-desktop py-space-xl max-w-7xl mx-auto space-y-8">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
+        <!-- Left: Wordmark & Heritage -->
+        <div class="md:col-span-4 space-y-3">
+          <a class="font-headline-md text-headline-md text-on-surface" href="#top">Maison Ember</a>
+          <p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs">
+            Open-hearth cooking &amp; natural cellar. 14 Rue des Tournelles, 75004 Paris.
+          </p>
+        </div>
+
+        <!-- Center: Quick Shared Links -->
+        <div class="md:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <ul class="space-y-2">
+            <li><span class="text-on-surface-variant font-body-sm text-body-sm">Service Hours: Tue–Sat 18h00–23h30</span></li>
+            <li><span class="text-on-surface-variant font-body-sm text-body-sm">14 Rue des Tournelles, 75004 Paris</span></li>
+            <li><span class="text-on-surface-variant font-body-sm text-body-sm">Metro: Bastille / Saint-Paul</span></li>
+          </ul>
+          <ul class="space-y-2">
+            <li><a class="text-on-surface-variant font-body-sm text-body-sm hover:text-primary transition-colors duration-150" href="mailto:cave@maisonember.com">Wine Enquiries</a></li>
+            <li><a class="text-on-surface-variant font-body-sm text-body-sm hover:text-primary transition-colors duration-150" href="#cellar">Press &amp; Journal</a></li>
+            <li><a class="text-primary font-body-sm text-body-sm hover:underline transition-colors duration-150" href="admin.html">Staff Table Desk &amp; Admin</a></li>
+          </ul>
+        </div>
+
+        <!-- Right: Direct Phone & Back to Top -->
+        <div class="md:col-span-3 md:text-right space-y-3">
+          <a class="font-price-numeral text-price-numeral text-on-surface font-semibold hover:text-primary transition-colors" href="tel:0142685500">
+            +33 (0)1 42 68 55 00
+          </a>
+          <div>
+            <a class="inline-flex items-center space-x-1 font-label-uppercase text-label-uppercase text-on-surface-variant hover:text-primary transition-colors" href="#top">
+              <span>Back to Top</span>
+              <span class="material-symbols-outlined text-xs" data-icon="arrow_upward">arrow_upward</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright Bar -->
+      <div class="pt-6 border-t border-outline-variant flex flex-col sm:flex-row justify-between items-center text-label-caption font-label-caption text-on-surface-variant">
+        <p>© Maison Ember Atelier Culinaire. All rights reserved. Open-hearth service &amp; cellar.</p>
+        <p class="mt-2 sm:mt-0">TVA FR 78 849 201 394 · Siret 849 201 394 00018</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Confirmation Receipt Modal -->
+  <div class="modal-overlay hidden" id="reservation-receipt-modal">
+    <div class="modal-content p-6 sm:p-8 rounded-lg animate-fade-in space-y-6">
+      <div class="flex items-start justify-between border-b border-outline pb-4">
+        <div>
+          <span class="font-label-uppercase text-label-uppercase text-secondary tracking-widest">RÉSERVATION CONFIRMÉE</span>
+          <h3 class="font-headline-md text-headline-md text-on-surface mt-1">Table Secured at Ember</h3>
+        </div>
+        <div class="text-right">
+          <span class="font-label-caption text-label-caption text-on-surface-variant block">Reference Folio</span>
+          <span class="font-price-numeral text-xl font-bold text-primary tracking-wide" id="receipt-ref">EMB-8492</span>
+        </div>
+      </div>
+
+      <!-- Receipt Content Card -->
+      <div class="bg-surface-container border border-outline-variant p-4 space-y-3">
+        <div class="flex justify-between py-1 border-b border-outline-variant font-body-sm">
+          <span class="text-on-surface-variant">Guest Name</span>
+          <span class="font-medium text-on-surface" id="receipt-name">—</span>
+        </div>
+        <div class="flex justify-between py-1 border-b border-outline-variant font-body-sm">
+          <span class="text-on-surface-variant">Date &amp; Sitting</span>
+          <span class="font-medium text-primary" id="receipt-datetime">—</span>
+        </div>
+        <div class="flex justify-between py-1 border-b border-outline-variant font-body-sm">
+          <span class="text-on-surface-variant">Party Size</span>
+          <span class="font-medium text-on-surface" id="receipt-party">—</span>
+        </div>
+        <div class="flex justify-between py-1 border-b border-outline-variant font-body-sm">
+          <span class="text-on-surface-variant">Seating Area</span>
+          <span class="font-medium text-on-surface" id="receipt-area">—</span>
+        </div>
+        <div class="flex justify-between py-1 font-body-sm">
+          <span class="text-on-surface-variant">Guest Notes</span>
+          <span class="font-medium text-on-surface text-right max-w-xs" id="receipt-notes">—</span>
+        </div>
+      </div>
+
+      <div class="p-4 bg-surface-container-low border border-outline-variant rounded font-label-caption text-on-surface-variant leading-relaxed">
+        <strong class="text-on-surface font-medium">House Note:</strong> A table is held for 15 minutes past the sitting hour. Please arrive promptly to enjoy our wood-fired service rhythm.
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="modal-actions flex flex-wrap items-center justify-between gap-3 pt-2">
+        <div class="flex items-center gap-2">
+          <a class="inline-flex items-center gap-1.5 px-3 py-2 border border-outline-variant rounded text-on-surface font-body-sm hover:border-primary transition-colors" href="#" id="receipt-cal-btn" rel="noopener noreferrer" target="_blank">
+            <span class="material-symbols-outlined text-sm">calendar_today</span>
+            <span>Google Cal</span>
+          </a>
+          <button class="inline-flex items-center gap-1.5 px-3 py-2 border border-outline-variant rounded text-on-surface font-body-sm hover:border-primary transition-colors" id="receipt-ics-btn" type="button">
+            <span class="material-symbols-outlined text-sm">download</span>
+            <span>Apple / iCal</span>
+          </button>
+          <button class="inline-flex items-center gap-1.5 px-3 py-2 border border-outline-variant rounded text-on-surface font-body-sm hover:border-primary transition-colors" onclick="window.print()" type="button">
+            <span class="material-symbols-outlined text-sm">print</span>
+            <span>Print Folio</span>
+          </button>
+        </div>
+
+        <button class="bg-primary-container text-on-primary font-label-uppercase text-label-uppercase px-6 py-2.5 rounded hover:bg-primary transition-colors" id="close-receipt-btn" type="button">
+          Close &amp; Return
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Private Dining Salon Inquiry Modal -->
+  <div class="modal-overlay hidden" id="inquiry-modal">
+    <div class="modal-content p-6 sm:p-8 rounded-lg animate-fade-in space-y-6">
+      <div class="flex items-start justify-between border-b border-outline pb-4">
+        <div>
+          <span class="font-label-uppercase text-label-uppercase text-secondary tracking-widest">SALON PRIVÉ &amp; PRIVATISATION</span>
+          <h3 class="font-headline-md text-headline-md text-on-surface mt-1">Private Dining Inquiries</h3>
+        </div>
+        <button class="text-on-surface-variant hover:text-primary p-1" id="close-inquiry-btn" type="button">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+
+      <p class="font-body-sm text-body-sm text-on-surface-variant">
+        Host an exclusive evening in our 17th-century vaulted cellar salon (up to 14 guests) or inquire about full-restaurant buyouts with bespoke hearth menus by Chef Alexandre.
+      </p>
+
+      <form class="space-y-4" id="inquiry-form">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block font-body-sm text-on-surface mb-1">Full Name *</label>
+            <input class="w-full bg-surface border border-outline-variant px-3 py-2 text-on-surface font-body-sm rounded focus:outline-none focus:border-primary-container" id="inquiry-name" required="" type="text"/>
+          </div>
+          <div>
+            <label class="block font-body-sm text-on-surface mb-1">Email Address *</label>
+            <input class="w-full bg-surface border border-outline-variant px-3 py-2 text-on-surface font-body-sm rounded focus:outline-none focus:border-primary-container" id="inquiry-email" required="" type="email"/>
+          </div>
+          <div>
+            <label class="block font-body-sm text-on-surface mb-1">Telephone</label>
+            <input class="w-full bg-surface border border-outline-variant px-3 py-2 text-on-surface font-body-sm rounded focus:outline-none focus:border-primary-container" id="inquiry-phone" type="tel"/>
+          </div>
+          <div>
+            <label class="block font-body-sm text-on-surface mb-1">Event Type</label>
+            <select class="w-full bg-surface border border-outline-variant px-3 py-2 text-on-surface font-body-sm rounded focus:outline-none focus:border-primary-container" id="inquiry-type">
+              <option value="Wine Vault Private Salon (8-14 guests)">Wine Vault Private Salon (8-14 guests)</option>
+              <option value="Full Restaurant Buyout (up to 34 guests)">Full Restaurant Buyout (up to 34 guests)</option>
+              <option value="Winemaker Tasting Dinner">Winemaker Tasting Dinner</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-body-sm text-on-surface mb-1">Preferred Date</label>
+            <input class="w-full bg-surface border border-outline-variant px-3 py-2 text-on-surface font-body-sm rounded focus:outline-none focus:border-primary-container" id="inquiry-date" type="date"/>
+          </div>
+          <div>
+            <label class="block font-body-sm text-on-surface mb-1">Estimated Guests</label>
+            <input class="w-full bg-surface border border-outline-variant px-3 py-2 text-on-surface font-body-sm rounded focus:outline-none focus:border-primary-container" id="inquiry-guests" max="40" min="6" type="number" value="10"/>
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-body-sm text-on-surface mb-1">Message &amp; Dietary Preferences</label>
+          <textarea class="w-full bg-surface border border-outline-variant px-3 py-2 text-on-surface font-body-sm rounded focus:outline-none focus:border-primary-container" id="inquiry-message" placeholder="Desired wine pairings, course count, special occasion..." rows="3"></textarea>
+        </div>
+
+        <div class="flex justify-end gap-3 pt-2">
+          <button class="bg-primary-container text-on-primary font-label-uppercase text-label-uppercase px-6 py-3 rounded hover:bg-primary transition-colors" type="submit">
+            Submit Salon Inquiry
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Client-Side Application JS -->
+  <script src="js/app.js"></script>
+</body>
+</html>

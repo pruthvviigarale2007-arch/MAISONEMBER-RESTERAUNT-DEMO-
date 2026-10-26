@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Menu — The Thalis · Kolhapuri Thali &amp; Rassa</title>
+  
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..800;1,400..800&amp;family=Work+Sans:ital,wght@0,300..700;1,300..700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { red: '#991b1b', crimson: '#7f1d1d', gold: '#d97706', amber: '#f59e0b', cream: '#fffbeb', sand: '#fef3c7', charcoal: '#1c1917' }
+          },
+          fontFamily: { serif: ['Playfair Display', 'serif'], sans: ['Work Sans', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link href="css/custom.css" rel="stylesheet"/>
+</head>
+<body class="bg-brand-cream text-stone-900 font-sans antialiased selection:bg-brand-red selection:text-white">
+
+  <!-- Header -->
+  <header class="bg-brand-cream/95 backdrop-blur sticky top-0 z-50 border-b border-amber-200/80 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 py-3.5 flex justify-between items-center">
+      <a class="flex items-center gap-3" href="index.html">
+        <div class="w-10 h-10 rounded-full bg-brand-red text-amber-300 flex items-center justify-center font-serif text-xl font-black shadow-inner border border-amber-400">
+          थ
+        </div>
+        <div>
+          <span class="font-serif text-xl sm:text-2xl font-black tracking-tight text-brand-red block leading-none">The Thalis</span>
+          <span class="text-[10px] uppercase font-bold tracking-widest text-amber-800">Kolhapuri Thali · 4.6 ★</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden lg:flex items-center space-x-7 text-xs font-semibold uppercase tracking-wider text-stone-800">
+        <a class="hover:text-brand-red transition-colors" href="index.html">Home</a>
+        <a class="text-brand-red border-b-2 border-brand-red pb-1" href="menu.html">Menu</a>
+        <a class="hover:text-brand-red transition-colors" href="order.html">Order Online</a>
+        <a class="hover:text-brand-red transition-colors" href="reservations.html">Reserve Table</a>
+        <a class="hover:text-brand-red transition-colors" href="reviews.html">Reviews (4.6★)</a>
+        <a class="hover:text-brand-red transition-colors" href="contact.html">Contact &amp; Map</a>
+        <a class="text-amber-800 hover:text-brand-red transition-colors" href="admin.html">Staff Desk</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a class="bg-brand-red hover:bg-brand-crimson text-white text-xs font-bold uppercase tracking-wider px-4 py-2 rounded shadow-sm transition-colors flex items-center gap-1.5" href="order.html">
+          <span class="material-symbols-outlined text-sm">shopping_cart</span>
+          <span>View Cart</span>
+          <span id="cart-badge" class="hidden bg-amber-400 text-stone-900 rounded-full px-1.5 py-0.2 text-[10px] font-bold">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-8 py-10">
+    <!-- Menu Header -->
+    <div class="text-center max-w-3xl mx-auto space-y-3 mb-6">
+      <span class="text-xs uppercase font-bold tracking-widest text-brand-red" id="menu-eyebrow">AUTHENTIC KOLHAPURI CARTE</span>
+      <h1 class="font-serif text-3xl sm:text-5xl font-black text-stone-900" id="menu-main-title">The Royal Kolhapuri Thali Menu</h1>
+      <p class="text-xs sm:text-sm text-stone-600 leading-relaxed" id="menu-main-desc">
+        Every thali is served with unlimited bowls of piping-hot <strong>Tambda Rassa</strong> &amp; <strong>Pandhra Rassa</strong>, hot Jowar/Bajra Bhakris baked fresh on iron chulhas, and authentic Indrayani rice.
+      </p>
+    </div>
+
+    <!-- Interactive Language Switcher Bar -->
+    <div class="flex items-center justify-center gap-3 mb-8">
+      <div class="bg-amber-100/90 border border-amber-300 rounded-full px-4 py-1.5 flex items-center gap-3 shadow-sm">
+        <span class="material-symbols-outlined text-base text-brand-red">translate</span>
+        <span class="text-xs font-bold text-stone-800" id="lang-switch-label">Select Language:</span>
+        <div class="inline-flex rounded-full bg-amber-200/80 p-0.5 border border-amber-300/80">
+          <button
+            type="button"
+            id="btn-lang-en"
+            class="lang-btn px-4 py-1 rounded-full text-xs font-bold transition-all bg-brand-red text-white shadow-sm"
+            data-lang="en"
+          >
+            English
+          </button>
+          <button
+            type="button"
+            id="btn-lang-mr"
+            class="lang-btn px-4 py-1 rounded-full text-xs font-bold transition-all text-stone-800 hover:text-brand-red"
+            data-lang="mr"
+          >
+            मराठी
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category Filter Tabs -->
+    <div class="flex flex-wrap items-center justify-center gap-2 mb-10 pb-4 border-b border-amber-200">
+      <button class="category-filter-btn px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-lg transition-colors bg-red-700 text-white border border-red-700" data-cat="all" data-en="All Specialties" data-mr="सर्व खास पदार्थ">
+        All Specialties
+      </button>
+      <button class="category-filter-btn px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-lg transition-colors bg-amber-100 text-stone-800 border border-amber-300 hover:border-red-700" data-cat="mutton" data-en="Mutton Dishes" data-mr="मटन थाळी व डिशेस">
+        Mutton Dishes
+      </button>
+      <button class="category-filter-btn px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-lg transition-colors bg-amber-100 text-stone-800 border border-amber-300 hover:border-red-700" data-cat="chicken" data-en="Chicken Dishes" data-mr="चिकन थाळी व डिशेस">
+        Chicken Dishes
+      </button>
+      <button class="category-filter-btn px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-lg transition-colors bg-amber-100 text-stone-800 border border-amber-300 hover:border-red-700" data-cat="seafood" data-en="Fresh Seafood" data-mr="ताजे मासे व फ्राय">
+        Fresh Seafood
+      </button>
+      <button class="category-filter-btn px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-lg transition-colors bg-amber-100 text-stone-800 border border-amber-300 hover:border-red-700" data-cat="veg" data-en="Pure Veg & Pithla Bhakari" data-mr="शाकाहारी व पिठलं-भाकरी">
+        Pure Veg &amp; Pithla Bhakari
+      </button>
+      <button class="category-filter-btn px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-lg transition-colors bg-amber-100 text-stone-800 border border-amber-300 hover:border-red-700" data-cat="rassa_specials" data-en="Rassa Bowls & Solkadhi" data-mr="रस्सा बाऊल्स व सोलकढी">
+        Rassa Bowls &amp; Solkadhi
+      </button>
+    </div>
+
+    <!-- Dishes Grid (Dynamically Populated from /api/menu) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="thali-menu-grid">
+      <!-- Loaded via app.js -->
+    </div>
+
+    <!-- Thali Composition Guarantee Notice -->
+    <div class="mt-14 bg-amber-100/90 border-2 border-brand-red rounded-xl p-8 space-y-3" id="thali-guarantee-box">
+      <h3 class="font-serif text-xl font-bold text-brand-red" id="guarantee-title">What Comes in Every Kolhapuri Thali?</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs text-stone-800 pt-2">
+        <div>
+          <span class="font-bold text-stone-900 block mb-1" id="g-rassa-title">🥘 Unlimited Rassa Bowls</span>
+          <span id="g-rassa-desc">Endless free refills of piping hot Tambda Rassa and cooling Pandhra Rassa throughout your meal.</span>
+        </div>
+        <div>
+          <span class="font-bold text-stone-900 block mb-1" id="g-bread-title">🫓 Choice of Hot Bhakri</span>
+          <span id="g-bread-desc">Two thick, fresh-off-the-chulha Jowar Bhakris, Bajra Bhakris, or thin Chapatis.</span>
+        </div>
+        <div>
+          <span class="font-bold text-stone-900 block mb-1" id="g-rice-title">🍚 Indrayani Fragrant Rice</span>
+          <span id="g-rice-desc">Steaming Indrayani rice paired with mutton rassa broth, raw sliced red onion, and fresh lemon.</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-stone-950 text-stone-300 text-xs py-10 mt-16 border-t border-stone-800 text-center">
+    <div class="max-w-7xl mx-auto px-4 space-y-3">
+      <p class="font-serif text-lg font-bold text-amber-400">The Thalis — Kolhapuri Thali</p>
+      <p class="text-stone-400">
+        <a href="https://www.google.com/maps/dir/?api=1&destination=The+Thalis+-+Kolhapuri+Thali,+Kadamwadi+Rd,+opp.+to+hotel+lisha,+Laxminarayan+Nagar,+Tarabai+Park,+Kolhapur,+Maharashtra+416003" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 underline underline-offset-2">
+          📍 Kadamwadi Rd, Opp. Hotel Lisha, Tarabai Park, Kolhapur (Get Directions)
+        </a> · Phone: <a href="tel:07744966966" class="hover:text-amber-400">077449 66966</a>
+      </p>
+      <p class="text-stone-500 text-[11px]">© The Thalis. Authentic Kolhapuri cuisine with unlimited rassa.</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

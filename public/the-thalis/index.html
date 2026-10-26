@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>The Thalis — Authentic Kolhapuri Thali · Tarabai Park, Kolhapur</title>
+  
+  <!-- Fonts: Playfair Display + Work Sans -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..800;1,400..800&amp;family=Work+Sans:ital,wght@0,300..700;1,300..700&amp;display=swap" rel="stylesheet"/>
+  
+  <!-- Google Material Symbols -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              red: '#991b1b',
+              crimson: '#7f1d1d',
+              gold: '#d97706',
+              amber: '#f59e0b',
+              cream: '#fffbeb',
+              sand: '#fef3c7',
+              charcoal: '#1c1917'
+            }
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'serif'],
+            sans: ['Work Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link href="css/custom.css" rel="stylesheet"/>
+</head>
+<body class="bg-brand-cream text-stone-900 font-sans antialiased selection:bg-brand-red selection:text-white">
+
+  <!-- Announcement Ribbon -->
+  <aside class="w-full bg-brand-red text-amber-100 py-2 px-4 text-center text-xs tracking-wide border-b border-brand-crimson">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1">
+      <a class="font-medium hover:underline inline-flex items-center gap-1 text-amber-200" href="https://www.google.com/maps/dir/?api=1&destination=The+Thalis+-+Kolhapuri+Thali,+Kadamwadi+Rd,+opp.+to+hotel+lisha,+Laxminarayan+Nagar,+Tarabai+Park,+Kolhapur,+Maharashtra+416003" target="_blank" rel="noopener noreferrer">
+        <span class="material-symbols-outlined text-sm">location_on</span>
+        <span>Kadamwadi Rd, Opp. Hotel Lisha, Tarabai Park, Kolhapur · <strong>Get Directions on Google Maps</strong></span>
+      </a>
+      <span class="text-[11px] bg-brand-crimson px-2 py-0.5 rounded border border-amber-300/40">Lunch: 12:30 PM–4:00 PM · Dinner: 7:00 PM–11:30 PM</span>
+    </div>
+  </aside>
+
+  <!-- Navigation Bar (Opening into Dedicated Pages) -->
+  <header class="bg-brand-cream/95 backdrop-blur sticky top-0 z-50 border-b border-amber-200/80 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 py-3.5 flex justify-between items-center">
+      <!-- Brand Logo & Rating Tag -->
+      <a class="flex items-center gap-3" href="index.html">
+        <div class="w-10 h-10 rounded-full bg-brand-red text-amber-300 flex items-center justify-center font-serif text-xl font-black shadow-inner border border-amber-400">
+          थ
+        </div>
+        <div>
+          <span class="font-serif text-xl sm:text-2xl font-black tracking-tight text-brand-red block leading-none">The Thalis</span>
+          <span class="text-[10px] uppercase font-bold tracking-widest text-amber-800">Kolhapuri Thali · 4.6 ★ (4.5K+ Reviews)</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links (Opening Separate Pages) -->
+      <nav class="hidden lg:flex items-center space-x-7 text-xs font-semibold uppercase tracking-wider text-stone-800">
+        <a class="text-brand-red border-b-2 border-brand-red pb-1" href="index.html">Home</a>
+        <a class="hover:text-brand-red transition-colors" href="menu.html">Menu</a>
+        <a class="hover:text-brand-red transition-colors" href="order.html">Order Online</a>
+        <a class="hover:text-brand-red transition-colors" href="reservations.html">Reserve Table</a>
+        <a class="hover:text-brand-red transition-colors" href="reviews.html">Reviews (4.6★)</a>
+        <a class="hover:text-brand-red transition-colors" href="contact.html">Contact &amp; Map</a>
+        <a class="text-amber-800 hover:text-brand-red transition-colors flex items-center gap-0.5" href="admin.html">
+          <span class="material-symbols-outlined text-sm">tune</span> Staff Desk
+        </a>
+      </nav>
+
+      <!-- Action Triggers -->
+      <div class="flex items-center gap-3">
+        <a class="hidden sm:inline-flex items-center gap-1.5 text-xs font-bold text-stone-800 hover:text-brand-red transition-colors" href="tel:07744966966">
+          <span class="material-symbols-outlined text-sm text-brand-red">call</span>
+          <span>077449 66966</span>
+        </a>
+        <a class="bg-brand-red hover:bg-brand-crimson text-white text-xs font-bold uppercase tracking-wider px-4 py-2.5 rounded shadow-sm transition-colors flex items-center gap-1.5" href="order.html">
+          <span class="material-symbols-outlined text-sm">restaurant</span>
+          <span>Order Online</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section with Authentic Live Sizzle/Hearth Video -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-8 pt-8 pb-16 border-b border-amber-200/80">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <!-- Left Column: Headline & Value Proposition -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 bg-amber-100 border border-amber-300 text-amber-900 text-xs px-3 py-1 rounded-full font-semibold">
+            <span class="text-brand-red font-bold">★ 4.6 Rating</span> · Based on 4,485+ Google Diners · All-You-Can-Eat Rassa
+          </div>
+
+          <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-black text-stone-900 leading-[1.1] tracking-tight">
+            Authentic Kolhapuri Thalis, Pure Ghee Mutton &amp; <span class="text-brand-red underline decoration-amber-500 underline-offset-8">Fiery Rassa</span>.
+          </h1>
+
+          <p class="text-sm sm:text-base text-stone-700 leading-relaxed max-w-xl">
+            Rooted in ancestral Chhatrapati Shahu Maharaj tradition. Slow-cooked over rustic chulhas using hand-pounded Byadgi &amp; Lavangi chilies, roasted dagad phool, and fresh stoneground kanda-lasun masala. Served with piping-hot Jowar Bhakris and unlimited bowls of Tambda &amp; Pandhra Rassa.
+          </p>
+
+          <!-- Badges Grid -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+            <div class="bg-amber-100/70 p-3 rounded border border-amber-200">
+              <span class="block font-bold text-xs text-brand-red">UNLIMITED RASSA</span>
+              <span class="text-[11px] text-stone-600">Free Tambda &amp; Pandhra refills</span>
+            </div>
+            <div class="bg-amber-100/70 p-3 rounded border border-amber-200">
+              <span class="block font-bold text-xs text-brand-red">DESI GHEE COOKED</span>
+              <span class="text-[11px] text-stone-600">Pure Gir cow bilona ghee</span>
+            </div>
+            <div class="bg-amber-100/70 p-3 rounded border border-amber-200">
+              <span class="block font-bold text-xs text-brand-red">HOT CHULHA BHAKRI</span>
+              <span class="text-[11px] text-stone-600">Jowar &amp; Bajra baked to order</span>
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a class="bg-brand-red hover:bg-brand-crimson text-white text-xs font-bold uppercase tracking-wider px-6 py-3.5 rounded shadow-md transition-all flex items-center gap-2" href="order.html">
+              <span>Order Delivery / Takeaway</span>
+              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+            <a class="border border-stone-800 hover:bg-stone-800 hover:text-white text-stone-900 text-xs font-bold uppercase tracking-wider px-6 py-3.5 rounded transition-colors" href="reservations.html">
+              Book Dining Table
+            </a>
+            <a class="text-xs font-bold text-brand-red hover:underline flex items-center gap-1" href="menu.html">
+              <span>View Full Menu</span> →
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Top Dishes Carousel -->
+        <div class="lg:col-span-5" id="hero-carousel-container">
+          <div class="relative bg-gradient-to-b from-stone-900 via-stone-900 to-stone-950 border-2 border-amber-400 rounded-2xl shadow-2xl p-4 sm:p-6 text-white overflow-hidden">
+            <!-- Decorative Kolhapuri Motif Glow -->
+            <div class="absolute -top-20 -right-20 w-44 h-44 bg-brand-red/25 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-20 -left-20 w-44 h-44 bg-amber-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+            <!-- Top Header & Slide Counter -->
+            <div class="flex items-center justify-between pb-3 mb-3 border-b border-stone-800">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse"></span>
+                <span class="text-[11px] font-bold uppercase tracking-wider text-amber-400">Featured Top Dishes</span>
+              </div>
+              <div class="flex items-center gap-1.5 bg-stone-800/80 px-2.5 py-0.5 rounded-full text-[11px] font-mono text-amber-300 border border-stone-700">
+                <span id="carousel-current-index">1</span>
+                <span>/</span>
+                <span id="carousel-total-slides">8</span>
+              </div>
+            </div>
+
+            <!-- Carousel Slides Track -->
+            <div class="relative min-h-[380px]" id="dishes-carousel-track">
+              <!-- Slide 1: Jatra Mutton Thali -->
+              <div class="dish-slide active space-y-4 transition-all duration-300" data-index="0">
+                <div class="flex justify-between items-start gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="non-veg-badge"><span class="non-veg-badge-dot"></span></span>
+                    <span class="text-[10px] uppercase font-bold tracking-wider bg-brand-red text-white px-2 py-0.5 rounded">Signature Bestseller</span>
+                  </div>
+                  <span class="text-2xl font-black text-amber-400 font-serif">₹520</span>
+                </div>
+                <div>
+                  <h3 class="font-serif text-2xl font-black text-white tracking-tight">Jatra Mutton Thali</h3>
+                  <p class="text-xs text-amber-200/90 font-medium mt-1">4.9 ★ · Chhatrapati Heritage Feast</p>
+                </div>
+                <div class="bg-stone-800/80 rounded-xl p-3.5 border border-stone-700 space-y-2">
+                  <div class="text-xs text-stone-300 leading-relaxed">
+                    Grand feast: tender mutton sukka, rich mutton masala, 2 hot chulha Jowar Bhakris, Indrayani rice, and unlimited bowls of fiery Tambda &amp; soothing Pandhra Rassa.
+                  </div>
+                  <div class="flex flex-wrap gap-1.5 pt-1 text-[11px] font-semibold text-amber-300">
+                    <span class="bg-stone-900/80 px-2 py-0.5 rounded border border-amber-400/30">🥘 Mutton Sukka</span>
+                    <span class="bg-stone-900/80 px-2 py-0.5 rounded border border-amber-400/30">🥣 Unlimited Rassa</span>
+                    <span class="bg-stone-900/80 px-2 py-0.5 rounded border border-amber-400/30">🫓 Hot Bhakri</span>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between pt-1">
+                  <span class="text-[11px] text-amber-300 flex items-center gap-1 font-semibold">
+                    <span class="material-symbols-outlined text-sm">local_fire_department</span> All-You-Can-Eat Rassa
+                  </span>
+                  <button type="button" onclick="addToCart('1', 'Jatra Mutton Thali', 520, 0)" class="bg-brand-red hover:bg-brand-crimson text-white text-xs font-bold uppercase tracking-wider px-4 py-2 rounded transition-colors flex items-center gap-1.5 shadow">
+                    <span class="material-symbols-outlined text-sm">add_shopping_cart</span> Add to Feast
+                  </button>
+                </div>
+              </div>
+
+              <!-- Slide 2: Mutton Chops Fry Plate -->
+              <div class="dish-slide hidden space-y-4 transition-all duration-300" data-index="1">
+                <div class="flex justify-between items-start gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="non-veg-badge"><span class="non-veg-badge-dot"></span></span>
+                    <span class="text-[10px] uppercase font-bold tracking-wider bg-amber-500 text-stone-950 px-2 py-0.5 rounded">Diners Favorite</span>
+                  </div>
+                  <span class="text-2xl font-black text-amber-400 font-serif">₹420</span>
+                </div>
+                <div>
+                  <h3 class="font-serif text-2xl font-black text-white tracking-tight">Mutton Chops Fry Plate</h3>
+                  <p class="text-xs text-amber-200/90 font-medium mt-1">4.8 ★ · Pan-Seared Ribs</p>
+                </div>
+                <div class="bg-stone-800/80 rounded-xl p-3.5 border border-stone-700 space-y-2">
+                  <div class="text-xs text-stone-300 leading-relaxed">
+                    Crispy, juicy mutton chops slow-marinated in crushed garlic, hand-pounded red chilies, and browned onions on high-heat iron tawa.
+                  </div>
+                  <div class="flex flex-wrap gap-1.5 pt-1 text-[11px] font-semibold text-amber-300">
+                    <span class="bg-stone-900/80 px-2 py-0.5 rounded border border-amber-400/30">🥩 Tender Chops</span>
+                    <span class="bg-stone-900/80 px-2 py-0.5 rounded border border-amber-400/30">🧄 Garlic Masala</span>
+                    <span class="bg-stone-900/80 px-2 py-0.5 rounded border border-amber-400/30">🔥 Iron Tawa Fry</span>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between pt-1">
+                  <span class="text-[11px] text-amber-300 flex items-center gap-1 font-semibold">
+                    <span class="material-symbols-outlined text-sm">restaurant</span> Starters / Sides
+                  </span>
+                  <button type="button" onclick="addToCart('4', 'Mutton Chops Fry Plate', 420, 0)" class="bg-brand-red hover:bg-brand-crimson text-white text-xs font-bold uppercase tracking-wider px-4 py-2 rounded transition-colors flex items-center gap-1.5 shadow">
+                    <span class="material-symbols-outlined text-sm">add_shopping_cart</span> Add to Feast
+                  </button>
+                </div>
+              </div>
+
+              <!-- Slide 3: Ghee Mutton Fry -->
+              <div class="dish-slide hidden space-y-4 transition-all duration-300" data-index="2">
+                <div class="flex justify-between items-start gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="non-veg-badge"><span class="non-veg-badge-dot"></span></span>
+                    <span class="text-[10px] uppercase font-bold tracking-wider bg-amber-600 text-white px-2 py-0.5 rounded">Gir Cow Bilona Ghee</span>
+                  </div>
+                  <span class="text-2xl font-black text-amber-400 font-serif">₹460</span>
+                </div>
+                <div>
+                  <h3 class="font-serif text-2xl font-black text-white tracking-tight">Ghee Mutton Fry</h3>
+                  <p class="text-xs text-amber-200/90 font-medium mt-1">4.9 ★ · Pure Aromatic Roast</p>
+                </div>
+                <div class="bg-stone-800/80 rounded-xl p-3.5 border border-stone-700 space-y-2">
+                  <div class="text-xs text-stone-300 leading-relaxed">
+                    Prime tender goat mutton pan-braised in fragrant desi cow bilona ghee with roasted dagad phool and special Kolhapuri masala.
+                  </div>
+                  <div class="flex flex-wrap gap-1.5 pt-1 text-[11px] font-semibold text-amber-300">
+                    <span class="bg-stone-900/80 px-2 py-0.5 rounded border border-amber-400/30">🧈 100% Desi Ghee</span>
+                    <span class="bg-stone-900/80 px-2 py-0.5 rounded border border-amber-400/30">🌿 Dagad Phool</span>
+                    <span class="bg-stone-900/80 px-2 py-0.5 rounded border border-amber-400/30">🍖 Melt-in-Mouth</span>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between pt-1">
+                  <span class="text-[11px] text-amber-300 flex items-center gap-1 font-semibold">
+                    <span class="material-symbols-outlined text-sm">verified</span> Chef Specialty
+                  </span>
+                  <button type="button" onclick="addToCart('3', 'Ghee Mutton Fry', 460, 0)" class="bg-brand-red hover:bg-brand-crimson text-white text-xs font-bold uppercase tracking-wider px-4 py-2 rounded transition-colors flex items-center gap-1.5 shadow">
+                    <span class="material-symbols-outlined text-sm">add_shopping_cart</span> Add to Feast
+                  </button>
+                </div>
+              </div>
+
+              <!-- Slide 4: Chicken Fry Thali -->
+              <div class="dish-slide hidden space-y-4 transition-all duration-300" data-index="3">
+                <div class="flex justify-between items-start gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="non-veg-badge"><span class="non-veg-badge-dot"></span></span>
+                    <span class="text-[10px] uppercase font-bold tracking-wider bg-red-600 text-white px-2 py-0.5 rounded">High Demand</span>
+                  </div>
+                  <span class="text-2xl font-black text-amber-400 font-serif">₹380</span>
+                </div>
+                <div>
+                  <h3 class="font-serif text-2xl font-black text-white tracking-tight">Chicken Fry Thali</h3>
+                  <p class="text-xs text-amber-200/90 font-medium mt-1">4.7 ★ · Authentic Desi Chicken</p>
+                </div>
+                <div class="bg-stone-800/80 rounded-xl p-3.5 border border-stone-700 space-y-2">
+                  <div class="text-xs text-stone-300 leading-relaxed">
+                    Country chicken pieces tossed in charred kanda-lasun masala with fragrant herbs, paired with endless Tambda &amp; Pandhra Rassa and hot Bhakri.
+                  </div>
+                  <div class="flex flex-wrap gap-1.5 pt-1 text-[11px] font-semibold text-amber-300">
+                    <span class="bg-stone-900/80 px-2 py-0.5 rounded border border-amber-400/30">🍗 Chicken Fry</span>
+                    <span class="bg-stone-900/80 px-2 py-0.5 rounded border border-amber-400/30">🥣 Unlimited Rassa</span>
+                    <span class="bg-stone-900/80 px-2 py-0.5 rounded border border-amber-400/30">🫓 Hot Bhakri</span>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between pt-1">
+                  <span class="text-[11px] text-amber-300 flex items-center gap-1 font-semibold">
+                    <span class="material-symbols-outlined text-sm">local_fire_department</span> Unlimited Broth Refills
+                  </span>
+                  <button type="button" onclick="addToCart('7', 'Chicken Fry Thali', 380, 0)" class="bg-brand-red hover:bg-brand-crimson text-white text-xs font-bold uppercase tracking-wider px-4 py-2 rounded transition-colors flex items-center gap-1.5 shadow">
+                    <span class="material-symbols-outlined text-sm">add_shopping_cart</span> Add to Feast
+                  </button>
+                </div>
+              </div>
+
+              <!-- Slide 5: Veg Pithla Bhakari Thali -->
+              <div class="dish-slide hidden space-y-4 transition-all duration-300" data-index="4">
+                <div class="flex justify-between items-start gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="veg-badge"><span class="veg-badge-dot"></span></span>
+                    <span class="text-[10px] uppercase font-bold tracking-wider bg-emerald-600 text-white px-2 py-0.5 rounded">Pure Vegetarian</span>
+                  </div>
+                  <span class="text-2xl font-black text-amber-400 font-serif">₹260</span>
+                </div>
+                <div>
+                  <h3 class="font-serif text-2xl font-black text-white tracking-tight">Veg Pithla Bhakari Thali</h3>
+                  <p class="text-xs text-amber-200/90 font-medium mt-1">4.8 ★ · Rustic Village Classic</p>
+                </div>
+                <div class="bg-stone-800/80 rounded-xl p-3.5 border border-stone-700 space-y-2">
+                  <div class="text-xs text-stone-300 leading-relaxed">
+                    Golden gram flour zunka simmered with green chilies, served with fiery garlic thecha, curd, roasted papad, and fresh hand-baked Jowar Bhakris.
+                  </div>
+                  <div class="flex flex-wrap gap-1.5 pt-1 text-[11px] font-semibold text-amber-300">
+                    <span class="bg-stone-900/80 px-2 py-0.5 rounded border border-amber-400/30">🥘 Garam Pithla</span>
+                    <span class="bg-stone-900/80 px-2 py-0.5 rounded border border-amber-400/30">🌶️ Mirchi Thecha</span>
+                    <span class="bg-stone-900/80 px-2 py-0.5 rounded border border-amber-400/30">🫓 2 Jowar Bhakris</span>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between pt-1">
+                  <span class="text-[11px] text-emerald-400 flex items-center gap-1 font-semibold">
+                    <span class="material-symbols-outlined text-sm">eco</span> 100% Shakahari
+                  </span>
+                  <button type="button" onclick="addToCart('14', 'Veg Pithla Bhakari Thali', 260, 1)" class="bg-brand-red hover:bg-brand-crimson text-white text-xs font-bold uppercase tracking-wider px-4 py-2 rounded transition-colors flex items-center gap-1.5 shadow">
+                    <span class="material-symbols-outlined text-sm">add_shopping_cart</span> Add to Feast
+                  </button>
+                </div>
+              </div>
+
+              <!-- Slide 6: Surmai Rava Fry -->
+              <div class="dish-slide hidden space-y-4 transition-all duration-300" data-index="5">
+                <div class="flex justify-between items-start gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="non-veg-badge"><span class="non-veg-badge-dot"></span></span>
+                    <span class="text-[10px] uppercase font-bold tracking-wider bg-cyan-700 text-white px-2 py-0.5 rounded">Coastal Seafood Catch</span>
+                  </div>
+                  <span class="text-2xl font-black text-amber-400 font-serif">₹520</span>
+                </div>
+                <div>
+                  <h3 class="font-serif text-2xl font-black text-white tracking-tight">Surmai Rava Fry</h3>
+                  <p class="text-xs text-amber-200/90 font-medium mt-1">4.8 ★ · Fresh Kingfish Cut</p>
+                </div>
+                <div class="bg-stone-800/80 rounded-xl p-3.5 border border-stone-700 space-y-2">
+                  <div class="text-xs text-stone-300 leading-relaxed">
+                    Fresh coastal Kingfish steak marinated in kokum and Kolhapuri spices, crusted with crisp golden semolina (rava), and shallow-fried till crispy.
+                  </div>
+                  <div class="flex flex-wrap gap-1.5 pt-1 text-[11px] font-semibold text-amber-300">
+                    <span class="bg-stone-900/80 px-2 py-0.5 rounded border border-amber-400/30">🐟 Fresh Kingfish</span>
+                    <span class="bg-stone-900/80 px-2 py-0.5 rounded border border-amber-400/30">✨ Golden Rava Crust</span>
+                    <span class="bg-stone-900/80 px-2 py-0.5 rounded border border-amber-400/30">🍋 Kokum Marinated</span>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between pt-1">
+                  <span class="text-[11px] text-amber-300 flex items-center gap-1 font-semibold">
+                    <span class="material-symbols-outlined text-sm">set_meal</span> Crispy Seafood
+                  </span>
+                  <button type="button" onclick="addToCart('11', 'Surmai Rava Fry', 520, 0)" class="bg-brand-red hover:bg-brand-crimson text-white text-xs font-bold uppercase tracking-wider px-4 py-2 rounded transition-colors flex items-center gap-1.5 shadow">
+                    <span class="material-symbols-outlined text-sm">add_shopping_cart</span> Add to Feast
+                  </button>
+                </div>
+              </div>
+
+              <!-- Slide 7: Tambda & Pandhra Rassa Duo -->
+              <div class="dish-slide hidden space-y-4 transition-all duration-300" data-index="6">
+                <div class="flex justify-between items-start gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="non-veg-badge"><span class="non-veg-badge-dot"></span></span>
+                    <span class="text-[10px] uppercase font-bold tracking-wider bg-brand-red text-white px-2 py-0.5 rounded">Unlimited with Thalis</span>
+                  </div>
+                  <span class="text-2xl font-black text-amber-400 font-serif">Included</span>
+                </div>
+                <div>
+                  <h3 class="font-serif text-2xl font-black text-white tracking-tight">Tambda &amp; Pandhra Rassa Duo</h3>
+                  <p class="text-xs text-amber-200/90 font-medium mt-1">5.0 ★ · The Soul of Kolhapur</p>
+                </div>
+                <div class="bg-stone-800/80 rounded-xl p-3.5 border border-stone-700 space-y-2">
+                  <div class="text-xs text-stone-300 leading-relaxed">
+                    Simmered for 6 hours on wood chulha: spicy red Byadgi mutton stock alongside fragrant white broth infused with coconut extract, sesame, and poppy seeds.
+                  </div>
+                  <div class="flex flex-wrap gap-1.5 pt-1 text-[11px] font-semibold text-amber-300">
+                    <span class="bg-stone-900/80 px-2 py-0.5 rounded border border-amber-400/30">🥣 Fiery Tambda Rassa</span>
+                    <span class="bg-stone-900/80 px-2 py-0.5 rounded border border-amber-400/30">🥥 Soothing Pandhra Rassa</span>
+                    <span class="bg-stone-900/80 px-2 py-0.5 rounded border border-amber-400/30">♾️ Endless Refills</span>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between pt-1">
+                  <span class="text-[11px] text-amber-300 flex items-center gap-1 font-semibold">
+                    <span class="material-symbols-outlined text-sm">soup_kitchen</span> Unlimited Free Refills
+                  </span>
+                  <a href="menu.html" class="bg-brand-red hover:bg-brand-crimson text-white text-xs font-bold uppercase tracking-wider px-4 py-2 rounded transition-colors flex items-center gap-1.5 shadow">
+                    <span>View Thalis</span> →
+                  </a>
+                </div>
+              </div>
+
+              <!-- Slide 8: Solkadhi & Mastani Paan -->
+              <div class="dish-slide hidden space-y-4 transition-all duration-300" data-index="7">
+                <div class="flex justify-between items-start gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="veg-badge"><span class="veg-badge-dot"></span></span>
+                    <span class="text-[10px] uppercase font-bold tracking-wider bg-rose-700 text-white px-2 py-0.5 rounded">Refreshing Finish</span>
+                  </div>
+                  <span class="text-2xl font-black text-amber-400 font-serif">₹70 / ₹60</span>
+                </div>
+                <div>
+                  <h3 class="font-serif text-2xl font-black text-white tracking-tight">Solkadhi &amp; Mastani Paan</h3>
+                  <p class="text-xs text-amber-200/90 font-medium mt-1">4.9 ★ · Digestif &amp; Royal Paan</p>
+                </div>
+                <div class="bg-stone-800/80 rounded-xl p-3.5 border border-stone-700 space-y-2">
+                  <div class="text-xs text-stone-300 leading-relaxed">
+                    Fresh pressed coconut milk spiked with tart Malvani kokum, garlic, and fresh coriander, followed by the fragrant sweet Mastani Paan dessert.
+                  </div>
+                  <div class="flex flex-wrap gap-1.5 pt-1 text-[11px] font-semibold text-amber-300">
+                    <span class="bg-stone-900/80 px-2 py-0.5 rounded border border-amber-400/30">🥥 Fresh Kokum Milk</span>
+                    <span class="bg-stone-900/80 px-2 py-0.5 rounded border border-amber-400/30">🌿 Natural Digestive</span>
+                    <span class="bg-stone-900/80 px-2 py-0.5 rounded border border-amber-400/30">🍃 Meetha Mastani Paan</span>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between pt-1">
+                  <span class="text-[11px] text-amber-300 flex items-center gap-1 font-semibold">
+                    <span class="material-symbols-outlined text-sm">local_bar</span> Perfect Finale
+                  </span>
+                  <button type="button" onclick="addToCart('17', 'Solkadhi', 70, 1)" class="bg-brand-red hover:bg-brand-crimson text-white text-xs font-bold uppercase tracking-wider px-4 py-2 rounded transition-colors flex items-center gap-1.5 shadow">
+                    <span class="material-symbols-outlined text-sm">add_shopping_cart</span> Add Solkadhi
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Carousel Bottom Controls (Arrows & Interactive Dots) -->
+            <div class="pt-4 mt-3 border-t border-stone-800 flex items-center justify-between">
+              <!-- Prev Button -->
+              <button
+                type="button"
+                id="carousel-prev-btn"
+                class="w-8 h-8 rounded-full bg-stone-800 hover:bg-brand-red text-amber-300 hover:text-white flex items-center justify-center transition-colors border border-stone-700"
+                title="Previous Dish"
+              >
+                <span class="material-symbols-outlined text-base">chevron_left</span>
+              </button>
+
+              <!-- Dots Indicators -->
+              <div class="flex items-center gap-1.5" id="carousel-dots-container">
+                <button type="button" class="carousel-dot h-2 w-5 bg-amber-400 rounded-full transition-all" data-slide="0"></button>
+                <button type="button" class="carousel-dot h-2 w-2 bg-stone-700 hover:bg-stone-500 rounded-full transition-all" data-slide="1"></button>
+                <button type="button" class="carousel-dot h-2 w-2 bg-stone-700 hover:bg-stone-500 rounded-full transition-all" data-slide="2"></button>
+                <button type="button" class="carousel-dot h-2 w-2 bg-stone-700 hover:bg-stone-500 rounded-full transition-all" data-slide="3"></button>
+                <button type="button" class="carousel-dot h-2 w-2 bg-stone-700 hover:bg-stone-500 rounded-full transition-all" data-slide="4"></button>
+                <button type="button" class="carousel-dot h-2 w-2 bg-stone-700 hover:bg-stone-500 rounded-full transition-all" data-slide="5"></button>
+                <button type="button" class="carousel-dot h-2 w-2 bg-stone-700 hover:bg-stone-500 rounded-full transition-all" data-slide="6"></button>
+                <button type="button" class="carousel-dot h-2 w-2 bg-stone-700 hover:bg-stone-500 rounded-full transition-all" data-slide="7"></button>
+              </div>
+
+              <!-- Next Button -->
+              <button
+                type="button"
+                id="carousel-next-btn"
+                class="w-8 h-8 rounded-full bg-stone-800 hover:bg-brand-red text-amber-300 hover:text-white flex items-center justify-center transition-colors border border-stone-700"
+                title="Next Dish"
+              >
+                <span class="material-symbols-outlined text-base">chevron_right</span>
+              </button>
+            </div>
+
+            <!-- Auto-Rotation Notice -->
+            <div class="mt-2 text-center text-[10px] text-stone-500">
+              Auto-advancing every 4.5s · Hover to pause
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Signature Thali Highlights -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-8 py-16 border-b border-amber-200/80">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-10">
+        <div>
+          <span class="text-xs uppercase font-bold tracking-widest text-amber-800">ROYAL SELECTION</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-black text-stone-900 mt-1">Signature Kolhapuri Feasts</h2>
+        </div>
+        <a class="text-xs font-bold uppercase tracking-wider text-brand-red hover:underline mt-2 sm:mt-0 flex items-center gap-1" href="menu.html">
+          <span>Explore All 20+ Dishes</span> →
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Item 1: Jatra Mutton Thali -->
+        <div class="bg-white border-2 border-amber-300 rounded-xl p-6 shadow-sm hover:border-brand-red transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start">
+              <span class="non-veg-badge"><span class="non-veg-badge-dot"></span></span>
+              <span class="text-lg font-black text-brand-red">₹520</span>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-stone-900 mt-2">Jatra Mutton Thali</h3>
+            <p class="text-xs text-stone-600 mt-2 leading-relaxed">
+              Grand feast: Succulent mutton fry, mutton sukka, unlimited fiery Tambda Rassa, soothing Pandhra Rassa, 2 hot Jowar Bhakris, and Indrayani rice.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-amber-100 flex justify-between items-center">
+            <span class="text-[11px] font-bold text-amber-900">Unlimited Rassa</span>
+            <a class="bg-brand-red hover:bg-brand-crimson text-white text-xs font-bold px-3.5 py-1.5 rounded transition-colors" href="order.html">
+              Order Thali
+            </a>
+          </div>
+        </div>
+
+        <!-- Item 2: Chicken Fry Thali -->
+        <div class="bg-white border-2 border-amber-300 rounded-xl p-6 shadow-sm hover:border-brand-red transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start">
+              <span class="non-veg-badge"><span class="non-veg-badge-dot"></span></span>
+              <span class="text-lg font-black text-brand-red">₹380</span>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-stone-900 mt-2">Chicken Fry Thali</h3>
+            <p class="text-xs text-stone-600 mt-2 leading-relaxed">
+              Tender country chicken tossed in roasted kanda-lasun masala, served with unlimited Tambda &amp; Pandhra Rassa, hot Bhakri, and fragrant rice.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-amber-100 flex justify-between items-center">
+            <span class="text-[11px] font-bold text-amber-900">Popular Choice</span>
+            <a class="bg-brand-red hover:bg-brand-crimson text-white text-xs font-bold px-3.5 py-1.5 rounded transition-colors" href="order.html">
+              Order Thali
+            </a>
+          </div>
+        </div>
+
+        <!-- Item 3: Veg Pithla Bhakari Thali -->
+        <div class="bg-white border-2 border-amber-300 rounded-xl p-6 shadow-sm hover:border-brand-red transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start">
+              <span class="veg-badge"><span class="veg-badge-dot"></span></span>
+              <span class="text-lg font-black text-brand-red">₹260</span>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-stone-900 mt-2">Veg Pithla Bhakari Thali</h3>
+            <p class="text-xs text-stone-600 mt-2 leading-relaxed">
+              Authentic gram flour pithla with garlic &amp; green chili tadka, 2 hot Jowar Bhakris, crushed peanut thecha, raw onion, and refreshing curd.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-amber-100 flex justify-between items-center">
+            <span class="text-[11px] font-bold text-amber-900">Pure Veg Special</span>
+            <a class="bg-brand-red hover:bg-brand-crimson text-white text-xs font-bold px-3.5 py-1.5 rounded transition-colors" href="order.html">
+              Order Thali
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Legend of Tambda & Pandhra Rassa -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-8 py-16 border-b border-amber-200/80">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-4">
+          <span class="text-xs uppercase font-bold tracking-widest text-brand-red">ROYAL MARATHA HERITAGE</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-black text-stone-900 leading-tight">
+            Why Our Tambda &amp; Pandhra Rassa is Legendary
+          </h2>
+          <p class="text-sm text-stone-700 leading-relaxed">
+            In Kolhapur, rassa is not just a gravy—it is an art form. Unlike commercial restaurants that use food colors or heavy cream, our broths are brewed in traditional brass handis:
+          </p>
+          <ul class="space-y-3 text-xs sm:text-sm text-stone-800">
+            <li class="flex items-start gap-2">
+              <span class="text-brand-red font-bold">🔴 Tambada Rassa:</span>
+              <span>Slow-simmered bone broth with Byadgi chilies, cloves, black pepper, and toasted coconut paste. Spicy, aromatic, and invigorating.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-amber-800 font-bold">⚪ Pandhra Rassa:</span>
+              <span>Silky white broth extracted from fresh coconut milk, white poppy seeds, cashew nuts, and roasted whole spices. Soothes the palate after the fiery Tambda.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-800 font-bold">🌿 Solkadhi:</span>
+              <span>Chilled digestive concoction made with real kokum agal, fresh coconut milk, and crushed garlic.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Review Summary Card -->
+        <div class="bg-white border-2 border-brand-red p-8 rounded-xl shadow-lg space-y-5">
+          <div class="flex items-center justify-between border-b border-amber-200 pb-4">
+            <div>
+              <span class="font-serif text-4xl font-black text-brand-red">4.6</span>
+              <span class="text-amber-500 text-xl font-bold"> ★★★★★</span>
+            </div>
+            <div class="text-right">
+              <span class="block text-xs font-bold text-stone-900">4,485+ Verified Reviews</span>
+              <span class="text-[11px] text-stone-500">Google Review Summary</span>
+            </div>
+          </div>
+          <blockquote class="italic text-xs sm:text-sm text-stone-700 leading-relaxed">
+            "Diners consistently like this restaurant's authentic Kolhapuri thalis, especially the mutton and chicken options, and highlight the delicious tambda and pandhra rassa. Guests praise the attentive, polite, and quick service!"
+          </blockquote>
+          <div class="pt-2 flex justify-between items-center">
+            <span class="text-xs font-semibold text-amber-900">Reported by 721+ Diners: ₹400–600</span>
+            <a class="text-xs font-bold text-brand-red hover:underline" href="reviews.html">Read Reviews →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location & Directions -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-8 py-16">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-stone-900 text-white p-8 sm:p-10 rounded-2xl shadow-xl">
+        <div class="lg:col-span-6 space-y-4">
+          <span class="text-xs uppercase font-bold tracking-widest text-amber-400">VISIT US IN KOLHAPUR</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">The Thalis — Tarabai Park</h2>
+          <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">
+            <strong>Address:</strong> 1st Floor, Opp. to Hotel Lisha, Above Life Pharma Medical, Kadamwadi Rd, Laxminarayan Nagar, Tarabai Park, Kolhapur, Maharashtra 416003
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs pt-1">
+            <div>
+              <span class="block font-bold text-amber-300">HOURS OF SERVICE</span>
+              <span class="text-stone-300">Lunch: 12:30 PM — 4:00 PM</span><br/>
+              <span class="text-stone-300">Dinner: 7:00 PM — 11:30 PM</span>
+            </div>
+            <div>
+              <span class="block font-bold text-amber-300">CONTACT &amp; BOOKING</span>
+              <span class="text-stone-300">Phone: 077449 66966</span><br/>
+              <span class="text-stone-300">Instagram: @the_thalis_kolhapur</span>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-3 pt-3">
+            <a class="bg-amber-500 hover:bg-amber-600 text-stone-950 text-xs font-bold uppercase tracking-wider py-3 px-5 rounded text-center transition-colors flex items-center gap-1.5 shadow" href="https://www.google.com/maps/dir/?api=1&destination=The+Thalis+-+Kolhapuri+Thali,+Kadamwadi+Rd,+opp.+to+hotel+lisha,+Laxminarayan+Nagar,+Tarabai+Park,+Kolhapur,+Maharashtra+416003" target="_blank" rel="noopener noreferrer">
+              <span class="material-symbols-outlined text-sm">directions</span>
+              <span>Get Directions</span>
+            </a>
+            <a class="bg-stone-800 hover:bg-stone-700 text-amber-300 border border-amber-400/50 text-xs font-bold uppercase tracking-wider py-3 px-4 rounded text-center transition-colors flex items-center gap-1.5" href="https://maps.google.com/maps?ftid=0x3bc101752fb283e7:0xa499fce807b3d3eb" target="_blank" rel="noopener noreferrer">
+              <span class="material-symbols-outlined text-sm">map</span>
+              <span>Open Google Maps</span>
+            </a>
+            <button type="button" onclick="copyAddress()" class="border border-stone-600 hover:border-amber-400 text-stone-300 hover:text-white text-xs font-bold uppercase tracking-wider py-3 px-4 rounded text-center transition-colors flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-sm">content_copy</span>
+              <span>Copy Address</span>
+            </button>
+            <a class="bg-brand-red hover:bg-brand-crimson text-white text-xs font-bold uppercase tracking-wider py-3 px-5 rounded text-center transition-colors flex items-center gap-1.5" href="tel:07744966966">
+              <span class="material-symbols-outlined text-sm">call</span>
+              <span>Call Us</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Embedded Map Frame on Homepage -->
+        <div class="lg:col-span-6 h-72 sm:h-80 rounded-xl overflow-hidden border-2 border-amber-400/80 shadow-lg bg-black">
+          <iframe
+            title="The Thalis Kolhapuri Thali Map"
+            src="https://maps.google.com/maps?q=The+Thalis+-+Kolhapuri+Thali,+Kadamwadi+Rd,+opp.+to+hotel+lisha,+Tarabai+Park,+Kolhapur,+Maharashtra+416003&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            class="w-full h-full border-0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-stone-950 text-stone-300 text-xs py-12 border-t border-stone-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div class="space-y-3">
+        <h4 class="font-serif text-lg font-bold text-amber-400">The Thalis</h4>
+        <p class="text-stone-400 leading-relaxed">
+          Authentic Indian restaurant serving traditional Kolhapuri mutton, chicken, and seafood thalis with signature unlimited Tambda &amp; Pandhra Rassa.
+        </p>
+      </div>
+
+      <div>
+        <h5 class="font-bold text-white uppercase tracking-wider mb-3">Quick Navigation</h5>
+        <ul class="space-y-2">
+          <li><a class="hover:text-amber-400 transition-colors" href="menu.html">Thali Menu</a></li>
+          <li><a class="hover:text-amber-400 transition-colors" href="order.html">Order Online</a></li>
+          <li><a class="hover:text-amber-400 transition-colors" href="reservations.html">Table Booking</a></li>
+          <li><a class="hover:text-amber-400 transition-colors" href="reviews.html">Google Reviews (4.6★)</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 class="font-bold text-white uppercase tracking-wider mb-3">Signatures</h5>
+        <ul class="space-y-2 text-stone-400">
+          <li>Jatra Mutton Thali</li>
+          <li>Ghee Mutton Fry</li>
+          <li>Chicken Fry Thali</li>
+          <li>Veg Pithla Bhakari Thali</li>
+          <li>Solkadhi &amp; Mastani Paan</li>
+        </ul>
+      </div>
+
+      <div class="space-y-2">
+        <h5 class="font-bold text-white uppercase tracking-wider mb-2">Staff Portal</h5>
+        <a class="inline-block bg-stone-800 hover:bg-stone-700 text-amber-300 px-3 py-1.5 rounded text-xs font-semibold" href="admin.html">
+          Staff Desk &amp; Orders Monitor →
+        </a>
+        <p class="text-stone-500 text-[11px] pt-2">© The Thalis - Kolhapuri Thali. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -3,122 +3,38 @@
 <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Maison Ember — Open-Hearth Cooking &amp; Natural Cellar · Paris 4e</title>
-  
-  <!-- Fonts: Playfair Display + Work Sans -->
+  <title>RestoFlow — Universal Restaurant Demo Platform | By Pruthviraj Garale</title>
+  <meta name="description" content="All-in-one interactive restaurant demo website featuring Digital QR Menu, 0% Commission WhatsApp Ordering, Table Reservations, and Google Reviews. Showcasing Traditional Indian Thalis, Luxury Fine Dining, and Modern Cafes."/>
+
+  <!-- Fonts: Playfair Display + Plus Jakarta Sans / Work Sans -->
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&amp;family=Work+Sans:ital,wght@0,300..700;1,300..700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
   
-  <!-- Material Symbols Outlined -->
+  <!-- Material Symbols Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-  
-  <!-- Tailwind CSS v3 -->
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  
-  <!-- Tailwind Configuration verbatim -->
-  <script id="tailwind-config">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
     tailwind.config = {
-      darkMode: "class",
+      darkMode: 'class',
       theme: {
         extend: {
-          "colors": {
-            "error-container": "#ffdad6",
-            "on-primary": "#ffffff",
-            "inverse-surface": "#352f2c",
-            "error": "#ba1a1a",
-            "surface": "#fff8f5",
-            "on-error": "#ffffff",
-            "surface-container-high": "#f0e6e1",
-            "tertiary-container": "#9a4a30",
-            "on-background": "#1f1b18",
-            "outline": "#88726c",
-            "on-tertiary-container": "#ffd4c7",
-            "tertiary-fixed-dim": "#ffb59e",
-            "inverse-on-surface": "#f9efea",
-            "surface-container-highest": "#ebe0db",
-            "surface-container-lowest": "#ffffff",
-            "on-primary-container": "#ffd3c6",
-            "tertiary-fixed": "#ffdbd0",
-            "on-tertiary-fixed": "#3a0b00",
-            "primary-container": "#9e472a",
-            "on-tertiary": "#ffffff",
-            "surface-bright": "#fff8f5",
-            "primary": "#7f3015",
-            "on-secondary-fixed": "#171e0f",
-            "on-surface": "#1f1b18",
-            "on-secondary": "#ffffff",
-            "inverse-primary": "#ffb59e",
-            "on-secondary-fixed-variant": "#414938",
-            "surface-dim": "#e2d8d3",
-            "on-tertiary-fixed-variant": "#783118",
-            "on-surface-variant": "#55423d",
-            "primary-fixed": "#ffdbd0",
-            "background": "#fff8f5",
-            "surface-variant": "#ebe0db",
-            "tertiary": "#7c331b",
-            "secondary-fixed": "#dde6ce",
-            "primary-fixed-dim": "#ffb59e",
-            "on-primary-fixed": "#3a0b00",
-            "on-secondary-container": "#5f6754",
-            "secondary-fixed-dim": "#c1cab3",
-            "outline-variant": "#dcc1b9",
-            "secondary": "#59614e",
-            "surface-tint": "#9b4428",
-            "secondary-container": "#dde6ce",
-            "surface-container-low": "#fcf2ec",
-            "surface-container": "#f6ece7",
-            "on-primary-fixed-variant": "#7c2e13",
-            "on-error-container": "#93000a"
+          fontFamily: {
+            serif: ['Playfair Display', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
           },
-          "borderRadius": {
-            "DEFAULT": "0.125rem",
-            "lg": "0.25rem",
-            "xl": "0.5rem",
-            "full": "0.75rem"
-          },
-          "spacing": {
-            "space-lg": "2rem",
-            "gutter": "1.5rem",
-            "space-sm": "0.75rem",
-            "space-xs": "0.5rem",
-            "gutter-desktop": "2.5rem",
-            "margin": "1.25rem",
-            "space-md": "1.25rem",
-            "space-2xs": "0.25rem",
-            "space-2xl": "5rem",
-            "margin-desktop": "4rem",
-            "space-xl": "3.5rem"
-          },
-          "fontFamily": {
-            "headline-lg": ["Playfair Display"],
-            "price-numeral": ["Work Sans"],
-            "title-menu-item": ["Playfair Display"],
-            "headline-lg-mobile": ["Playfair Display"],
-            "headline-md": ["Playfair Display"],
-            "label-caption": ["Work Sans"],
-            "body-lg": ["Work Sans"],
-            "body-md": ["Work Sans"],
-            "label-uppercase": ["Work Sans"],
-            "headline-sm": ["Playfair Display"],
-            "display-hero-mobile": ["Playfair Display"],
-            "body-sm": ["Work Sans"],
-            "display-hero": ["Playfair Display"]
-          },
-          "fontSize": {
-            "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
-            "price-numeral": ["15px", { "lineHeight": "24px", "letterSpacing": "0.02em", "fontWeight": "500" }],
-            "title-menu-item": ["18px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "600" }],
-            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "400" }],
-            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "500" }],
-            "label-caption": ["12px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "400" }],
-            "body-lg": ["17px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
-            "body-md": ["15px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
-            "label-uppercase": ["11px", { "lineHeight": "16px", "letterSpacing": "0.12em", "fontWeight": "600" }],
-            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "500" }],
-            "display-hero-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
-            "body-sm": ["13px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }],
-            "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }]
+          colors: {
+            brand: {
+              red: '#991b1b',
+              crimson: '#7f1d1d',
+              gold: '#d97706',
+              amber: '#f59e0b',
+              cream: '#fffbeb',
+              sand: '#fef3c7',
+              charcoal: '#1c1917'
+            }
           }
         }
       }
@@ -127,745 +43,1637 @@
 
   <style>
     .material-symbols-outlined {
-      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20;
-      font-size: 18px;
-      line-height: 1;
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
       display: inline-block;
       vertical-align: middle;
+      line-height: 1;
     }
-    .dotted-leader {
-      border-bottom: 1px dotted #88726c;
-      flex-grow: 1;
-      margin: 0 16px;
-      height: 14px;
-      opacity: 0.45;
+    .veg-dot {
+      width: 10px;
+      height: 10px;
+      background-color: #16a34a;
+      border-radius: 50%;
+      display: inline-block;
     }
+    .non-veg-dot {
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 9px solid #dc2626;
+      display: inline-block;
+    }
+    .diet-box-veg {
+      border: 1.5px solid #16a34a;
+      padding: 2px;
+      border-radius: 3px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #f0fdf4;
+    }
+    .diet-box-nonveg {
+      border: 1.5px solid #dc2626;
+      padding: 2px;
+      border-radius: 3px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #fef2f2;
+    }
+    /* Hide scrollbars for clean carousel/tabs */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
   </style>
-  <link href="css/custom.css" rel="stylesheet"/>
 </head>
-<body class="bg-background text-on-surface antialiased selection:bg-primary-container selection:text-on-primary">
+<body class="bg-stone-50 text-stone-900 font-sans antialiased selection:bg-amber-500 selection:text-white">
 
-  <!-- Announcement Ribbon -->
-  <aside class="w-full bg-surface-container border-b border-outline-variant py-2 px-margin text-center">
-    <p class="font-label-caption text-label-caption text-on-surface-variant tracking-wider">
-      Autumn hearth menu now serving · <a class="underline font-medium text-primary hover:text-on-surface transition-colors" href="private-dining.html">Private dining salon inquiries open</a> for November &amp; December
-    </p>
-  </aside>
-
-  <!-- TopNavBar -->
-  <header class="bg-surface docked full-width top-0 sticky z-50 border-b border-outline-variant">
-    <div class="flex justify-between items-center w-full px-margin md:px-margin-desktop py-space-sm max-w-7xl mx-auto">
-      <!-- Brand & Location Lockup -->
-      <div class="flex items-baseline space-x-3">
-        <a class="font-headline-md text-headline-md text-on-surface tracking-tight" href="index.html">Maison Ember</a>
-        <span class="hidden sm:inline font-label-uppercase text-label-uppercase text-on-surface-variant tracking-widest pl-2 border-l border-outline-variant">Paris · 4e</span>
+  <!-- ========================================== -->
+  <!-- 1. TOP MASTER AGENCY BAR (DEMO CONTROL BAR) -->
+  <!-- ========================================== -->
+  <aside class="bg-stone-950 text-white border-b border-stone-800 text-xs py-2.5 px-4 sticky top-0 z-[60] shadow-md">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
+      
+      <!-- Agency Branding & Live Mode Tag -->
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center gap-1.5 bg-gradient-to-r from-amber-500 to-red-600 text-white font-bold uppercase tracking-wider px-2.5 py-0.5 rounded text-[10px]">
+          <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+          LIVE DEMO PLATFORM
+        </span>
+        <span class="text-stone-300 font-medium hidden sm:inline">
+          Interactive Restaurant Website Showcase · Developed by <strong>Pruthviraj Garale</strong>
+        </span>
       </div>
 
-      <!-- Desktop Navigation Links (Opening in dedicated pages) -->
-      <nav class="hidden md:flex items-center space-x-8">
-        <a class="text-on-surface-variant font-label-uppercase text-label-uppercase tracking-widest hover:text-primary transition-colors duration-150" href="menu.html">Menu</a>
-        <a class="text-on-surface-variant font-label-uppercase text-label-uppercase tracking-widest hover:text-primary transition-colors duration-150" href="cellar.html">Cellar</a>
-        <a class="text-on-surface-variant font-label-uppercase text-label-uppercase tracking-widest hover:text-primary transition-colors duration-150" href="atmosphere.html">Atmosphere</a>
-        <a class="text-on-surface-variant font-label-uppercase text-label-uppercase tracking-widest hover:text-primary transition-colors duration-150" href="reservations.html">Reservations</a>
-        <a class="text-on-surface-variant font-label-uppercase text-label-uppercase tracking-widest hover:text-primary transition-colors duration-150" href="private-dining.html">Private Dining</a>
-        <a class="text-secondary font-label-uppercase text-label-uppercase tracking-widest hover:text-primary transition-colors duration-150" href="admin.html">Staff Desk</a>
+      <!-- Live Restaurant Type Selector -->
+      <div class="flex items-center gap-2 overflow-x-auto max-w-full pb-1 md:pb-0">
+        <span class="text-stone-400 text-[11px] font-semibold uppercase tracking-wider mr-1 hidden lg:inline">Switch Concept:</span>
+        
+        <button id="btn-concept-indian" onclick="switchConcept('indian')" class="concept-btn px-3 py-1 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 bg-amber-500 text-stone-950 shadow">
+          <span>🍛</span>
+          <span>Traditional Thali (Indian)</span>
+        </button>
+        
+        <button id="btn-concept-finedining" onclick="switchConcept('finedining')" class="concept-btn px-3 py-1 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 bg-stone-800 text-stone-300 hover:bg-stone-700">
+          <span>🍷</span>
+          <span>Fine Dining (Hearth Grill)</span>
+        </button>
+
+        <button id="btn-concept-cafe" onclick="switchConcept('cafe')" class="concept-btn px-3 py-1 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 bg-stone-800 text-stone-300 hover:bg-stone-700">
+          <span>🍕</span>
+          <span>Cafe &amp; Pizzeria</span>
+        </button>
+      </div>
+
+      <!-- Quick Agency Contact -->
+      <div class="hidden xl:flex items-center gap-2">
+        <a href="https://wa.me/917744966966?text=Hi%20Pruthviraj,%20I%20saw%20your%20Restaurant%20Demo%20Website%20and%20want%20to%20build%20one%20for%20my%20restaurant." target="_blank" rel="noopener noreferrer" class="bg-green-600 hover:bg-green-500 text-white text-[11px] font-bold px-3 py-1 rounded flex items-center gap-1 transition-colors">
+          <span class="material-symbols-outlined text-sm">chat</span>
+          <span>Get This For Your Restaurant</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ========================================== -->
+  <!-- 2. RESTAURANT MAIN NAVIGATION BAR -->
+  <!-- ========================================== -->
+  <header id="restaurant-nav" class="bg-white/95 backdrop-blur sticky top-[45px] z-50 border-b border-stone-200 transition-colors duration-300 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 py-3.5 flex justify-between items-center">
+      
+      <!-- Brand Logo / Emblem -->
+      <div class="flex items-center gap-3">
+        <div id="nav-emblem" class="w-10 h-10 rounded-full bg-brand-red text-amber-300 flex items-center justify-center font-serif text-xl font-black shadow-inner border border-amber-400">
+          थ
+        </div>
+        <div>
+          <span id="nav-title" class="font-serif text-xl sm:text-2xl font-black tracking-tight text-brand-red block leading-none">The Thalis</span>
+          <span id="nav-subtitle" class="text-[10px] uppercase font-bold tracking-widest text-amber-800">Kolhapuri Thali · 4.6 ★ (4.5K+ Reviews)</span>
+        </div>
+      </div>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center space-x-6 text-xs font-bold uppercase tracking-wider text-stone-700">
+        <a href="#hero-section" class="hover:text-amber-600 transition-colors">Home</a>
+        <a href="#menu-section" class="hover:text-amber-600 transition-colors">Digital Menu</a>
+        <a href="#whatsapp-order-section" class="hover:text-amber-600 transition-colors">WhatsApp Order</a>
+        <a href="#reservations-section" class="hover:text-amber-600 transition-colors">Table Booking</a>
+        <a href="#reviews-section" class="hover:text-amber-600 transition-colors">Reviews &amp; Maps</a>
+        <a href="#dedicated-sites-section" class="text-amber-800 font-extrabold hover:underline">Full Sites ↗</a>
+        <button onclick="toggleStaffDeskModal()" class="text-stone-500 hover:text-stone-900 flex items-center gap-1 border border-stone-300 px-2.5 py-1 rounded text-[11px]">
+          <span class="material-symbols-outlined text-sm">tune</span> Staff Desk
+        </button>
       </nav>
 
-      <!-- Trailing Action Triggers -->
-      <div class="flex items-center space-x-5">
-        <a class="hidden lg:inline font-price-numeral text-price-numeral text-on-surface-variant hover:text-primary transition-colors duration-150" href="tel:0142685500">
-          Tel: 01 42 68 55 00
+      <!-- Cart Trigger & Call Button -->
+      <div class="flex items-center gap-3">
+        <a id="nav-call-btn" href="tel:07744966966" class="hidden sm:inline-flex items-center gap-1.5 text-xs font-bold text-stone-800 hover:text-brand-red transition-colors border border-stone-300 px-3 py-1.5 rounded-lg">
+          <span class="material-symbols-outlined text-sm text-green-600">call</span>
+          <span id="nav-phone-text">077449 66966</span>
         </a>
-        <a class="inline-flex items-center justify-center bg-primary-container text-on-primary font-label-uppercase text-label-uppercase tracking-wider px-5 py-3 rounded-lg hover:bg-primary transition-colors duration-150 ease-out shadow-none" href="reservations.html">
-          Reserve Table
-        </a>
+
+        <!-- Cart Drawer Button with Live Badge -->
+        <button onclick="toggleCartDrawer()" class="relative bg-amber-500 hover:bg-amber-600 text-stone-950 font-bold px-3.5 py-2 rounded-lg text-xs uppercase tracking-wider flex items-center gap-1.5 shadow transition-all">
+          <span class="material-symbols-outlined text-base">shopping_cart</span>
+          <span class="hidden sm:inline">Order Cart</span>
+          <span id="global-cart-badge" class="bg-red-600 text-white text-[10px] font-black w-5 h-5 rounded-full flex items-center justify-center -ml-1">0</span>
+        </button>
       </div>
     </div>
   </header>
 
-  <main class="w-full" id="top">
-    <!-- Hero Section -->
-    <section class="max-w-7xl mx-auto px-margin md:px-margin-desktop pt-space-lg md:pt-space-xl pb-space-2xl border-b border-outline-variant">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter lg:gap-gutter-desktop items-center">
-        <!-- Left: Cinematic Live Hearth Video (4:5 Ratio) -->
-        <div class="lg:col-span-5 order-2 lg:order-1">
-          <div class="relative p-2 bg-surface-container border border-outline-variant rounded">
-            <!-- Video Container with Gradient Overlay -->
-            <div class="relative w-full aspect-[4/5] overflow-hidden bg-black rounded">
-              <video
-                id="hero-hearth-video"
-                autoplay
-                loop
-                muted
-                playsinline
-                class="w-full h-full object-cover filter contrast-[1.05]"
-              >
-                <source src="videos/hearth.mp4" type="video/mp4" />
-                <source src="https://assets.mixkit.co/videos/42999/42999-720.mp4" type="video/mp4" />
-                Your browser does not support HTML5 video.
-              </video>
-              
-              <!-- Subtle Warmth & Contrast Overlay -->
-              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none"></div>
-
-              <!-- Interactive Sound Toggle Button -->
-              <button
-                type="button"
-                id="toggle-video-sound"
-                class="absolute bottom-3 right-3 bg-surface/90 hover:bg-surface text-on-surface p-2 rounded backdrop-blur border border-outline-variant transition-colors z-10 flex items-center gap-1.5 text-xs px-2.5 shadow-sm"
-                title="Toggle hearth ember sound"
-              >
-                <span class="material-symbols-outlined text-sm text-primary" id="sound-icon">volume_off</span>
-                <span id="sound-text" class="font-label-caption text-[11px] font-medium">Sound On</span>
-              </button>
-
-              <!-- Live Hearth Indicator -->
-              <div class="absolute top-3 left-3 bg-primary-container text-on-primary font-label-uppercase text-[10px] px-2.5 py-1 rounded backdrop-blur-sm flex items-center gap-1.5">
-                <span class="inline-block w-1.5 h-1.5 rounded-full bg-red-400 animate-pulse"></span>
-                <span>Live Hearth Fire</span>
-              </div>
-            </div>
-
-            <div class="mt-2.5 flex justify-between items-center text-on-surface-variant px-1 font-label-caption text-label-caption">
-              <span>Hearth Fire No. 04 · Oak &amp; Beech Coal</span>
-              <span>18h00 Live Service</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right: Typographic Anchor & Service Manifesto -->
-        <div class="lg:col-span-7 order-1 lg:order-2 space-y-6">
-          <div class="inline-flex items-center space-x-2 border-b border-outline pb-1">
-            <span class="font-label-uppercase text-label-uppercase text-secondary tracking-widest">ATELIER CULINAIRE &amp; VINS VIVANTS</span>
-          </div>
-          <h1 class="font-display-hero text-display-hero-mobile md:text-display-hero text-on-surface tracking-tight max-w-xl">
-            Open-hearth cooking, wild herbs, and low-intervention wines.
-          </h1>
-          <p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg leading-relaxed">
-            Rooted in ancestral ember cookery and seasonal harvests from the Seine-et-Marne basin. Unhurried hospitality at the threshold of the Marais and Bastille.
-          </p>
-
-          <!-- Architectural Service Metadata Grid -->
-          <div class="pt-4 border-t border-outline-variant grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <p class="font-label-uppercase text-label-uppercase text-on-surface-variant tracking-wider">SERVICE HOURS</p>
-              <p class="font-body-md text-body-md text-on-surface mt-1">Tuesday – Saturday</p>
-              <p class="font-body-sm text-body-sm text-on-surface-variant">18h00 — 23h30 (Last seating 21h45)</p>
-            </div>
-            <div>
-              <p class="font-label-uppercase text-label-uppercase text-on-surface-variant tracking-wider">ADDRESS &amp; QUARTIER</p>
-              <p class="font-body-md text-body-md text-on-surface mt-1">14 Rue des Tournelles</p>
-              <p class="font-body-sm text-body-sm text-on-surface-variant">75004 Paris · Bastille / Saint-Paul</p>
-            </div>
-          </div>
-
-          <!-- Direct Operational CTAs -->
-          <div class="pt-2 flex flex-wrap items-center gap-4">
-            <a class="bg-primary-container text-on-primary font-label-uppercase text-label-uppercase px-6 py-3.5 rounded-lg hover:bg-primary transition-colors duration-150 inline-flex items-center gap-2" href="reservations.html">
-              <span>Book an Evening</span>
-              <span class="material-symbols-outlined" data-icon="north_east">north_east</span>
-            </a>
-            <a class="border border-on-surface text-on-surface font-label-uppercase text-label-uppercase px-6 py-3.5 rounded-lg hover:bg-surface-container transition-colors duration-150 inline-flex items-center gap-2" href="menu.html">
-              <span>Browse Today's Menu</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Narrative & Culinary Heritage -->
-    <section class="max-w-7xl mx-auto px-margin md:px-margin-desktop py-space-2xl border-b border-outline-variant" id="cellar">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter lg:gap-gutter-desktop items-start">
-        <div class="lg:col-span-4 space-y-4">
-          <span class="font-label-uppercase text-label-uppercase text-secondary tracking-widest">OUR PHILOSOPHY</span>
-          <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">
-            Cooking over embers since 2019.
-          </h2>
-          <div class="w-12 h-px bg-primary-container"></div>
-        </div>
-
-        <div class="lg:col-span-4 space-y-4">
-          <p class="font-body-md text-body-md text-on-surface leading-relaxed">
-            We do not use gas ranges or circulating water baths. Every cut of meat, winter brassica, and crustacean is exposed directly to hardwood coals of sessile oak and charred fruitwood sourced from sustainably managed groves in Picardy.
-          </p>
-          <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-            Our sourdough is fermented on-site for thirty-six hours using ancient stoneground flours from Seine-et-Marne, paired with cultured butter churned and smoked over hazelnut twigs twice weekly.
-          </p>
-        </div>
-
-        <div class="lg:col-span-4 bg-surface-container p-6 border border-outline-variant space-y-4">
-          <h3 class="font-headline-sm text-headline-sm text-on-surface">The Natural Cellar</h3>
-          <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
-            Curated by head sommelier Camille Roy, our subterranean cellar shelters 420 references dedicated solely to low-intervention, biodynamic growers across the Loire, Jura, and northern Rhône. Unfiltered, honest expressions of living soil.
-          </p>
-          <div class="pt-2 flex items-center justify-between border-t border-outline-variant text-label-caption font-label-caption text-on-surface-variant">
-            <span>Current cellar holdings: 1,840 btls</span>
-            <span class="text-primary font-medium">Updated weekly</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Asymmetrical Kitchen Vignettes -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-gutter mt-space-xl">
-        <div class="space-y-2">
-          <div class="bg-surface-container border border-outline-variant p-1.5">
-            <img class="w-full aspect-[3/2] object-cover" data-alt="Levain boule and butter" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFO5GSTkchHYTxk7aMcbBn4RmtXum05PiKmRorJhFPqybypTOfgZ5J3O4itE6u0_ucdfcwEVTJF-v87VeSeybFlo9yf08iMKhvE0ahXBny1o_czIh0zFZ_iI8_i7luuWC0EyYsmD1CWzLkJOV5NsdAXNJnYA9LovG5F8-bXPQp0ARp6nQUuki81WHs93Ip9bwjyslv6cKS0tYjyvpYwl3ry8BFYDRQB9uQ5_uIA7LilgCzdwoHj329Bg"/>
-          </div>
-          <p class="font-label-caption text-label-caption text-on-surface-variant">36-hour natural levain boule &amp; hazelnut smoked butter</p>
-        </div>
-
-        <div class="space-y-2">
-          <div class="bg-surface-container border border-outline-variant p-1.5">
-            <img class="w-full aspect-[3/2] object-cover" data-alt="Leeks in coals" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_nBakLW5pgINOgOKveW-W1RkXTMbie5XzlHiZmX0jzm8gUYP945LZx32-FJ6BhmAtOX7wgTgm2abFJWN7QW2-VMvHr48JiyVWIKEzEjOfVTIRLkNHnbBO6JWC-iRkklPj-ZXeNooNLu9ZAFPPpmieof84CiS11zENq5WISdmhbvROBoa-DyJBBxXKeJN8nQ9Yu_seXpGZ_-OEExoj5va4nQ0tnKBfQMgi-J09aF3NVL5Xoaw2hpB8ug"/>
-          </div>
-          <p class="font-label-caption text-label-caption text-on-surface-variant">Winter leeks roasted directly in oak ash</p>
-        </div>
-
-        <div class="space-y-2">
-          <div class="bg-surface-container border border-outline-variant p-1.5">
-            <img class="w-full aspect-[3/2] object-cover" data-alt="Subterranean cellar bottle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxqGHTeN5UK44nPZn9YYXeRu2ZPnQShDJik05JBOc8-KwT0PBU0dtigmUVYYRDu8-vwa7pWQAodhlr9cA0a8J-vg8x5QeXuiz8FBobDj_IXHOc5vHokMCb7puZp1Rkd_iIq8dyIHI3uzZLDmqrsP_4P6AZ0PJ3GFuxrDQOc0D5eh3MXY0TEQPNZJDqJZSkuSFF2rLLfmT-2jj97202F96GHm29HcnShaZHArX5U1oOzGV0Ph1kIM6oqQ"/>
-          </div>
-          <p class="font-label-caption text-label-caption text-on-surface-variant">Maceration wine from Domaine Courbet, Jura</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- The Menu (Dynamic & Letterpress Brasserie Format) -->
-    <section class="max-w-7xl mx-auto px-margin md:px-margin-desktop py-space-2xl border-b border-outline-variant" id="menu">
-      <div class="text-center max-w-2xl mx-auto space-y-3 mb-space-lg">
-        <span class="font-label-uppercase text-label-uppercase text-secondary tracking-widest">CARTE DE SAISON</span>
-        <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Dinner Service at the Hearth</h2>
-        <p class="font-body-md text-body-md text-on-surface-variant">
-          Menus rotate based on morning market arrivals from Rungis and our Seine-et-Marne growers. Dishes are cooked to order over live fire.
-        </p>
-      </div>
-
-      <!-- Menu Category Tabs -->
-      <div class="flex flex-wrap items-center justify-center gap-2 mb-space-lg border-b border-outline-variant pb-4" id="menu-tabs">
-        <button class="menu-category-btn px-4 py-2 font-label-uppercase text-label-uppercase border border-primary-container bg-surface-container text-primary rounded-lg transition-colors" data-category="starters">
-          Starters &amp; Crudo
-        </button>
-        <button class="menu-category-btn px-4 py-2 font-label-uppercase text-label-uppercase border border-outline-variant bg-transparent text-on-surface-variant hover:text-on-surface rounded-lg transition-colors" data-category="mains">
-          Wood-Fired Mains
-        </button>
-        <button class="menu-category-btn px-4 py-2 font-label-uppercase text-label-uppercase border border-outline-variant bg-transparent text-on-surface-variant hover:text-on-surface rounded-lg transition-colors" data-category="sides">
-          Sides from the Ash
-        </button>
-        <button class="menu-category-btn px-4 py-2 font-label-uppercase text-label-uppercase border border-outline-variant bg-transparent text-on-surface-variant hover:text-on-surface rounded-lg transition-colors" data-category="desserts">
-          Cheeses &amp; Desserts
-        </button>
-        <button class="menu-category-btn px-4 py-2 font-label-uppercase text-label-uppercase border border-outline-variant bg-transparent text-on-surface-variant hover:text-on-surface rounded-lg transition-colors" data-category="cellar">
-          Selected Cellar
-        </button>
-      </div>
-
-      <!-- Menu Sheet (Dynamic Container) -->
-      <div class="max-w-4xl mx-auto bg-surface p-6 sm:p-12 border border-outline-variant shadow-none" id="dynamic-menu-container">
-        <!-- Loaded dynamically via API -->
-      </div>
-
-      <!-- Tasting Menu Note -->
-      <div class="max-w-4xl mx-auto mt-6 pt-4 border-t border-outline-variant flex flex-col sm:flex-row justify-between items-center text-label-caption font-label-caption text-on-surface-variant">
-        <p>Tasting Menu "Carte Blanche au Feu" (6 Courses) — €95 per guest / Wine pairing +€60</p>
-        <p class="mt-2 sm:mt-0">All taxes &amp; service included</p>
-      </div>
-    </section>
-
-    <!-- Atmosphere & The Spaces -->
-    <section class="max-w-7xl mx-auto px-margin md:px-margin-desktop py-space-2xl border-b border-outline-variant" id="atmosphere">
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-space-lg">
-        <div>
-          <span class="font-label-uppercase text-label-uppercase text-secondary tracking-widest">ATMOSPHERE &amp; SPACES</span>
-          <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mt-1">An intimate room carved in limestone.</h2>
-        </div>
-        <p class="font-body-md text-body-md text-on-surface-variant max-w-md mt-4 md:mt-0">
-          Thirty-four covers centered around our cast-iron hearth, flanked by a polished brass counter and candlelit alcoves.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-stretch">
-        <div class="md:col-span-7 bg-surface-container border border-outline-variant p-2 flex flex-col justify-between">
-          <img class="w-full aspect-[16/10] object-cover" data-alt="Hearth dining room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5IYt-1WGPnCcFwfcgRCcVNXdsYkETpdA0L1hJcsYY9czx2QF7Jc5LD15j5fq1UZWGhspU0pd65UNIl2z8zu5a61iPRBIvfzJ1DR2dzCfQiFj2wsdnQfTOICMriw_sUF24Mm9vBPFAdwB2HFHp3uZJPPRmuEQzqZuzW0xMwfuEyArZRtGSsw-R0XJco_MEWyoaCBPhXxvP8n6uTXJNTUvNUCD4aE-V6SlUMcH1QoKtylsu5YkscnkRrw"/>
-          <div class="p-3">
-            <h4 class="font-headline-sm text-headline-sm text-on-surface">The Hearth Counter</h4>
-            <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">8 front-row seats watching chef Alexandre &amp; team manage live fire and plating.</p>
-          </div>
-        </div>
-
-        <div class="md:col-span-5 flex flex-col gap-gutter">
-          <div class="bg-surface-container border border-outline-variant p-2 flex-1">
-            <img class="w-full aspect-[16/9] object-cover" data-alt="Brass counter" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPx6H8EQN0WHt7vMQ33RgGH01VvgAY3aUWfDH4zpzlaLDFRJbfNf4sgq7adYFd8o6A18BNaAdvGCWH402n4XRwnU8UzzqK-o2nYyeaxr4ABuf4Fi2D0y8nDlrq5OSQVJjAKo0jRo8GgS3J0aLoBDh945s8Y-fkyv2KqoXR0tdRJdB0pbQ5OeywOAc_uJCyjkZoetus8rWAWLwwmRfqI101W_n3nLR0lCBpF1Ur-sDbpqot_LVUPpRiAg"/>
-            <div class="p-3">
-              <h4 class="font-title-menu-item text-title-menu-item text-on-surface">The Brass Bar &amp; Banquettes</h4>
-              <p class="font-body-sm text-body-sm text-on-surface-variant">Low-key aperitifs, raw bar courses, and walk-in counter dining.</p>
-            </div>
-          </div>
-          <div class="bg-surface-container border border-outline-variant p-2 flex-1">
-            <img class="w-full aspect-[16/9] object-cover" data-alt="Vault cellar room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkxBmCORzK4VytccxjThaSFhopYZRozatAvxVD7vCNa-DOv--Ty93vYb4WZOJV6MyGKp6bTx15jyAGS9oW4NHBppzLjowDJMmp7ehgtfCi1bZjmGfL0XfH7C7hENfDc0tK7pRlSTZ1RBjVr3QYOH0ePBE1Eii1rZ3zMqsu_HS3IseLvcMdUbSmPUby9pbCyF6y2G6m8FcW54k0UC2wdaIAjOTTYQ6OM1GdL3YODIROaS_PiHTM2Dj9XA"/>
-            <div class="p-3">
-              <h4 class="font-title-menu-item text-title-menu-item text-on-surface">The Subterranean Vault</h4>
-              <p class="font-body-sm text-body-sm text-on-surface-variant">Private communal dining for up to 12 guests surrounded by our grand cru bottles.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Interactive Multi-Step Reservation Suite Connected to Backend -->
-    <section class="max-w-7xl mx-auto px-margin md:px-margin-desktop py-space-2xl border-b border-outline-variant" id="reservations">
-      <div class="max-w-3xl mb-space-lg">
-        <span class="font-label-uppercase text-label-uppercase text-secondary tracking-widest">RESERVATION SUITE</span>
-        <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mt-1">Book your table at Maison Ember</h2>
-        <p class="font-body-md text-body-md text-on-surface-variant mt-2">
-          Reservations open 30 days in advance at 10:00 AM Paris time. For parties larger than 8 or cellar salon takeovers, please consult our private dining team.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter lg:gap-gutter-desktop">
-        <!-- Interactive Booking Form (8 Cols) -->
-        <div class="lg:col-span-8 bg-surface border border-outline-variant p-6 sm:p-8 space-y-8">
+  <!-- ========================================== -->
+  <!-- 3. HERO SECTION (DYNAMIC SIZZLE / CAROUSEL) -->
+  <!-- ========================================== -->
+  <section id="hero-section" class="relative overflow-hidden bg-stone-900 text-white transition-colors duration-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 py-12 lg:py-20">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <!-- Left Column: Dynamic Headline, Badges & Story -->
+        <div class="lg:col-span-7 space-y-6">
           
-          <!-- Step 1: Party Size & Seating Zone -->
-          <div>
-            <div class="flex items-center justify-between border-b border-outline-variant pb-2 mb-4">
-              <span class="font-label-uppercase text-label-uppercase text-primary tracking-widest">STEP 1 · PARTY SIZE &amp; ATMOSPHERE</span>
-              <span class="font-label-caption text-label-caption text-on-surface-variant">Dinner service Tue–Sat</span>
+          <!-- Rating & Concept Pill -->
+          <div class="inline-flex items-center gap-2 bg-stone-800/80 border border-stone-700 text-amber-300 text-xs px-3.5 py-1 rounded-full font-semibold">
+            <span id="hero-badge-rating" class="font-black text-amber-400">★ 4.6 Verified Google Rating</span>
+            <span class="text-stone-500">·</span>
+            <span id="hero-badge-detail">4,485+ Diners · Pure Authentic Flavors</span>
+          </div>
+
+          <!-- Dynamic Main Title -->
+          <h1 id="hero-title" class="font-serif text-3xl sm:text-5xl lg:text-6xl font-black leading-[1.12] tracking-tight text-white">
+            Authentic Kolhapuri Thalis, Pure Ghee Mutton &amp; <span class="text-amber-400 underline decoration-red-600 underline-offset-8">Fiery Rassa</span>.
+          </h1>
+
+          <!-- Dynamic Narrative Description -->
+          <p id="hero-desc" class="text-stone-300 text-sm sm:text-base leading-relaxed max-w-xl font-normal">
+            Rooted in ancestral culinary tradition. Slow-cooked over rustic chulhas using hand-pounded Byadgi &amp; Lavangi chilies, stoneground masalas, and pure Gir cow desi ghee. Served with hot Jowar Bhakris and unlimited bowls of Tambda &amp; Pandhra Rassa.
+          </p>
+
+          <!-- 3 Highlight Badges Grid -->
+          <div id="hero-badges-grid" class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+            <div class="bg-stone-800/70 p-3 rounded-lg border border-stone-700">
+              <span class="block font-bold text-xs text-amber-400">UNLIMITED RASSA</span>
+              <span class="text-[11px] text-stone-300">Free Tambda &amp; Pandhra refills</span>
             </div>
-
-            <!-- Party Size Selector Buttons -->
-            <label class="block font-body-sm text-body-sm text-on-surface font-medium mb-2">Number of Guests</label>
-            <div class="grid grid-cols-4 sm:grid-cols-8 gap-2 mb-6" id="party-size-selector">
-              <button class="party-btn py-2.5 text-center border border-outline-variant hover:border-primary font-price-numeral text-price-numeral rounded transition-colors" data-party="1" type="button">1</button>
-              <button class="party-btn py-2.5 text-center border border-primary-container bg-primary-container text-on-primary font-price-numeral text-price-numeral rounded transition-colors" data-party="2" type="button">2</button>
-              <button class="party-btn py-2.5 text-center border border-outline-variant hover:border-primary font-price-numeral text-price-numeral rounded transition-colors" data-party="3" type="button">3</button>
-              <button class="party-btn py-2.5 text-center border border-outline-variant hover:border-primary font-price-numeral text-price-numeral rounded transition-colors" data-party="4" type="button">4</button>
-              <button class="party-btn py-2.5 text-center border border-outline-variant hover:border-primary font-price-numeral text-price-numeral rounded transition-colors" data-party="5" type="button">5</button>
-              <button class="party-btn py-2.5 text-center border border-outline-variant hover:border-primary font-price-numeral text-price-numeral rounded transition-colors" data-party="6" type="button">6</button>
-              <button class="party-btn py-2.5 text-center border border-outline-variant hover:border-primary font-price-numeral text-price-numeral rounded transition-colors" data-party="7" type="button">7</button>
-              <button class="party-btn py-2.5 text-center border border-outline-variant hover:border-primary font-price-numeral text-price-numeral rounded transition-colors" data-party="8" type="button">8</button>
+            <div class="bg-stone-800/70 p-3 rounded-lg border border-stone-700">
+              <span class="block font-bold text-xs text-amber-400">DESI GHEE COOKED</span>
+              <span class="text-[11px] text-stone-300">Pure Gir cow bilona ghee</span>
             </div>
-
-            <!-- Seating Zone Radio Tiles -->
-            <label class="block font-body-sm text-body-sm text-on-surface font-medium mb-2">Preferred Seating Area</label>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3" id="seating-area-selector">
-              <div class="area-card border-2 border-primary-container bg-surface-container p-3.5 cursor-pointer rounded transition-all" data-area="Main Dining Room">
-                <div class="flex items-center justify-between">
-                  <span class="font-body-md text-body-md font-medium text-on-surface">Main Dining Room</span>
-                  <span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
-                </div>
-                <p class="font-label-caption text-label-caption text-on-surface-variant mt-1">Spacious banquettes, candlelit room</p>
-              </div>
-
-              <div class="area-card border border-outline-variant p-3.5 cursor-pointer rounded hover:border-outline transition-all" data-area="Hearth Counter">
-                <div class="flex items-center justify-between">
-                  <span class="font-body-md text-body-md font-medium text-on-surface">Hearth Counter</span>
-                  <span class="material-symbols-outlined text-on-surface-variant" data-icon="restaurant">restaurant</span>
-                </div>
-                <p class="font-label-caption text-label-caption text-on-surface-variant mt-1">High stools overlooking the coals</p>
-              </div>
-
-              <div class="area-card border border-outline-variant p-3.5 cursor-pointer rounded hover:border-outline transition-all" data-area="Wine Vault Salon">
-                <div class="flex items-center justify-between">
-                  <span class="font-body-md text-body-md font-medium text-on-surface">Wine Vault Salon</span>
-                  <span class="material-symbols-outlined text-on-surface-variant" data-icon="wine_bar">wine_bar</span>
-                </div>
-                <p class="font-label-caption text-label-caption text-on-surface-variant mt-1">Historic 17th-c. cellar room</p>
-              </div>
+            <div class="bg-stone-800/70 p-3 rounded-lg border border-stone-700">
+              <span class="block font-bold text-xs text-amber-400">HOT CHULHA BHAKRI</span>
+              <span class="text-[11px] text-stone-300">Jowar &amp; Bajra baked fresh</span>
             </div>
           </div>
 
-          <!-- Step 2: Date & Service Slots -->
-          <div>
-            <div class="flex items-center justify-between border-b border-outline-variant pb-2 mb-4">
-              <span class="font-label-uppercase text-label-uppercase text-primary tracking-widest">STEP 2 · DATE &amp; SERVICE TIME</span>
-              <span class="font-label-caption text-label-caption text-on-surface-variant">Real-time availability backed by API</span>
-            </div>
+          <!-- Main Call to Actions -->
+          <div class="flex flex-wrap items-center gap-3 pt-3">
+            <a href="#whatsapp-order-section" class="bg-green-600 hover:bg-green-500 text-white text-xs font-bold uppercase tracking-wider px-6 py-3.5 rounded-lg shadow-lg transition-all flex items-center gap-2">
+              <span class="material-symbols-outlined text-base">chat</span>
+              <span>Order on WhatsApp (0% Fee)</span>
+            </a>
+            
+            <a href="#reservations-section" class="bg-stone-800 hover:bg-stone-700 border border-stone-600 text-white text-xs font-bold uppercase tracking-wider px-6 py-3.5 rounded-lg transition-all flex items-center gap-2">
+              <span class="material-symbols-outlined text-base">calendar_month</span>
+              <span>Reserve Table</span>
+            </a>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-              <div>
-                <label class="block font-body-sm text-body-sm text-on-surface font-medium mb-1" for="reservation-date">Select Evening</label>
-                <input class="w-full bg-surface border border-outline-variant px-3 py-2.5 text-on-surface font-body-md text-body-md rounded focus:outline-none focus:border-primary-container" id="reservation-date" type="date"/>
-              </div>
-              <div>
-                <label class="block font-body-sm text-body-sm text-on-surface font-medium mb-1">Service Type</label>
-                <div class="p-2.5 bg-surface-container border border-outline-variant text-on-surface font-body-sm text-body-sm rounded">
-                  Dinner Service · 18h00 to 23h30
-                </div>
-              </div>
-            </div>
-
-            <!-- Time Slots Grid (Dynamically rendered from /api/reservations/availability) -->
-            <label class="block font-body-sm text-body-sm text-on-surface font-medium mb-2">Available Sittings</label>
-            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="time-slot-grid">
-              <!-- Rendered via JS -->
-            </div>
-          </div>
-
-          <!-- Step 3: Guest Contact Details -->
-          <div>
-            <div class="flex items-center justify-between border-b border-outline-variant pb-2 mb-4">
-              <span class="font-label-uppercase text-label-uppercase text-primary tracking-widest">STEP 3 · GUEST INFORMATION</span>
-              <span class="font-label-caption text-label-caption text-on-surface-variant">Confidential verification</span>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label class="block font-body-sm text-body-sm text-on-surface mb-1" for="guest-name">Full Name *</label>
-                <input class="w-full bg-surface border border-outline-variant px-3.5 py-2.5 text-on-surface font-body-md text-body-md rounded focus:outline-none focus:border-primary-container" id="guest-name" placeholder="e.g. Éléonore de la Tour" type="text" value="Éléonore de la Tour"/>
-              </div>
-              <div>
-                <label class="block font-body-sm text-body-sm text-on-surface mb-1" for="guest-email">Email Address *</label>
-                <input class="w-full bg-surface border border-outline-variant px-3.5 py-2.5 text-on-surface font-body-md text-body-md rounded focus:outline-none focus:border-primary-container" id="guest-email" placeholder="name@domaine.fr" type="email" value="eleonore.latour@paris.com"/>
-              </div>
-              <div>
-                <label class="block font-body-sm text-body-sm text-on-surface mb-1" for="guest-phone">Telephone (Mobile) *</label>
-                <input class="w-full bg-surface border border-outline-variant px-3.5 py-2.5 text-on-surface font-body-md text-body-md rounded focus:outline-none focus:border-primary-container" id="guest-phone" placeholder="+33 6 12 34 56 78" type="tel" value="+33 6 54 89 21 00"/>
-              </div>
-              <div>
-                <label class="block font-body-sm text-body-sm text-on-surface mb-1" for="guest-notes">Dietary &amp; Celebrations</label>
-                <input class="w-full bg-surface border border-outline-variant px-3.5 py-2.5 text-on-surface font-body-md text-body-md rounded focus:outline-none focus:border-primary-container" id="guest-notes" placeholder="Allergies, anniversary, wine preferences..." type="text" value="Anniversary celebration · 1 pescatarian guest"/>
-              </div>
-            </div>
-          </div>
-
-          <!-- Submit Button -->
-          <div class="pt-2">
-            <button class="w-full bg-primary-container text-on-primary font-label-uppercase text-label-uppercase tracking-wider py-4 rounded hover:bg-primary transition-colors flex items-center justify-center space-x-2" id="confirm-reservation-btn" type="button">
-              <span>Complete Table Reservation</span>
-              <span class="material-symbols-outlined" data-icon="done">done</span>
-            </button>
-            <p class="font-label-caption text-label-caption text-on-surface-variant text-center mt-2.5">
-              Instant confirmation will be dispatched via SMS &amp; Email with calendar pass.
-            </p>
-          </div>
-        </div>
-
-        <!-- Live Reservation Folio / Summary Sidebar -->
-        <div class="lg:col-span-4 space-y-6">
-          <div class="bg-surface-container border border-outline-variant p-6 space-y-5">
-            <div class="border-b border-outline pb-3">
-              <span class="font-label-uppercase text-label-uppercase text-secondary tracking-widest">SUMMARY FOLIO</span>
-              <h3 class="font-headline-sm text-headline-sm text-on-surface mt-1">Your Evening at Ember</h3>
-            </div>
-
-            <!-- Dynamic Live Summary List -->
-            <dl class="space-y-3 font-body-sm text-body-sm">
-              <div class="flex justify-between py-1 border-b border-outline-variant">
-                <dt class="text-on-surface-variant">Guests</dt>
-                <dd class="font-medium text-on-surface" id="summary-party">2 Guests</dd>
-              </div>
-              <div class="flex justify-between py-1 border-b border-outline-variant">
-                <dt class="text-on-surface-variant">Date</dt>
-                <dd class="font-medium text-on-surface" id="summary-date">Today</dd>
-              </div>
-              <div class="flex justify-between py-1 border-b border-outline-variant">
-                <dt class="text-on-surface-variant">Service Time</dt>
-                <dd class="font-medium text-primary" id="summary-time">19:45 Sitting</dd>
-              </div>
-              <div class="flex justify-between py-1 border-b border-outline-variant">
-                <dt class="text-on-surface-variant">Seating Area</dt>
-                <dd class="font-medium text-on-surface" id="summary-area">Main Dining Room</dd>
-              </div>
-              <div class="flex justify-between py-1 border-b border-outline-variant">
-                <dt class="text-on-surface-variant">Table Hold</dt>
-                <dd class="text-on-surface">15 Minutes</dd>
-              </div>
-            </dl>
-
-            <!-- House Hospitality Policy -->
-            <div class="bg-surface p-4 border border-outline-variant space-y-2">
-              <div class="flex items-center space-x-1.5 text-on-surface">
-                <span class="material-symbols-outlined text-secondary" data-icon="info">info</span>
-                <h4 class="font-body-sm text-body-sm font-semibold">House Policy</h4>
-              </div>
-              <p class="font-label-caption text-label-caption text-on-surface-variant leading-relaxed">
-                Tables are held for 15 minutes past the reserved hour. Cancellations are welcomed up to 6 hours prior without fee. We look forward to cooking for you.
-              </p>
-            </div>
-
-            <!-- Concierge Contact Direct -->
-            <div class="text-center pt-2">
-              <p class="font-label-caption text-label-caption text-on-surface-variant">
-                Need bespoke arrangements? Call maitre d' at <br/>
-                <a class="text-primary font-medium hover:underline" href="tel:0142685500">01 42 68 55 00</a>
-              </p>
-            </div>
-          </div>
-
-          <!-- Wine Cellar Tasting Notice -->
-          <div class="p-5 border border-outline-variant bg-surface space-y-2">
-            <span class="font-label-uppercase text-label-uppercase text-secondary tracking-widest">SOMMELIER NOTE</span>
-            <p class="font-body-sm text-body-sm text-on-surface-variant">
-              Interested in our pairing voyage? Camille Roy pairs rare Jura and Savennières magnums directly with your selected hearth courses upon arrival.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Location, Hours & Practical Transit -->
-    <section class="max-w-7xl mx-auto px-margin md:px-margin-desktop py-space-2xl border-b border-outline-variant" id="location">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter lg:gap-gutter-desktop items-start">
-        <div class="lg:col-span-5 space-y-6">
-          <div>
-            <span class="font-label-uppercase text-label-uppercase text-secondary tracking-widest">FINDING MAISON EMBER</span>
-            <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mt-1">14 Rue des Tournelles</h2>
-            <p class="font-body-md text-body-md text-on-surface-variant">75004 Paris, France</p>
-          </div>
-
-          <div class="space-y-4 border-t border-outline-variant pt-4">
-            <div>
-              <h4 class="font-label-uppercase text-label-uppercase text-on-surface">Weekly Service Schedule</h4>
-              <ul class="mt-2 space-y-1 font-body-sm text-body-sm text-on-surface-variant">
-                <li class="flex justify-between"><span>Tuesday – Friday:</span> <span class="font-price-numeral text-on-surface">18h00 — 23h30</span></li>
-                <li class="flex justify-between"><span>Saturday:</span> <span class="font-price-numeral text-on-surface">12h30 — 15h00 &amp; 18h00 — 23h30</span></li>
-                <li class="flex justify-between"><span>Sunday &amp; Monday:</span> <span class="text-outline">Closed for hearth rest</span></li>
-              </ul>
-            </div>
-
-            <div class="border-t border-outline-variant pt-4">
-              <h4 class="font-label-uppercase text-label-uppercase text-on-surface">Access &amp; Transport</h4>
-              <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
-                <strong class="text-on-surface">Metro:</strong> Bastille (Lines 1, 5, 8) — 3 min walk. <br/>
-                Saint-Paul (Line 1) — 6 min walk along Rue Saint-Antoine. <br/>
-                <strong class="text-on-surface">Public Parking:</strong> Parking Indigo Bastille (Rue Saint-Antoine).
-              </p>
-            </div>
-
-            <div class="border-t border-outline-variant pt-4">
-              <h4 class="font-label-uppercase text-label-uppercase text-on-surface">Dress Code &amp; Atmosphere</h4>
-              <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
-                Casual elegance; come as you are. Well-behaved hounds welcomed at the front hearth counter.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Architectural Location Vignette Map Frame -->
-        <div class="lg:col-span-7 bg-surface-container border border-outline-variant p-2">
-          <img class="w-full aspect-[16/10] object-cover" data-alt="Rue des Tournelles street view" data-location="Paris" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEwW_eUOUZKdnfAtf83ndMDXGK-OZJZrG_ysf8eWPtNFOrH_GwbPBAKr9zLr9igxkKrFgUuWIB4QERxLf_NY_5A5sTdeA9jk0gBYUaXM1PJNO-zBLs-LOOBnnF1A5ensVSQ_QM5Qx3gKT-itBfzxGk-1M47pan-sPTTG2tCXDmu5VigTcBl9MzxfOdqv0eEgqdYw2JufWLGswElrID4vkxTOdgJqeV7Uv6MvQwF3ctD1yI5hal9Hp3_w"/>
-          <div class="p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
-            <span class="font-body-sm text-body-sm text-on-surface font-medium">Located on the historic boundary of the Marais and Bastille</span>
-            <a class="font-label-uppercase text-label-uppercase text-primary hover:underline inline-flex items-center gap-1" href="https://maps.google.com" rel="noopener noreferrer" target="_blank">
-              <span>Open in Maps</span>
-              <span class="material-symbols-outlined text-xs" data-icon="open_in_new">open_in_new</span>
+            <a href="#menu-section" class="text-xs font-bold text-amber-400 hover:text-amber-300 flex items-center gap-1 py-2 px-1">
+              <span>Explore Digital Menu</span>
+              <span class="material-symbols-outlined text-sm">arrow_forward</span>
             </a>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Editorial Guestbook & Cellar Notes Newsletter Connected to Backend -->
-    <section class="max-w-7xl mx-auto px-margin md:px-margin-desktop py-space-xl">
-      <div class="bg-surface-container border border-outline-variant p-8 md:p-12">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
-          <div class="md:col-span-7 space-y-2">
-            <span class="font-label-uppercase text-label-uppercase text-secondary tracking-widest">THE EMBER JOURNAL</span>
-            <h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">
-              Cellar notes, wild foraging dispatches, and private salon dates.
-            </h3>
-            <p class="font-body-sm text-body-sm text-on-surface-variant max-w-xl">
-              Published once a month on the full moon. No promotional noise—only reports on current vintage arrivals and upcoming winemaker dinners.
-            </p>
+          <!-- Pitch Benefit Tagline -->
+          <div class="pt-2 text-[11px] text-stone-400 flex items-center gap-2">
+            <span class="material-symbols-outlined text-sm text-green-400">check_circle</span>
+            <span>Zero Swiggy/Zomato commission · Instant customer WhatsApp dispatch · 100% Mobile Ready</span>
           </div>
 
-          <div class="md:col-span-5">
-            <form class="space-y-3" id="newsletter-form">
-              <div class="flex flex-col sm:flex-row gap-2">
-                <input class="flex-1 bg-surface border border-outline-variant px-4 py-3 text-on-surface font-body-sm text-body-sm rounded focus:outline-none focus:border-primary-container" id="newsletter-email" placeholder="Enter your email address" required="" type="email"/>
-                <button class="bg-primary-container text-on-primary font-label-uppercase text-label-uppercase px-6 py-3 rounded hover:bg-primary transition-colors whitespace-nowrap" type="submit">
-                  Join Guestbook
+        </div>
+
+        <!-- Right Column: Media Viewer (Video vs Carousel Switcher) -->
+        <div class="lg:col-span-5">
+          <div class="bg-stone-950 border border-stone-800 rounded-2xl p-4 sm:p-5 shadow-2xl relative">
+            
+            <!-- View Mode Switcher Header -->
+            <div class="flex items-center justify-between pb-3 mb-3 border-b border-stone-800">
+              <span class="text-xs font-bold uppercase tracking-wider text-amber-400 flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
+                <span id="hero-media-label">Atmospheric Sizzle Reel</span>
+              </span>
+
+              <!-- Video vs Carousel Toggle Pill -->
+              <div class="bg-stone-900 p-0.5 rounded-lg border border-stone-700 flex text-[11px] font-semibold">
+                <button id="btn-hero-video" onclick="setHeroMedia('video')" class="px-2.5 py-1 rounded bg-amber-500 text-stone-950 font-bold transition-all flex items-center gap-1">
+                  <span class="material-symbols-outlined text-xs">videocam</span>
+                  <span>Video</span>
+                </button>
+                <button id="btn-hero-carousel" onclick="setHeroMedia('carousel')" class="px-2.5 py-1 rounded text-stone-400 hover:text-white transition-all flex items-center gap-1">
+                  <span class="material-symbols-outlined text-xs">auto_awesome_motion</span>
+                  <span>Dishes</span>
                 </button>
               </div>
-              <span class="hidden" id="newsletter-feedback"></span>
-              <p class="font-label-caption text-label-caption text-on-surface-variant">
-                Unsubscribe at any moment with one click. We guard your privacy scrupulously.
-              </p>
-            </form>
+            </div>
+
+            <!-- Media Container 1: Live Sizzle Video -->
+            <div id="hero-media-video-wrapper" class="relative rounded-xl overflow-hidden aspect-[4/3] bg-black">
+              <video id="hero-video-player" class="w-full h-full object-cover" autoplay loop muted playsinline poster="the-thalis/images/poster.jpg">
+                <source src="the-thalis/videos/sizzle.mp4" type="video/mp4"/>
+                <source src="videos/hearth.mp4" type="video/mp4"/>
+              </video>
+              <div class="absolute bottom-3 left-3 right-3 bg-stone-950/80 backdrop-blur px-3 py-2 rounded-lg text-xs flex justify-between items-center text-stone-300 border border-stone-800">
+                <span id="video-caption-text">Fresh chulha flame cooking &amp; rassa simmering</span>
+                <span class="text-[10px] uppercase font-bold text-amber-400">4K Kitchen Loop</span>
+              </div>
+            </div>
+
+            <!-- Media Container 2: Top Dishes Auto-Carousel (Hidden by default) -->
+            <div id="hero-media-carousel-wrapper" class="hidden relative aspect-[4/3] bg-stone-900 rounded-xl p-4 flex flex-col justify-between border border-stone-800">
+              <div class="flex justify-between items-start">
+                <span id="carousel-badge" class="bg-red-700 text-white text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded">
+                  Signature Bestseller
+                </span>
+                <span id="carousel-price" class="text-2xl font-black text-amber-400 font-serif">
+                  ₹520
+                </span>
+              </div>
+
+              <div class="space-y-1 text-center py-4">
+                <h3 id="carousel-dish-title" class="font-serif text-2xl font-black text-white">
+                  Jatra Mutton Thali
+                </h3>
+                <p id="carousel-dish-sub" class="text-xs text-amber-200/90 font-medium">
+                  मटन सुक्का, मटन फ्राय, अमर्याद तांबडा-पांढरा रस्सा
+                </p>
+                <p id="carousel-dish-desc" class="text-xs text-stone-400 line-clamp-2 max-w-sm mx-auto">
+                  Royal feast with unlimited rassa bowls, 2 hot chulha bhakris, and fragrant Indrayani rice.
+                </p>
+              </div>
+
+              <div class="flex items-center justify-between pt-2 border-t border-stone-800">
+                <button onclick="prevCarouselSlide()" class="w-8 h-8 rounded-full bg-stone-800 hover:bg-stone-700 flex items-center justify-center text-stone-300">
+                  <span class="material-symbols-outlined text-sm">chevron_left</span>
+                </button>
+                <div class="flex items-center gap-1.5" id="carousel-dots-container">
+                  <!-- Dots generated dynamically -->
+                </div>
+                <button onclick="nextCarouselSlide()" class="w-8 h-8 rounded-full bg-stone-800 hover:bg-stone-700 flex items-center justify-center text-stone-300">
+                  <span class="material-symbols-outlined text-sm">chevron_right</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Client Pitch Callout underneath Media -->
+            <p class="text-[11px] text-stone-400 text-center mt-3">
+              💡 <em>Restaurant owners can showcase either their kitchen ambience video or an auto-rotating dishes carousel.</em>
+            </p>
+
           </div>
         </div>
-      </div>
-    </section>
-  </main>
 
-  <!-- Footer -->
-  <footer class="w-full bg-surface-container border-t border-outline-variant">
-    <div class="w-full px-margin md:px-margin-desktop py-space-xl max-w-7xl mx-auto space-y-8">
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
-        <!-- Left: Wordmark & Heritage -->
-        <div class="md:col-span-4 space-y-3">
-          <a class="font-headline-md text-headline-md text-on-surface" href="#top">Maison Ember</a>
-          <p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs">
-            Open-hearth cooking &amp; natural cellar. 14 Rue des Tournelles, 75004 Paris.
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 4. FEATURE 1: SMART DIGITAL QR MENU       -->
+  <!-- ========================================== -->
+  <section id="menu-section" class="py-16 bg-white border-b border-stone-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-amber-600 block mb-1">SMART DIGITAL CARTE</span>
+          <h2 id="menu-section-title" class="font-serif text-3xl sm:text-4xl font-black text-stone-900">
+            Interactive Restaurant Menu
+          </h2>
+          <p id="menu-section-desc" class="text-sm text-stone-600 mt-1 max-w-xl">
+            Live filter by category, dietary preferences, or search keyword. Switch language instantly between English, Marathi &amp; Hindi.
           </p>
         </div>
 
-        <!-- Center: Quick Shared Links -->
-        <div class="md:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <ul class="space-y-2">
-            <li><span class="text-on-surface-variant font-body-sm text-body-sm">Service Hours: Tue–Sat 18h00–23h30</span></li>
-            <li><span class="text-on-surface-variant font-body-sm text-body-sm">14 Rue des Tournelles, 75004 Paris</span></li>
-            <li><span class="text-on-surface-variant font-body-sm text-body-sm">Metro: Bastille / Saint-Paul</span></li>
-          </ul>
-          <ul class="space-y-2">
-            <li><a class="text-on-surface-variant font-body-sm text-body-sm hover:text-primary transition-colors duration-150" href="mailto:cave@maisonember.com">Wine Enquiries</a></li>
-            <li><a class="text-on-surface-variant font-body-sm text-body-sm hover:text-primary transition-colors duration-150" href="#cellar">Press &amp; Journal</a></li>
-            <li><a class="text-primary font-body-sm text-body-sm hover:underline transition-colors duration-150" href="admin.html">Staff Table Desk &amp; Admin</a></li>
-          </ul>
+        <!-- Language Switcher Bar -->
+        <div class="flex items-center gap-2 bg-stone-100 p-1 rounded-lg border border-stone-200 self-start md:self-auto">
+          <span class="text-[11px] font-bold text-stone-500 uppercase tracking-wider px-2">Language:</span>
+          <button id="lang-btn-en" onclick="setMenuLanguage('en')" class="px-3 py-1 text-xs font-bold rounded bg-amber-500 text-stone-950 shadow-sm transition-all">English</button>
+          <button id="lang-btn-mr" onclick="setMenuLanguage('mr')" class="px-3 py-1 text-xs font-bold rounded text-stone-700 hover:text-stone-900 transition-all">मराठी</button>
+          <button id="lang-btn-hi" onclick="setMenuLanguage('hi')" class="px-3 py-1 text-xs font-bold rounded text-stone-700 hover:text-stone-900 transition-all">हिन्दी</button>
         </div>
+      </div>
 
-        <!-- Right: Direct Phone & Back to Top -->
-        <div class="md:col-span-3 md:text-right space-y-3">
-          <a class="font-price-numeral text-price-numeral text-on-surface font-semibold hover:text-primary transition-colors" href="tel:0142685500">
-            +33 (0)1 42 68 55 00
-          </a>
-          <div>
-            <a class="inline-flex items-center space-x-1 font-label-uppercase text-label-uppercase text-on-surface-variant hover:text-primary transition-colors" href="#top">
-              <span>Back to Top</span>
-              <span class="material-symbols-outlined text-xs" data-icon="arrow_upward">arrow_upward</span>
-            </a>
+      <!-- Controls Row: Search & Filters -->
+      <div class="bg-stone-50 border border-stone-200 p-4 rounded-xl mb-8 space-y-4">
+        
+        <div class="flex flex-col sm:flex-row gap-3 items-center justify-between">
+          <!-- Search Input -->
+          <div class="relative w-full sm:w-72">
+            <span class="material-symbols-outlined absolute left-3 top-2.5 text-stone-400 text-sm">search</span>
+            <input type="text" id="menu-search-input" oninput="filterMenuItems()" placeholder="Search dishes (e.g. mutton, rassa, bhakri)..." class="w-full bg-white border border-stone-300 pl-9 pr-3 py-2 rounded-lg text-xs text-stone-800 focus:outline-none focus:border-amber-500"/>
+          </div>
+
+          <!-- Veg / Non-Veg Diet Filter -->
+          <div class="flex items-center gap-1.5 w-full sm:w-auto overflow-x-auto pb-1 sm:pb-0">
+            <span class="text-xs font-semibold text-stone-500 mr-1">Diet:</span>
+            <button onclick="setDietFilter('all')" id="diet-btn-all" class="px-3 py-1.5 text-xs font-bold rounded-lg bg-stone-800 text-white transition-all">All</button>
+            <button onclick="setDietFilter('veg')" id="diet-btn-veg" class="px-3 py-1.5 text-xs font-bold rounded-lg bg-white border border-stone-300 text-green-700 hover:bg-green-50 transition-all flex items-center gap-1">
+              <span class="diet-box-veg"><span class="veg-dot"></span></span>
+              <span>Pure Veg</span>
+            </button>
+            <button onclick="setDietFilter('nonveg')" id="diet-btn-nonveg" class="px-3 py-1.5 text-xs font-bold rounded-lg bg-white border border-stone-300 text-red-700 hover:bg-red-50 transition-all flex items-center gap-1">
+              <span class="diet-box-nonveg"><span class="non-veg-dot"></span></span>
+              <span>Non-Veg</span>
+            </button>
           </div>
         </div>
+
+        <!-- Category Buttons Tabs -->
+        <div id="menu-category-tabs" class="flex items-center gap-2 overflow-x-auto no-scrollbar pt-2 border-t border-stone-200">
+          <!-- Dynamically populated categories -->
+        </div>
+
       </div>
 
-      <!-- Copyright Bar -->
-      <div class="pt-6 border-t border-outline-variant flex flex-col sm:flex-row justify-between items-center text-label-caption font-label-caption text-on-surface-variant">
-        <p>© Maison Ember Atelier Culinaire. All rights reserved. Open-hearth service &amp; cellar.</p>
-        <p class="mt-2 sm:mt-0">TVA FR 78 849 201 394 · Siret 849 201 394 00018</p>
+      <!-- Menu Grid Cards Container -->
+      <div id="menu-items-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Rendered dynamically by JavaScript -->
       </div>
+
     </div>
-  </footer>
+  </section>
 
-  <!-- Confirmation Receipt Modal -->
-  <div class="modal-overlay hidden" id="reservation-receipt-modal">
-    <div class="modal-content p-6 sm:p-8 rounded-lg animate-fade-in space-y-6">
-      <div class="flex items-start justify-between border-b border-outline pb-4">
+  <!-- ========================================== -->
+  <!-- 5. FEATURE 2: 0% COMMISSION WHATSAPP ORDER -->
+  <!-- ========================================== -->
+  <section id="whatsapp-order-section" class="py-16 bg-gradient-to-b from-stone-900 to-stone-950 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        
+        <!-- Left Column: Value Pitch for Restaurant Owners -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="inline-flex items-center gap-1.5 bg-green-500/20 border border-green-500/50 text-green-400 text-xs px-3 py-1 rounded-full font-bold">
+            <span class="material-symbols-outlined text-sm">savings</span>
+            <span>0% Commission Direct Ordering</span>
+          </div>
+
+          <h2 class="font-serif text-3xl sm:text-4xl font-black text-white leading-tight">
+            Stop Paying 30% Swiggy &amp; Zomato Commissions.
+          </h2>
+
+          <p class="text-stone-300 text-sm leading-relaxed">
+            Customers browse your digital menu, customize their order (spice level, bread choices, instructions), and send the order directly to your restaurant's WhatsApp with one tap.
+          </p>
+
+          <!-- Benefits List -->
+          <ul class="space-y-3 text-xs text-stone-300">
+            <li class="flex items-start gap-2">
+              <span class="material-symbols-outlined text-green-400 text-sm mt-0.5">check_circle</span>
+              <span><strong>Keep 100% of Revenue:</strong> Save ₹30,000 to ₹1,50,000+ every month in aggregator commissions.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="material-symbols-outlined text-green-400 text-sm mt-0.5">check_circle</span>
+              <span><strong>Direct Customer Phone Numbers:</strong> Build your own loyal customer database for festival campaigns.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="material-symbols-outlined text-green-400 text-sm mt-0.5">check_circle</span>
+              <span><strong>No App Download Needed:</strong> Works seamlessly in any mobile browser on any smartphone.</span>
+            </li>
+          </ul>
+
+          <div class="bg-stone-800/80 border border-stone-700 p-4 rounded-xl space-y-2">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider block">WhatsApp Order Preview</span>
+            <div class="bg-stone-950 p-3 rounded font-mono text-[11px] text-green-400 leading-relaxed border border-stone-800 whitespace-pre-line" id="whatsapp-preview-box">
+              🍽️ *NEW ORDER — THE THALIS*
+              Customer: Ramesh Kulkarni
+              Delivery: Tarabai Park, Kolhapur
+              --------------------------------
+              1x Jatra Mutton Thali (₹520)
+              1x Solkadhi (₹70)
+              Spice: Kolhapuri Tikhat · Bread: Jowar Bhakri
+              --------------------------------
+              *Total Amount: ₹590 (UPI / Cash)*
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Interactive Live Order Cart Sandbox -->
+        <div class="lg:col-span-7 bg-stone-800/90 border border-stone-700 rounded-2xl p-6 shadow-2xl text-stone-100">
+          <div class="flex justify-between items-center pb-4 border-b border-stone-700">
+            <div>
+              <h3 class="font-serif text-xl font-bold text-white">Interactive Order Builder</h3>
+              <p class="text-xs text-stone-400">Test how customers build and place orders in real time.</p>
+            </div>
+            <button onclick="clearDemoCart()" class="text-xs text-stone-400 hover:text-red-400 underline">Clear Cart</button>
+          </div>
+
+          <!-- Cart Items List Container -->
+          <div id="sandbox-cart-items" class="py-4 space-y-3 min-h-[140px] max-h-60 overflow-y-auto">
+            <!-- Dynamically populated or empty message -->
+          </div>
+
+          <!-- Order Preferences Form -->
+          <div class="pt-4 border-t border-stone-700 grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+            <div>
+              <label class="block font-semibold text-stone-300 mb-1">Customer Full Name *</label>
+              <input type="text" id="order-customer-name" value="Ramesh Kulkarni" class="w-full bg-stone-900 border border-stone-700 rounded-lg p-2.5 text-white focus:outline-none focus:border-amber-400"/>
+            </div>
+            <div>
+              <label class="block font-semibold text-stone-300 mb-1">Mobile WhatsApp Number *</label>
+              <input type="tel" id="order-customer-phone" value="9876543210" class="w-full bg-stone-900 border border-stone-700 rounded-lg p-2.5 text-white focus:outline-none focus:border-amber-400"/>
+            </div>
+            <div>
+              <label class="block font-semibold text-stone-300 mb-1">Order Mode</label>
+              <select id="order-type-select" onchange="updateCartTotal()" class="w-full bg-stone-900 border border-stone-700 rounded-lg p-2.5 text-white focus:outline-none focus:border-amber-400">
+                <option value="Home Delivery">Doorstep Home Delivery</option>
+                <option value="Takeaway / Pickup">Counter Takeaway / Pickup</option>
+                <option value="Dine-In (Table)">Dine-In (Table QR Order)</option>
+              </select>
+            </div>
+            <div>
+              <label class="block font-semibold text-stone-300 mb-1">Spice &amp; Customization</label>
+              <select id="order-spice-select" onchange="updateCartTotal()" class="w-full bg-stone-900 border border-stone-700 rounded-lg p-2.5 text-white focus:outline-none focus:border-amber-400">
+                <option value="Kolhapuri Tikhat (Authentic Fiery)">Authentic Spicy (Kolhapuri Tikhat)</option>
+                <option value="Medium Spicy">Medium Spicy</option>
+                <option value="Mild">Mild / Kids Friendly</option>
+              </select>
+            </div>
+            <div class="sm:col-span-2">
+              <label class="block font-semibold text-stone-300 mb-1">Delivery Address or Table Number</label>
+              <input type="text" id="order-address-input" value="Kadamwadi Rd, Tarabai Park, Kolhapur" class="w-full bg-stone-900 border border-stone-700 rounded-lg p-2.5 text-white focus:outline-none focus:border-amber-400"/>
+            </div>
+          </div>
+
+          <!-- Total Bill & Trigger WhatsApp Button -->
+          <div class="mt-6 pt-4 border-t border-stone-700 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+              <span class="text-xs text-stone-400 block">Total Bill Amount:</span>
+              <span id="order-total-amount" class="text-2xl font-black text-amber-400 font-serif">₹590</span>
+            </div>
+
+            <button onclick="dispatchWhatsAppOrder()" class="w-full sm:w-auto bg-green-600 hover:bg-green-500 text-white font-bold px-6 py-3.5 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 text-xs uppercase tracking-wider">
+              <span class="material-symbols-outlined text-base">send</span>
+              <span>Place Order via WhatsApp</span>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 6. FEATURE 3: TABLE RESERVATION SYSTEM     -->
+  <!-- ========================================== -->
+  <section id="reservations-section" class="py-16 bg-stone-50 border-b border-stone-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      
+      <div class="max-w-3xl mx-auto text-center mb-10">
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-600 block mb-1">SMART BOOKING ENGINE</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-black text-stone-900">
+          Online Table Reservations 24/7
+        </h2>
+        <p class="text-sm text-stone-600 mt-2">
+          Eliminate missed phone calls during peak kitchen hours. Guests book instantly with live seat availability and receive a calendar sync invite.
+        </p>
+      </div>
+
+      <!-- Booking Card Form -->
+      <div class="max-w-4xl mx-auto bg-white border border-stone-200 rounded-2xl p-6 sm:p-10 shadow-sm">
+        <form onsubmit="handleDemoReservation(event)" class="space-y-6">
+          
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <!-- Date Picker -->
+            <div>
+              <label class="block text-xs font-bold text-stone-700 mb-1">Select Date *</label>
+              <input type="date" id="res-date-input" required class="w-full bg-stone-50 border border-stone-300 rounded-lg p-2.5 text-xs text-stone-800 focus:outline-none focus:border-amber-500"/>
+            </div>
+
+            <!-- Party Size -->
+            <div>
+              <label class="block text-xs font-bold text-stone-700 mb-1">Party Size *</label>
+              <select id="res-party-select" class="w-full bg-stone-50 border border-stone-300 rounded-lg p-2.5 text-xs text-stone-800 focus:outline-none focus:border-amber-500">
+                <option value="2">2 Guests (Couple Table)</option>
+                <option value="4" selected>4 Guests (Family Table)</option>
+                <option value="6">6 Guests (Party Group)</option>
+                <option value="8">8 Guests (Large Banquet)</option>
+                <option value="12">12+ Guests (Private Area)</option>
+              </select>
+            </div>
+
+            <!-- Dining Area Selection -->
+            <div>
+              <label class="block text-xs font-bold text-stone-700 mb-1">Seating Area *</label>
+              <select id="res-area-select" class="w-full bg-stone-50 border border-stone-300 rounded-lg p-2.5 text-xs text-stone-800 focus:outline-none focus:border-amber-500">
+                <option value="Family AC Hall">Family AC Hall</option>
+                <option value="Open Chulha View">Chulha Fire View</option>
+                <option value="Terrace Garden">Terrace / Garden</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Time Slot Buttons -->
+          <div>
+            <label class="block text-xs font-bold text-stone-700 mb-2">Available Time Slots</label>
+            <div id="res-time-slots-container" class="grid grid-cols-3 sm:grid-cols-6 gap-2">
+              <button type="button" onclick="selectTimeSlot('12:30 PM')" class="time-slot-btn py-2 px-3 border border-stone-300 rounded-lg text-xs font-bold text-stone-700 hover:border-amber-500 hover:bg-amber-50">12:30 PM</button>
+              <button type="button" onclick="selectTimeSlot('01:30 PM')" class="time-slot-btn py-2 px-3 border border-stone-300 rounded-lg text-xs font-bold text-stone-700 hover:border-amber-500 hover:bg-amber-50">01:30 PM</button>
+              <button type="button" onclick="selectTimeSlot('02:30 PM')" class="time-slot-btn py-2 px-3 border border-stone-300 rounded-lg text-xs font-bold text-stone-700 hover:border-amber-500 hover:bg-amber-50">02:30 PM</button>
+              <button type="button" onclick="selectTimeSlot('07:30 PM')" class="time-slot-btn py-2 px-3 border border-amber-500 bg-amber-500 text-stone-950 font-bold rounded-lg text-xs">07:30 PM</button>
+              <button type="button" onclick="selectTimeSlot('08:45 PM')" class="time-slot-btn py-2 px-3 border border-stone-300 rounded-lg text-xs font-bold text-stone-700 hover:border-amber-500 hover:bg-amber-50">08:45 PM</button>
+              <button type="button" onclick="selectTimeSlot('09:45 PM')" class="time-slot-btn py-2 px-3 border border-stone-300 rounded-lg text-xs font-bold text-stone-700 hover:border-amber-500 hover:bg-amber-50">09:45 PM</button>
+            </div>
+            <input type="hidden" id="selected-time-slot" value="07:30 PM"/>
+          </div>
+
+          <!-- Guest Contact Info -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+            <div>
+              <label class="block text-xs font-bold text-stone-700 mb-1">Your Full Name *</label>
+              <input type="text" id="res-guest-name" required placeholder="e.g. Anand Shinde" class="w-full bg-stone-50 border border-stone-300 rounded-lg p-2.5 text-xs text-stone-800 focus:outline-none focus:border-amber-500"/>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-stone-700 mb-1">Phone Number *</label>
+              <input type="tel" id="res-guest-phone" required placeholder="e.g. 09823011223" class="w-full bg-stone-50 border border-stone-300 rounded-lg p-2.5 text-xs text-stone-800 focus:outline-none focus:border-amber-500"/>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-stone-700 mb-1">Email (For Calendar Invite)</label>
+              <input type="email" id="res-guest-email" placeholder="e.g. anand@gmail.com" class="w-full bg-stone-50 border border-stone-300 rounded-lg p-2.5 text-xs text-stone-800 focus:outline-none focus:border-amber-500"/>
+            </div>
+          </div>
+
+          <div class="flex justify-end pt-3">
+            <button type="submit" class="bg-amber-500 hover:bg-amber-600 text-stone-950 font-bold px-8 py-3.5 rounded-xl shadow transition-colors text-xs uppercase tracking-wider flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm">check_circle</span>
+              <span>Confirm Reservation Folio</span>
+            </button>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 7. FEATURE 4: GOOGLE MAPS & REVIEWS       -->
+  <!-- ========================================== -->
+  <section id="reviews-section" class="py-16 bg-white border-b border-stone-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <!-- Left: Google Rating Badge & Testimonials -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="inline-flex items-center gap-2 bg-amber-50 border border-amber-300 text-amber-900 text-xs px-3 py-1 rounded-full font-bold">
+            <span>★ 4.6 on Google Maps</span> · Verified Business Listing
+          </div>
+
+          <h2 class="font-serif text-3xl sm:text-4xl font-black text-stone-900">
+            Social Proof That Drives Customers to Dine In.
+          </h2>
+
+          <p class="text-sm text-stone-600 leading-relaxed">
+            Integrate live customer reviews, photos, and high-converting review badges directly from Google Maps to boost footfall and establish local trust.
+          </p>
+
+          <!-- Review Cards Slider -->
+          <div class="space-y-3">
+            <div class="bg-stone-50 border border-stone-200 p-4 rounded-xl">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="font-bold text-xs text-stone-900">Aditya Kulkarni</span>
+                <span class="text-amber-500 text-xs">★★★★★</span>
+              </div>
+              <p class="text-xs text-stone-600 italic">
+                "The authentic Kolhapuri flavors are unmatched. Unlimited tambda and pandhra rassa served steaming hot with mutton chops thali is pure heaven!"
+              </p>
+              <span class="text-[10px] text-stone-400 mt-2 block">Dined 3 days ago · Local Guide</span>
+            </div>
+
+            <div class="bg-stone-50 border border-stone-200 p-4 rounded-xl">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="font-bold text-xs text-stone-900">Dr. Snehal Patil</span>
+                <span class="text-amber-500 text-xs">★★★★★</span>
+              </div>
+              <p class="text-xs text-stone-600 italic">
+                "Family friendly, quick service and extremely hygienic. The hot chulha bhakris and veg pithla thali are exceptional."
+              </p>
+              <span class="text-[10px] text-stone-400 mt-2 block">Dined last week</span>
+            </div>
+          </div>
+
+          <!-- Direct Location Actions -->
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <a id="google-maps-link" href="https://www.google.com/maps/dir/?api=1&destination=The+Thalis+-+Kolhapuri+Thali,+Kadamwadi+Rd,+opp.+to+hotel+lisha,+Laxminarayan+Nagar,+Tarabai+Park,+Kolhapur,+Maharashtra+416003" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-5 py-2.5 rounded-lg text-xs flex items-center gap-1.5 shadow transition-colors">
+              <span class="material-symbols-outlined text-sm">directions</span>
+              <span>Get Directions on Google Maps</span>
+            </a>
+            
+            <a href="tel:07744966966" class="border border-stone-300 hover:bg-stone-100 font-bold px-5 py-2.5 rounded-lg text-xs flex items-center gap-1.5 transition-colors text-stone-800">
+              <span class="material-symbols-outlined text-sm text-green-600">call</span>
+              <span>Call Restaurant Directly</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right: Interactive Map Simulation -->
+        <div class="lg:col-span-6 bg-stone-100 border border-stone-300 rounded-2xl overflow-hidden p-3 shadow-md">
+          <div class="bg-stone-800 text-white p-3 rounded-lg text-xs flex justify-between items-center mb-2">
+            <div>
+              <strong id="map-venue-name" class="block font-bold">The Thalis — Kolhapuri Thali</strong>
+              <span id="map-venue-address" class="text-stone-300 text-[11px]">Kadamwadi Rd, Opp. Hotel Lisha, Tarabai Park, Kolhapur</span>
+            </div>
+            <span class="bg-green-600 text-[10px] font-bold px-2 py-0.5 rounded text-white">Open Now</span>
+          </div>
+
+          <!-- Styled Google Maps Placeholder/Iframe simulation -->
+          <div class="relative w-full aspect-[16/10] bg-stone-200 rounded-lg overflow-hidden flex items-center justify-center border border-stone-300">
+            <iframe 
+              class="w-full h-full border-0" 
+              src="https://maps.google.com/maps?q=The+Thalis+Kolhapuri+Thali+Tarabai+Park+Kolhapur&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 8. SHOWCASE: FULL DEDICATED WEBSITES      -->
+  <!-- ========================================== -->
+  <section id="dedicated-sites-section" class="py-16 bg-stone-900 text-white border-b border-stone-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+      
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-400 block mb-1">PORTFOLIO DEMONSTRATION</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-black text-white">
+          Explore the Full Standalone Multi-Page Demos
+        </h2>
+        <p class="text-sm text-stone-400 mt-2">
+          Click below to open and navigate the full dedicated restaurant websites with separate sub-pages (Menu, Cellar, Atmosphere, Order, Reservations, and Admin Staff Desk).
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Showcase Card 1: The Thalis Kolhapuri -->
+        <div class="bg-stone-950 border border-stone-800 rounded-2xl overflow-hidden shadow-xl hover:border-amber-500 transition-all flex flex-col justify-between">
+          <div class="p-6 sm:p-8 space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="bg-red-800 text-amber-200 text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded">
+                Traditional &amp; Indian Concept
+              </span>
+              <span class="text-xs font-bold text-amber-400">4.6 ★ (4.5K Reviews)</span>
+            </div>
+
+            <h3 class="font-serif text-2xl font-black text-white">The Thalis — Kolhapuri Thali</h3>
+            <p class="text-xs text-stone-400 leading-relaxed">
+              Complete regional Indian restaurant website with unlimited rassa highlight, hot chulha bhakris, multi-language Marathi/English switch, full online ordering system, and Google Maps direction integration.
+            </p>
+
+            <div class="flex flex-wrap gap-2 pt-2 text-[11px] text-stone-300 font-medium">
+              <span class="bg-stone-800 px-2 py-0.5 rounded">🥘 Unlimited Rassa</span>
+              <span class="bg-stone-800 px-2 py-0.5 rounded">🌐 Marathi / English Switch</span>
+              <span class="bg-stone-800 px-2 py-0.5 rounded">💬 WhatsApp Order</span>
+              <span class="bg-stone-800 px-2 py-0.5 rounded">👨‍🍳 Kitchen Staff Desk</span>
+            </div>
+          </div>
+
+          <div class="p-6 bg-stone-900 border-t border-stone-800 flex items-center justify-between">
+            <a href="the-thalis/index.html" class="bg-amber-500 hover:bg-amber-600 text-stone-950 font-bold px-5 py-2.5 rounded-lg text-xs uppercase tracking-wider flex items-center gap-1.5 transition-colors">
+              <span>Open The Thalis Full Site</span>
+              <span class="material-symbols-outlined text-sm">open_in_new</span>
+            </a>
+            <a href="the-thalis/menu.html" class="text-xs text-stone-400 hover:text-white underline">View Menu ↗</a>
+          </div>
+        </div>
+
+        <!-- Showcase Card 2: Maison Ember Fine Dining -->
+        <div class="bg-stone-950 border border-stone-800 rounded-2xl overflow-hidden shadow-xl hover:border-amber-500 transition-all flex flex-col justify-between">
+          <div class="p-6 sm:p-8 space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="bg-stone-800 text-amber-300 text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded">
+                Luxury &amp; European Concept
+              </span>
+              <span class="text-xs font-bold text-amber-400">4.9 ★ Michelin Guide</span>
+            </div>
+
+            <h3 class="font-serif text-2xl font-black text-white">Maison Ember — Hearth &amp; Cellar</h3>
+            <p class="text-xs text-stone-400 leading-relaxed">
+              Michelin-style open hearth dining and biodynamic wine cellar. Features video backgrounds, sommelier tasting notes, course menus, seating zone reservations (Hearth Counter, Wine Vault), and private dining buyouts.
+            </p>
+
+            <div class="flex flex-wrap gap-2 pt-2 text-[11px] text-stone-300 font-medium">
+              <span class="bg-stone-800 px-2 py-0.5 rounded">🔥 Woodfire Hearth Video</span>
+              <span class="bg-stone-800 px-2 py-0.5 rounded">🍷 Sommelier Cellar</span>
+              <span class="bg-stone-800 px-2 py-0.5 rounded">📅 Time-Slot Capacity</span>
+              <span class="bg-stone-800 px-2 py-0.5 rounded">👑 Salon Buyout Inquiries</span>
+            </div>
+          </div>
+
+          <div class="p-6 bg-stone-900 border-t border-stone-800 flex items-center justify-between">
+            <a href="maison-ember/index.html" class="bg-amber-500 hover:bg-amber-600 text-stone-950 font-bold px-5 py-2.5 rounded-lg text-xs uppercase tracking-wider flex items-center gap-1.5 transition-colors">
+              <span>Open Maison Ember Full Site</span>
+              <span class="material-symbols-outlined text-sm">open_in_new</span>
+            </a>
+            <a href="maison-ember/reservations.html" class="text-xs text-stone-400 hover:text-white underline">Book Table ↗</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 9. BUSINESS ROI & WHY RESTAURANTS BUY     -->
+  <!-- ========================================== -->
+  <section class="py-16 bg-white border-b border-stone-200">
+    <div class="max-w-5xl mx-auto px-4 sm:px-8 text-center space-y-10">
+      
+      <div>
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-600 block mb-1">BUSINESS ROI CALCULATOR</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-black text-stone-900">
+          How Much Money Are You Losing to Aggregators?
+        </h2>
+        <p class="text-sm text-stone-600 mt-2 max-w-xl mx-auto">
+          Drag the slider to see how much your restaurant saves every month by shifting repeat diners to your own zero-commission website.
+        </p>
+      </div>
+
+      <!-- ROI Calculator Card -->
+      <div class="bg-stone-50 border border-stone-200 rounded-2xl p-6 sm:p-8 max-w-2xl mx-auto space-y-6">
         <div>
-          <span class="font-label-uppercase text-label-uppercase text-secondary tracking-widest">RÉSERVATION CONFIRMÉE</span>
-          <h3 class="font-headline-md text-headline-md text-on-surface mt-1">Table Secured at Ember</h3>
+          <div class="flex justify-between items-center mb-2">
+            <span class="text-xs font-bold text-stone-700 uppercase tracking-wider">Monthly Delivery Sales:</span>
+            <span id="slider-sales-display" class="text-xl font-black text-stone-900 font-serif">₹2,00,000</span>
+          </div>
+          <input type="range" id="roi-slider" min="50000" max="1000000" step="25000" value="200000" oninput="calculateROI()" class="w-full accent-amber-500 cursor-pointer"/>
         </div>
-        <div class="text-right">
-          <span class="font-label-caption text-label-caption text-on-surface-variant block">Reference Folio</span>
-          <span class="font-price-numeral text-xl font-bold text-primary tracking-wide" id="receipt-ref">EMB-8492</span>
+
+        <div class="grid grid-cols-2 gap-4 pt-2">
+          <div class="bg-red-50 border border-red-200 p-4 rounded-xl text-left">
+            <span class="text-[11px] font-bold text-red-700 uppercase tracking-wider block">Lost to Zomato/Swiggy (30%)</span>
+            <span id="roi-lost-amount" class="text-2xl font-black text-red-700 font-serif mt-1 block">₹60,000 / mo</span>
+            <span class="text-[10px] text-red-600 mt-1 block">Deducted from your hard work every 30 days</span>
+          </div>
+
+          <div class="bg-green-50 border border-green-200 p-4 rounded-xl text-left">
+            <span class="text-[11px] font-bold text-green-700 uppercase tracking-wider block">Saved with Direct Website (0%)</span>
+            <span id="roi-saved-amount" class="text-2xl font-black text-green-700 font-serif mt-1 block">₹60,000 / mo</span>
+            <span class="text-[10px] text-green-700 mt-1 block">100% directly credited to your UPI/Bank</span>
+          </div>
         </div>
+
+        <p class="text-xs text-stone-500">
+          ⭐ <em>This website pays for itself in less than 7 days of direct orders!</em>
+        </p>
       </div>
 
-      <!-- Receipt Content Card -->
-      <div class="bg-surface-container border border-outline-variant p-4 space-y-3">
-        <div class="flex justify-between py-1 border-b border-outline-variant font-body-sm">
-          <span class="text-on-surface-variant">Guest Name</span>
-          <span class="font-medium text-on-surface" id="receipt-name">—</span>
-        </div>
-        <div class="flex justify-between py-1 border-b border-outline-variant font-body-sm">
-          <span class="text-on-surface-variant">Date &amp; Sitting</span>
-          <span class="font-medium text-primary" id="receipt-datetime">—</span>
-        </div>
-        <div class="flex justify-between py-1 border-b border-outline-variant font-body-sm">
-          <span class="text-on-surface-variant">Party Size</span>
-          <span class="font-medium text-on-surface" id="receipt-party">—</span>
-        </div>
-        <div class="flex justify-between py-1 border-b border-outline-variant font-body-sm">
-          <span class="text-on-surface-variant">Seating Area</span>
-          <span class="font-medium text-on-surface" id="receipt-area">—</span>
-        </div>
-        <div class="flex justify-between py-1 font-body-sm">
-          <span class="text-on-surface-variant">Guest Notes</span>
-          <span class="font-medium text-on-surface text-right max-w-xs" id="receipt-notes">—</span>
-        </div>
-      </div>
+    </div>
+  </section>
 
-      <div class="p-4 bg-surface-container-low border border-outline-variant rounded font-label-caption text-on-surface-variant leading-relaxed">
-        <strong class="text-on-surface font-medium">House Note:</strong> A table is held for 15 minutes past the sitting hour. Please arrive promptly to enjoy our wood-fired service rhythm.
-      </div>
-
-      <!-- Action Buttons -->
-      <div class="modal-actions flex flex-wrap items-center justify-between gap-3 pt-2">
+  <!-- ========================================== -->
+  <!-- 10. MODAL: STAFF & MAÎTRE D' DESK         -->
+  <!-- ========================================== -->
+  <div id="staff-desk-modal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-[70] hidden flex items-center justify-center p-4">
+    <div class="bg-stone-900 border border-stone-700 text-white rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden flex flex-col shadow-2xl">
+      
+      <!-- Modal Header -->
+      <div class="p-5 border-b border-stone-800 flex justify-between items-center bg-stone-950">
         <div class="flex items-center gap-2">
-          <a class="inline-flex items-center gap-1.5 px-3 py-2 border border-outline-variant rounded text-on-surface font-body-sm hover:border-primary transition-colors" href="#" id="receipt-cal-btn" rel="noopener noreferrer" target="_blank">
-            <span class="material-symbols-outlined text-sm">calendar_today</span>
-            <span>Google Cal</span>
-          </a>
-          <button class="inline-flex items-center gap-1.5 px-3 py-2 border border-outline-variant rounded text-on-surface font-body-sm hover:border-primary transition-colors" id="receipt-ics-btn" type="button">
-            <span class="material-symbols-outlined text-sm">download</span>
-            <span>Apple / iCal</span>
-          </button>
-          <button class="inline-flex items-center gap-1.5 px-3 py-2 border border-outline-variant rounded text-on-surface font-body-sm hover:border-primary transition-colors" onclick="window.print()" type="button">
-            <span class="material-symbols-outlined text-sm">print</span>
-            <span>Print Folio</span>
-          </button>
+          <span class="material-symbols-outlined text-amber-400">tune</span>
+          <h3 class="font-serif text-lg font-bold">Restaurant Manager &amp; Kitchen Staff Desk</h3>
         </div>
-
-        <button class="bg-primary-container text-on-primary font-label-uppercase text-label-uppercase px-6 py-2.5 rounded hover:bg-primary transition-colors" id="close-receipt-btn" type="button">
-          Close &amp; Return
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Private Dining Salon Inquiry Modal -->
-  <div class="modal-overlay hidden" id="inquiry-modal">
-    <div class="modal-content p-6 sm:p-8 rounded-lg animate-fade-in space-y-6">
-      <div class="flex items-start justify-between border-b border-outline pb-4">
-        <div>
-          <span class="font-label-uppercase text-label-uppercase text-secondary tracking-widest">SALON PRIVÉ &amp; PRIVATISATION</span>
-          <h3 class="font-headline-md text-headline-md text-on-surface mt-1">Private Dining Inquiries</h3>
-        </div>
-        <button class="text-on-surface-variant hover:text-primary p-1" id="close-inquiry-btn" type="button">
+        <button onclick="toggleStaffDeskModal()" class="text-stone-400 hover:text-white p-1">
           <span class="material-symbols-outlined">close</span>
         </button>
       </div>
 
-      <p class="font-body-sm text-body-sm text-on-surface-variant">
-        Host an exclusive evening in our 17th-century vaulted cellar salon (up to 14 guests) or inquire about full-restaurant buyouts with bespoke hearth menus by Chef Alexandre.
-      </p>
-
-      <form class="space-y-4" id="inquiry-form">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label class="block font-body-sm text-on-surface mb-1">Full Name *</label>
-            <input class="w-full bg-surface border border-outline-variant px-3 py-2 text-on-surface font-body-sm rounded focus:outline-none focus:border-primary-container" id="inquiry-name" required="" type="text"/>
-          </div>
-          <div>
-            <label class="block font-body-sm text-on-surface mb-1">Email Address *</label>
-            <input class="w-full bg-surface border border-outline-variant px-3 py-2 text-on-surface font-body-sm rounded focus:outline-none focus:border-primary-container" id="inquiry-email" required="" type="email"/>
-          </div>
-          <div>
-            <label class="block font-body-sm text-on-surface mb-1">Telephone</label>
-            <input class="w-full bg-surface border border-outline-variant px-3 py-2 text-on-surface font-body-sm rounded focus:outline-none focus:border-primary-container" id="inquiry-phone" type="tel"/>
-          </div>
-          <div>
-            <label class="block font-body-sm text-on-surface mb-1">Event Type</label>
-            <select class="w-full bg-surface border border-outline-variant px-3 py-2 text-on-surface font-body-sm rounded focus:outline-none focus:border-primary-container" id="inquiry-type">
-              <option value="Wine Vault Private Salon (8-14 guests)">Wine Vault Private Salon (8-14 guests)</option>
-              <option value="Full Restaurant Buyout (up to 34 guests)">Full Restaurant Buyout (up to 34 guests)</option>
-              <option value="Winemaker Tasting Dinner">Winemaker Tasting Dinner</option>
-            </select>
-          </div>
-          <div>
-            <label class="block font-body-sm text-on-surface mb-1">Preferred Date</label>
-            <input class="w-full bg-surface border border-outline-variant px-3 py-2 text-on-surface font-body-sm rounded focus:outline-none focus:border-primary-container" id="inquiry-date" type="date"/>
-          </div>
-          <div>
-            <label class="block font-body-sm text-on-surface mb-1">Estimated Guests</label>
-            <input class="w-full bg-surface border border-outline-variant px-3 py-2 text-on-surface font-body-sm rounded focus:outline-none focus:border-primary-container" id="inquiry-guests" max="40" min="6" type="number" value="10"/>
-          </div>
+      <!-- Live Stats Counters -->
+      <div class="grid grid-cols-3 gap-3 p-4 bg-stone-900 border-b border-stone-800 text-center text-xs">
+        <div class="bg-stone-950 p-2.5 rounded-lg border border-stone-800">
+          <span class="text-stone-400 block text-[11px]">Today's Orders</span>
+          <span class="text-lg font-bold text-amber-400" id="staff-stat-orders">14</span>
         </div>
-
-        <div>
-          <label class="block font-body-sm text-on-surface mb-1">Message &amp; Dietary Preferences</label>
-          <textarea class="w-full bg-surface border border-outline-variant px-3 py-2 text-on-surface font-body-sm rounded focus:outline-none focus:border-primary-container" id="inquiry-message" placeholder="Desired wine pairings, course count, special occasion..." rows="3"></textarea>
+        <div class="bg-stone-950 p-2.5 rounded-lg border border-stone-800">
+          <span class="text-stone-400 block text-[11px]">Reservations</span>
+          <span class="text-lg font-bold text-amber-400" id="staff-stat-res">8 (32 Covers)</span>
         </div>
-
-        <div class="flex justify-end gap-3 pt-2">
-          <button class="bg-primary-container text-on-primary font-label-uppercase text-label-uppercase px-6 py-3 rounded hover:bg-primary transition-colors" type="submit">
-            Submit Salon Inquiry
-          </button>
+        <div class="bg-stone-950 p-2.5 rounded-lg border border-stone-800">
+          <span class="text-stone-400 block text-[11px]">Today's Direct Revenue</span>
+          <span class="text-lg font-bold text-green-400" id="staff-stat-rev">₹18,450</span>
         </div>
-      </form>
+      </div>
+
+      <!-- Kitchen Orders Table -->
+      <div class="p-5 overflow-y-auto flex-grow space-y-4">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-400 block">Live Orders Queue</span>
+        
+        <div class="border border-stone-800 rounded-lg overflow-x-auto">
+          <table class="w-full text-left text-xs">
+            <thead class="bg-stone-950 text-stone-400 uppercase text-[10px]">
+              <tr>
+                <th class="p-3">Ref #</th>
+                <th class="p-3">Customer</th>
+                <th class="p-3">Dishes</th>
+                <th class="p-3">Amount</th>
+                <th class="p-3">Status</th>
+                <th class="p-3 text-right">Action</th>
+              </tr>
+            </thead>
+            <tbody id="staff-orders-tbody" class="divide-y divide-stone-800 text-stone-200">
+              <!-- Populated dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="p-4 border-t border-stone-800 bg-stone-950 flex justify-end">
+        <button onclick="toggleStaffDeskModal()" class="bg-stone-800 hover:bg-stone-700 text-stone-300 font-bold px-4 py-2 rounded text-xs">
+          Close Desk
+        </button>
+      </div>
+
     </div>
   </div>
 
-  <!-- Client-Side Application JS -->
-  <script src="js/app.js"></script>
+  <!-- ========================================== -->
+  <!-- 11. SLIDE-IN CART DRAWER                   -->
+  <!-- ========================================== -->
+  <div id="cart-drawer-overlay" onclick="toggleCartDrawer()" class="fixed inset-0 bg-black/60 z-[80] hidden backdrop-blur-sm transition-opacity"></div>
+  <aside id="cart-drawer" class="fixed right-0 top-0 bottom-0 w-full sm:w-96 bg-stone-900 border-l border-stone-800 text-white z-[90] transform translate-x-full transition-transform duration-300 flex flex-col shadow-2xl">
+    
+    <div class="p-4 border-b border-stone-800 flex justify-between items-center bg-stone-950">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-amber-400">shopping_cart</span>
+        <h3 class="font-serif text-lg font-bold">Your Order Cart</h3>
+      </div>
+      <button onclick="toggleCartDrawer()" class="text-stone-400 hover:text-white p-1">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+
+    <div id="drawer-items-list" class="p-4 overflow-y-auto flex-grow space-y-3">
+      <!-- Populated dynamically -->
+    </div>
+
+    <div class="p-4 border-t border-stone-800 bg-stone-950 space-y-3">
+      <div class="flex justify-between text-xs text-stone-400">
+        <span>Subtotal:</span>
+        <span id="drawer-subtotal" class="font-bold text-white">₹0</span>
+      </div>
+      <div class="flex justify-between text-xs text-stone-400">
+        <span>Delivery / Packaging:</span>
+        <span class="text-green-400 font-bold">FREE (Direct)</span>
+      </div>
+      <div class="flex justify-between text-sm font-bold text-white pt-2 border-t border-stone-800">
+        <span>Total Payable:</span>
+        <span id="drawer-total" class="text-amber-400 text-lg font-serif">₹0</span>
+      </div>
+
+      <button onclick="toggleCartDrawer(); location.href='#whatsapp-order-section';" class="w-full bg-green-600 hover:bg-green-500 text-white font-bold py-3 rounded-xl text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 transition-colors">
+        <span class="material-symbols-outlined text-sm">chat</span>
+        <span>Proceed to WhatsApp Checkout</span>
+      </button>
+    </div>
+
+  </aside>
+
+  <!-- ========================================== -->
+  <!-- 12. RESERVATION CONFIRMATION MODAL         -->
+  <!-- ========================================== -->
+  <div id="res-modal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-[70] hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 text-center space-y-4 shadow-2xl">
+      <div class="w-14 h-14 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto border-2 border-green-500">
+        <span class="material-symbols-outlined text-3xl">check</span>
+      </div>
+      <div>
+        <span class="text-[11px] font-bold uppercase tracking-widest text-amber-700">TABLE RESERVED</span>
+        <h3 class="font-serif text-2xl font-black text-stone-900 mt-0.5">Booking Confirmed!</h3>
+      </div>
+      <p class="text-xs text-stone-600">
+        Your booking folio <strong id="res-modal-ref" class="text-amber-800">#RES-8891</strong> has been confirmed. A WhatsApp notification will be sent shortly.
+      </p>
+
+      <div class="bg-stone-50 border border-stone-200 rounded-xl p-3 text-xs text-left space-y-1.5">
+        <div class="flex justify-between"><span>Guest:</span><strong id="res-modal-name">—</strong></div>
+        <div class="flex justify-between"><span>Date &amp; Time:</span><strong id="res-modal-datetime">—</strong></div>
+        <div class="flex justify-between"><span>Party &amp; Area:</span><strong id="res-modal-party">—</strong></div>
+      </div>
+
+      <div class="pt-2 flex flex-col gap-2">
+        <button onclick="downloadCalendarInvite()" class="w-full bg-stone-900 hover:bg-stone-800 text-white text-xs font-bold py-2.5 rounded-lg flex items-center justify-center gap-1.5">
+          <span class="material-symbols-outlined text-sm">event</span>
+          <span>Download Apple / Google Calendar (.ics)</span>
+        </button>
+        <button onclick="document.getElementById('res-modal').classList.add('hidden')" class="w-full text-xs font-bold text-stone-500 hover:text-stone-800 py-1.5">
+          Close Window
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- 13. MASTER FOOTER & PRUTHVIRAJ AGENCY INFO -->
+  <!-- ========================================== -->
+  <footer class="bg-stone-950 text-stone-400 text-xs py-12 border-t border-stone-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 space-y-8">
+      
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-stone-800">
+        <div>
+          <span class="font-serif text-2xl font-black text-white block">RestoFlow Agency Platform</span>
+          <p class="text-stone-400 text-xs mt-1">
+            Empowering restaurants with 0% commission direct ordering, QR digital menus, and 24/7 table reservations.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3">
+          <a href="https://wa.me/917744966966?text=Hi%20Pruthviraj,%20I%20want%20to%20build%20a%20website%20for%20my%20restaurant." target="_blank" rel="noopener noreferrer" class="bg-green-600 hover:bg-green-500 text-white font-bold px-4 py-2.5 rounded-lg text-xs flex items-center gap-1.5 shadow transition-colors">
+            <span class="material-symbols-outlined text-sm">chat</span>
+            <span>WhatsApp: 077449 66966</span>
+          </a>
+          <a href="mailto:pruthvviigarale2007@gmail.com" class="bg-stone-800 hover:bg-stone-700 text-white font-bold px-4 py-2.5 rounded-lg text-xs flex items-center gap-1.5 transition-colors">
+            <span class="material-symbols-outlined text-sm">mail</span>
+            <span>pruthvviigarale2007@gmail.com</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row justify-between items-center text-[11px] text-stone-500 gap-3">
+        <p>© 2026 RestoFlow. Designed &amp; Developed for Restaurants by <strong>Pruthviraj Garale</strong>.</p>
+        <div class="flex items-center gap-4">
+          <a href="the-thalis/index.html" class="hover:text-stone-300">The Thalis Site</a>
+          <a href="maison-ember/index.html" class="hover:text-stone-300">Maison Ember Site</a>
+          <a href="the-thalis/admin.html" class="hover:text-stone-300">Staff Portal</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================== -->
+  <!-- 14. APPLICATION JAVASCRIPT LOGIC           -->
+  <!-- ========================================== -->
+  <script>
+    // --- 1. MULTI-CONCEPT DATASETS ---
+    const RESTAURANT_CONCEPTS = {
+      indian: {
+        id: 'indian',
+        name: 'The Thalis — Kolhapuri Thali',
+        shortName: 'The Thalis',
+        emblem: 'थ',
+        emblemBg: '#991b1b',
+        emblemColor: '#fde047',
+        tagline: 'Authentic Kolhapuri Thalis, Pure Ghee Mutton & Fiery Rassa',
+        rating: '★ 4.6 Verified Google Rating',
+        ratingDetail: '4,485+ Diners · Unlimited Tambda-Pandhra Rassa',
+        heroTitle: 'Authentic Kolhapuri Thalis, Pure Ghee Mutton & <span class="text-amber-400 underline decoration-red-600 underline-offset-8">Fiery Rassa</span>.',
+        heroDesc: 'Rooted in ancestral culinary tradition. Slow-cooked over rustic chulhas using hand-pounded Byadgi & Lavangi chilies, stoneground masalas, and pure Gir cow desi ghee. Served with hot Jowar Bhakris and unlimited bowls of Tambda & Pandhra Rassa.',
+        badges: [
+          { title: 'UNLIMITED RASSA', desc: 'Free Tambda & Pandhra refills' },
+          { title: 'DESI GHEE COOKED', desc: 'Pure Gir cow bilona ghee' },
+          { title: 'HOT CHULHA BHAKRI', desc: 'Jowar & Bajra baked fresh' }
+        ],
+        videoSrc: 'the-thalis/videos/sizzle.mp4',
+        videoCaption: 'Fresh chulha flame cooking & rassa simmering',
+        currency: '₹',
+        address: 'Kadamwadi Rd, Opp. Hotel Lisha, Tarabai Park, Kolhapur',
+        phone: '077449 66966',
+        mapQuery: 'The+Thalis+Kolhapuri+Thali+Tarabai+Park+Kolhapur',
+        categories: [
+          { id: 'all', en: 'All Items', mr: 'सर्व पदार्थ', hi: 'सभी व्यंजन' },
+          { id: 'mutton', en: 'Mutton Thalis', mr: 'मटन थाळ्या', hi: 'मटन थाली' },
+          { id: 'chicken', en: 'Chicken Thalis', mr: 'चिकन थाळ्या', hi: 'चिकन थाली' },
+          { id: 'seafood', en: 'Seafood', mr: 'मासे स्पेशल', hi: 'सीफूड' },
+          { id: 'veg', en: 'Pure Veg', mr: 'शाकाहारी', hi: 'शाकाहारी' },
+          { id: 'rassa', en: 'Rassa & Drinks', mr: 'रस्सा व पेये', hi: 'रस्सा व ड्रिंक्स' }
+        ],
+        dishes: [
+          { id: 'thali-1', cat: 'mutton', title: 'Jatra Mutton Thali', title_mr: 'जत्रा मटन थाळी', title_hi: 'जात्रा मटन थाली', desc: 'Royal feast: Mutton sukka, mutton fry, mutton kheema bowl, unlimited fiery Tambda Rassa, soothing Pandhra Rassa, 2 hot Jowar Bhakris, and Indrayani rice.', desc_mr: 'शाही जत्रा थाळी: मटन सुक्का, मटन फ्राय, खिमा वाटी, अमर्याद तांबडा व पांढरा रस्सा, २ गरमागरम ज्वारी भाकरी आणि इंद्रायणी भात.', desc_hi: 'शाही मटन थाली: मटन सुक्का, मटन फ्राय, असीमित तांबडा व पांढरा रस्सा, २ गरम ज्वारी भाकरी और भात.', price: 520, is_veg: false, badge: 'Signature Bestseller' },
+          { id: 'thali-2', cat: 'mutton', title: 'Ghee Mutton Fry', title_mr: 'तूप मटन फ्राय', title_hi: 'घी मटन फ्राई', desc: 'Tender mutton pan-roasted in pure Gir cow desi ghee with roasted coconut and signature Kolhapuri kanda-lasun masala.', desc_mr: 'गीर गायीच्या साजूक तुपात भाजलेले मऊ मटन, सुके खोबरे आणि अस्सल कोल्हापुरी कांदा-लसूण मसाला.', desc_hi: 'देसी घी में भुना हुआ मटन और कोल्हापुरी मसाले.', price: 460, is_veg: false, badge: 'Chef Special' },
+          { id: 'thali-3', cat: 'chicken', title: 'Chicken Fry Thali', title_mr: 'चिकन फ्राय थाळी', title_hi: 'चिकन फ्राई थाली', desc: 'Country chicken fry, unlimited Tambda & Pandhra Rassa, 2 hot bhakris, raw onion-lemon, and fragrant rice.', desc_mr: 'गावरान चिकन फ्राय, अमर्याद तांबडा-पांढरा रस्सा, २ भाकरी, कांदा-लिंबू आणि भात.', desc_hi: 'देसी चिकन फ्राई, असीमित रस्सा, २ भाकरी और चावल.', price: 380, is_veg: false, badge: 'Popular' },
+          { id: 'thali-4', cat: 'veg', title: 'Veg Pithla Bhakari Thali', title_mr: 'पिठलं भाकरी थाळी', title_hi: 'पिठला भाकरी थाली', desc: 'Authentic gram flour pithla with tempered golden garlic and green chilies, 2 fresh Jowar Bhakris, spicy thecha, and curd.', desc_mr: 'खमंग लसूण फोडणीचे गरमागरम पिठलं, २ ताज्या ज्वारी भाकरी, झणझणीत ठेचा, कांदा आणि ताजे दही.', desc_hi: 'लहसुन तड़का पिठला, २ ज्वारी भाकरी, ठेचा और दही.', price: 260, is_veg: true, badge: 'Pure Veg Bestseller' },
+          { id: 'thali-5', cat: 'seafood', title: 'Surmai Rava Fry Thali', title_mr: 'सुरमई रवा फ्राय थाळी', title_hi: 'सुरमई रवा फ्राई थाली', desc: 'Fresh Kingfish steak marinated in kokum and red spices, crisp rava-crusted fried, with coastal rassa and bhakri.', desc_mr: 'कोकम आगळात मॅरीनेट करून रव्यात कुरकुरीत तळलेली सुरमई, रस्सा आणि भाकरी.', desc_hi: 'रवा क्रस्टेड सुरमई मछली फ्राई, रस्सा और भाकरी.', price: 520, is_veg: false, badge: 'Fresh Catch' },
+          { id: 'thali-6', cat: 'rassa', title: 'Tambada Rassa Bowl', title_mr: 'तांबडा रस्सा', title_hi: 'तांबडा रस्सा', desc: 'Fiery, thin, soul-warming red broth brewed with mutton bones and signature Lavangi chilies. (Free refills with all thalis).', desc_mr: 'जाज्वल्य तिखट अस्सल कोल्हापुरी लाल रस्सा. (सर्व थाळ्यांसोबत मोफत रिफिल्स).', desc_hi: 'मटन हड्डियों से उबला हुआ तीखा लाल रस्सा. (थाली के साथ मुफ्त).', price: 80, is_veg: false, badge: 'World Famous' },
+          { id: 'thali-7', cat: 'rassa', title: 'Solkadhi (Chilled)', title_mr: 'सोलकढी (थंडगार)', title_hi: 'सोलकढ़ी (ठंडी)', desc: 'Digestive elixir prepared from freshly pressed coconut milk, Malvani kokum extract, golden garlic, and coriander.', desc_mr: 'ताजे नारळाचे दूध, अस्सल कोकम आगळ आणि लसणाची पचनास उत्तम थंडगार सोलकढी.', desc_hi: 'ताज़ा नारियल दूध और कोकम से बनी पाचक सोलकढ़ी.', price: 70, is_veg: true, badge: 'Digestive' }
+        ]
+      },
+      finedining: {
+        id: 'finedining',
+        name: 'Maison Ember — Open Hearth & Cellar',
+        shortName: 'Maison Ember',
+        emblem: 'M',
+        emblemBg: '#1c1917',
+        emblemColor: '#f59e0b',
+        tagline: 'Open-Hearth Cooking, Biodynamic Cellar & Seasonal Terroir · Paris 4e',
+        rating: '★ 4.9 Michelin Guide Selected',
+        ratingDetail: 'Michelin Selected · Artisanal Beech & Cherry Fire Hearth',
+        heroTitle: 'Open-Hearth Cooking, Natural Cellar &amp; <span class="text-amber-400 underline decoration-amber-600 underline-offset-8">Living Terroir</span>.',
+        heroDesc: 'Every dish touched by open fire. Whole turbot slow-grilled over embers, 55-day dry-aged Normande beef seared on wild cherry wood, accompanied by low-intervention biodynamic wines from our subterranean limestone vault.',
+        badges: [
+          { title: 'HEARTH COOKING', desc: 'Picardy birch & cherry wood' },
+          { title: 'NATURAL CELLAR', desc: '350+ zero-sulfur vintages' },
+          { title: 'CHEF ATELIER', desc: 'Counter view of the flames' }
+        ],
+        videoSrc: 'videos/hearth.mp4',
+        videoCaption: 'Oak ember hearth & open fire cooking',
+        currency: '€',
+        address: '14 Rue Saint-Paul, 4e Arrondissement, Paris',
+        phone: '+33 1 42 68 55 00',
+        mapQuery: 'Rue+Saint-Paul+Paris+4e',
+        categories: [
+          { id: 'all', en: 'All Courses', mr: 'सर्व कोर्सेस', hi: 'सभी कोर्स' },
+          { id: 'starters', en: 'Starters over Embers', mr: 'स्टार्टर्स', hi: 'स्टार्टर्स' },
+          { id: 'mains', en: 'Hearth Mains', mr: 'मेन कोर्स', hi: 'मेन कोर्स' },
+          { id: 'cellar', en: 'Natural Cellar', mr: 'वाइन सेलार', hi: 'वाइन' }
+        ],
+        dishes: [
+          { id: 'me-1', cat: 'mains', title: 'Line-Caught Turbot on the Bone', title_mr: 'टरबॉट फिश (ओपन फायर)', title_hi: 'टरबॉट फिश', desc: 'Slow-grilled over beech embers, brown butter fumet, young glazed leeks, wild sorrel oil.', desc_mr: 'लाकडाच्या निखाऱ्यांवर भाजलेला टरबॉट मासा, ब्राऊन बटर आणि लेमन सॉस.', desc_hi: 'ओपन फायर ग्रिल्ड टरबॉट फिश.', price: 46, is_veg: false, badge: 'House Classic' },
+          { id: 'me-2', cat: 'mains', title: 'Dry-Aged Normande Ribeye (800g)', title_mr: 'ड्राई-एज्ड रिबआय स्टेक', title_hi: 'ड्राई एज्ड रिबआई', desc: '55 days dry-aged, seared over wild cherry wood, roasted garlic bone marrow butter, shallot confit.', desc_mr: '५५ दिवस एज केलेले प्रीमियम बीफ स्टेक, रोस्टेड गार्लिक बोन मॅरो बटर.', desc_hi: 'चेरी वुड पर सेका हुआ प्राइम रिबआई.', price: 115, is_veg: false, badge: 'For Two' },
+          { id: 'me-3', cat: 'starters', title: 'Saint-Vaast Oysters over Embers', title_mr: 'ऑइस्टर्स (स्मोक्ड)', title_hi: 'ऑइस्टर्स', desc: 'Briefly kissed by beech fire, smoked marrow butter, verjus mignonette, pickled sea fennel.', desc_mr: 'आगीवर स्मोक केलेले ताजे ऑइस्टर्स, सी फेनेल आणि हर्ब सॉस.', desc_hi: 'स्मोक्ड ऑइस्टर्स.', price: 22, is_veg: false, badge: 'Seasonal' },
+          { id: 'me-4', cat: 'mains', title: 'Ash-Baked Delicata Squash', title_mr: 'अॅश-बेक्ड स्क्वॅश', title_hi: 'रोस्टेड स्क्वैश', desc: 'Chestnut emulsion, toasted pumpkin seeds, crisp garden sage, vin jaune reduction.', desc_mr: 'राखेखाली भाजलेली डिलीकाटा भोपळा, चेस्टनट इमल्शन आणि सेज.', desc_hi: 'रोस्टेड डिलीकाटा स्क्वैश.', price: 31, is_veg: true, badge: 'Plant-Based' },
+          { id: 'me-5', cat: 'cellar', title: 'Savagnin Maceration (Jura 2021)', title_mr: 'ऑरेंज वाइन (जुरा २०२१)', title_hi: 'ऑरेंज वाइन', desc: 'Domaine Courbet. 3 weeks skin-contact, vibrant dried apricot, walnut smoke, living minerality.', desc_mr: '३ आठवडे फर्मेंट केलेली नॅचरल ऑरेंज वाइन.', desc_hi: 'नेचुरल वाइन जुरा.', price: 78, is_veg: true, badge: 'Natural Wine' }
+        ]
+      },
+      cafe: {
+        id: 'cafe',
+        name: 'Bella Crust — Artisanal Pizza & Cafe',
+        shortName: 'Bella Crust',
+        emblem: 'B',
+        emblemBg: '#065f46',
+        emblemColor: '#fde047',
+        tagline: '48-Hour Fermented Sourdough Pizza, Specialty Roastery & Italian Small Plates',
+        rating: '★ 4.7 (2,150+ Reviews)',
+        ratingDetail: 'Italian Stone Hearth · Single Origin Arabica Coffee',
+        heroTitle: 'Artisanal Sourdough Pizza, Craft Coffee &amp; <span class="text-amber-400 underline decoration-green-600 underline-offset-8">Italian Pastas</span>.',
+        heroDesc: 'Naturally fermented 48-hour dough baked at 450°C in our imported stone oven. Topped with San Marzano tomatoes, fresh Fior di Latte mozzarella, and hand-pulled burrata.',
+        badges: [
+          { title: '48H SOURDOUGH', desc: 'Crisp airy leopard crust' },
+          { title: 'SPECIALTY COFFEE', desc: 'Fresh roasted single estate' },
+          { title: 'ITALIAN IMPORT', desc: 'San Marzano D.O.P tomatoes' }
+        ],
+        videoSrc: 'the-thalis/videos/sizzle.mp4',
+        videoCaption: 'Wood-fired oven pizza baking & bubbling cheese',
+        currency: '₹',
+        address: 'High Street Boulevard, Opp. Metro Station, City Center',
+        phone: '098221 44556',
+        mapQuery: 'High+Street+Boulevard+Pizza',
+        categories: [
+          { id: 'all', en: 'All Items', mr: 'सर्व पदार्थ', hi: 'सभी व्यंजन' },
+          { id: 'pizzas', en: 'Sourdough Pizzas', mr: 'पार्टी पिझ्झा', hi: 'पिज्जा' },
+          { id: 'sides', en: 'Appetizers & Pasta', mr: 'पास्ता व स्टार्टर्स', hi: 'पास्ता व स्टार्टर्स' },
+          { id: 'coffee', en: 'Coffee & Drinks', mr: 'कॉफी व पेये', hi: 'कॉफी व ड्रिंक्स' }
+        ],
+        dishes: [
+          { id: 'bc-1', cat: 'pizzas', title: 'Truffle Burrata Margherita', title_mr: 'ट्रफल बुराटा मार्गारिटा', title_hi: 'ट्रफल बुर्राटा पिज्जा', desc: 'San Marzano tomato base, fresh buffalo mozzarella, hand-pulled burrata heart, black truffle oil drizzle, fresh basil.', desc_mr: 'इटालियन टोमॅटो, फ्रेश मोझारेला चीज, बुराटा आणि ट्रफल ऑईल पिझ्झा.', desc_hi: 'ताजा बुर्राटा चीज और ट्रफल पिज्जा.', price: 490, is_veg: true, badge: 'House Favorite' },
+          { id: 'bc-2', cat: 'pizzas', title: 'Smoked Pepperoni & Hot Honey', title_mr: 'स्मोक्ड पेपरोनी व हॉट हनी', title_hi: 'स्मोक्ड पेपेरोनी पिज्जा', desc: 'Crisp pepperoni cups, spicy Calabrian chili paste, aged mozzarella, drizzled with artisan chili wildflower honey.', desc_mr: 'कुरकुरीत पेपरोनी, मोझारेला चीज आणि स्पायसी हॉट हनी पिझ्झा.', desc_hi: 'पेपेरोनी और चिली हनी पिज्जा.', price: 560, is_veg: false, badge: 'Bestseller' },
+          { id: 'bc-3', cat: 'sides', title: 'Garlic Confit Dough Knots', title_mr: 'गार्लिक डो नॉट्स', title_hi: 'गार्लिक ब्रेड नॉट्स', desc: 'Fresh-baked sourdough knots tossed in whipped herb garlic butter, grated Grana Padano, and marinara dip.', desc_mr: 'ताज्या गार्लिक बटरमध्ये घोळवलेले कुरकुरीत डो नॉट्स आणि सॉस.', desc_hi: 'गार्लिक बटर डो नॉट्स.', price: 220, is_veg: true, badge: 'Popular' },
+          { id: 'bc-4', cat: 'coffee', title: 'Iced Hazelnut Cold Brew', title_mr: 'आईस्ड हेझलनट कोल्ड ब्रू', title_hi: 'आईस्ड कोल्ड ब्रू', desc: '18-hour cold steeped single estate Arabica, infused with roasted hazelnut syrup and cold foam.', desc_mr: '१८ तास कोल्ड-स्टीप केलेली अरेबिका कॉफी आणि हेझलनट फोम.', desc_hi: 'हेज़लनट कोल्ड ब्रू कॉफी.', price: 180, is_veg: true, badge: 'Specialty Coffee' }
+        ]
+      }
+    };
+
+    // --- 2. GLOBAL STATE ---
+    let currentConceptKey = 'indian';
+    let currentLanguage = 'en';
+    let currentCategory = 'all';
+    let currentDietFilter = 'all';
+    let currentHeroMedia = 'video';
+    let currentCarouselIndex = 0;
+    let carouselAutoTimer = null;
+    let demoCart = [
+      { id: 'thali-1', title: 'Jatra Mutton Thali', price: 520, qty: 1 },
+      { id: 'thali-7', title: 'Solkadhi (Chilled)', price: 70, qty: 1 }
+    ];
+
+    // --- 3. SWITCH RESTAURANT CONCEPT ---
+    function switchConcept(conceptKey) {
+      if (!RESTAURANT_CONCEPTS[conceptKey]) return;
+      currentConceptKey = conceptKey;
+      const c = RESTAURANT_CONCEPTS[conceptKey];
+
+      // Update Nav Buttons
+      document.querySelectorAll('.concept-btn').forEach(btn => {
+        btn.classList.remove('bg-amber-500', 'text-stone-950');
+        btn.classList.add('bg-stone-800', 'text-stone-300');
+      });
+      const activeBtn = document.getElementById(`btn-concept-${conceptKey}`);
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-stone-800', 'text-stone-300');
+        activeBtn.classList.add('bg-amber-500', 'text-stone-950');
+      }
+
+      // Update Header Elements
+      const emblem = document.getElementById('nav-emblem');
+      emblem.textContent = c.emblem;
+      emblem.style.backgroundColor = c.emblemBg;
+      emblem.style.color = c.emblemColor;
+      document.getElementById('nav-title').textContent = c.shortName;
+      document.getElementById('nav-subtitle').textContent = c.tagline;
+      document.getElementById('nav-phone-text').textContent = c.phone;
+      document.getElementById('nav-call-btn').href = `tel:${c.phone.replace(/[^0-9+]/g, '')}`;
+
+      // Update Hero Section
+      document.getElementById('hero-badge-rating').textContent = c.rating;
+      document.getElementById('hero-badge-detail').textContent = c.ratingDetail;
+      document.getElementById('hero-title').innerHTML = c.heroTitle;
+      document.getElementById('hero-desc').textContent = c.heroDesc;
+
+      // Update Hero Badges Grid
+      const badgesContainer = document.getElementById('hero-badges-grid');
+      badgesContainer.innerHTML = c.badges.map(b => `
+        <div class="bg-stone-800/70 p-3 rounded-lg border border-stone-700">
+          <span class="block font-bold text-xs text-amber-400">${b.title}</span>
+          <span class="text-[11px] text-stone-300">${b.desc}</span>
+        </div>
+      `).join('');
+
+      // Update Hero Video & Captions
+      const videoEl = document.getElementById('hero-video-player');
+      videoEl.src = c.videoSrc;
+      videoEl.load();
+      videoEl.play().catch(() => {});
+      document.getElementById('video-caption-text').textContent = c.videoCaption;
+
+      // Update Map Details
+      document.getElementById('map-venue-name').textContent = c.name;
+      document.getElementById('map-venue-address').textContent = c.address;
+      document.getElementById('google-maps-link').href = `https://www.google.com/maps/dir/?api=1&destination=${c.mapQuery}`;
+
+      // Reset Menu Category and Diet Filters
+      currentCategory = 'all';
+      currentDietFilter = 'all';
+      renderCategoryTabs();
+      renderMenuItems();
+      updateCarouselSlide();
+
+      // Reset Cart with initial dish from this concept
+      demoCart = [
+        { id: c.dishes[0].id, title: c.dishes[0].title, price: c.dishes[0].price, qty: 1 }
+      ];
+      updateCartUI();
+    }
+
+    // --- 4. HERO MEDIA SWITCH (VIDEO VS CAROUSEL) ---
+    function setHeroMedia(mode) {
+      currentHeroMedia = mode;
+      const videoWrapper = document.getElementById('hero-media-video-wrapper');
+      const carouselWrapper = document.getElementById('hero-media-carousel-wrapper');
+      const btnVideo = document.getElementById('btn-hero-video');
+      const btnCarousel = document.getElementById('btn-hero-carousel');
+      const label = document.getElementById('hero-media-label');
+
+      if (mode === 'video') {
+        videoWrapper.classList.remove('hidden');
+        carouselWrapper.classList.add('hidden');
+        btnVideo.className = 'px-2.5 py-1 rounded bg-amber-500 text-stone-950 font-bold transition-all flex items-center gap-1';
+        btnCarousel.className = 'px-2.5 py-1 rounded text-stone-400 hover:text-white transition-all flex items-center gap-1';
+        label.textContent = 'Atmospheric Sizzle Reel';
+        clearInterval(carouselAutoTimer);
+      } else {
+        videoWrapper.classList.add('hidden');
+        carouselWrapper.classList.remove('hidden');
+        btnCarousel.className = 'px-2.5 py-1 rounded bg-amber-500 text-stone-950 font-bold transition-all flex items-center gap-1';
+        btnVideo.className = 'px-2.5 py-1 rounded text-stone-400 hover:text-white transition-all flex items-center gap-1';
+        label.textContent = 'Featured Dishes Carousel';
+        startCarouselAuto();
+      }
+    }
+
+    function updateCarouselSlide() {
+      const c = RESTAURANT_CONCEPTS[currentConceptKey];
+      const dishes = c.dishes;
+      if (!dishes || dishes.length === 0) return;
+      
+      currentCarouselIndex = (currentCarouselIndex + dishes.length) % dishes.length;
+      const dish = dishes[currentCarouselIndex];
+
+      document.getElementById('carousel-badge').textContent = dish.badge || 'Chef Specialty';
+      document.getElementById('carousel-price').textContent = `${c.currency}${dish.price}`;
+      document.getElementById('carousel-dish-title').textContent = dish.title;
+      document.getElementById('carousel-dish-sub').textContent = dish.title_mr || dish.desc;
+      document.getElementById('carousel-dish-desc').textContent = dish.desc;
+
+      const dotsContainer = document.getElementById('carousel-dots-container');
+      dotsContainer.innerHTML = dishes.map((_, idx) => `
+        <button onclick="goToCarouselSlide(${idx})" class="w-2 h-2 rounded-full transition-all ${idx === currentCarouselIndex ? 'bg-amber-400 w-4' : 'bg-stone-700 hover:bg-stone-500'}"></button>
+      `).join('');
+    }
+
+    function nextCarouselSlide() {
+      currentCarouselIndex++;
+      updateCarouselSlide();
+    }
+
+    function prevCarouselSlide() {
+      currentCarouselIndex--;
+      updateCarouselSlide();
+    }
+
+    function goToCarouselSlide(idx) {
+      currentCarouselIndex = idx;
+      updateCarouselSlide();
+    }
+
+    function startCarouselAuto() {
+      clearInterval(carouselAutoTimer);
+      carouselAutoTimer = setInterval(nextCarouselSlide, 4000);
+    }
+
+    // --- 5. SMART DIGITAL MENU LOGIC ---
+    function setMenuLanguage(lang) {
+      currentLanguage = lang;
+      ['en', 'mr', 'hi'].forEach(l => {
+        const btn = document.getElementById(`lang-btn-${l}`);
+        if (btn) {
+          if (l === lang) {
+            btn.className = 'px-3 py-1 text-xs font-bold rounded bg-amber-500 text-stone-950 shadow-sm transition-all';
+          } else {
+            btn.className = 'px-3 py-1 text-xs font-bold rounded text-stone-700 hover:text-stone-900 transition-all';
+          }
+        }
+      });
+      renderCategoryTabs();
+      renderMenuItems();
+    }
+
+    function renderCategoryTabs() {
+      const c = RESTAURANT_CONCEPTS[currentConceptKey];
+      const container = document.getElementById('menu-category-tabs');
+      container.innerHTML = c.categories.map(cat => {
+        const label = cat[currentLanguage] || cat.en;
+        const isActive = cat.id === currentCategory;
+        return `
+          <button onclick="setCategoryFilter('${cat.id}')" class="px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all ${isActive ? 'bg-amber-500 text-stone-950 shadow' : 'bg-stone-200 text-stone-700 hover:bg-stone-300'}">
+            ${label}
+          </button>
+        `;
+      }).join('');
+    }
+
+    function setCategoryFilter(catId) {
+      currentCategory = catId;
+      renderCategoryTabs();
+      renderMenuItems();
+    }
+
+    function setDietFilter(diet) {
+      currentDietFilter = diet;
+      ['all', 'veg', 'nonveg'].forEach(d => {
+        const btn = document.getElementById(`diet-btn-${d}`);
+        if (btn) {
+          if (d === diet) {
+            btn.className = 'px-3 py-1.5 text-xs font-bold rounded-lg bg-stone-800 text-white transition-all';
+          } else {
+            btn.className = 'px-3 py-1.5 text-xs font-bold rounded-lg bg-white border border-stone-300 text-stone-700 hover:bg-stone-100 transition-all';
+          }
+        }
+      });
+      renderMenuItems();
+    }
+
+    function filterMenuItems() {
+      renderMenuItems();
+    }
+
+    function renderMenuItems() {
+      const c = RESTAURANT_CONCEPTS[currentConceptKey];
+      const container = document.getElementById('menu-items-grid');
+      const searchQuery = (document.getElementById('menu-search-input')?.value || '').toLowerCase().trim();
+
+      let dishes = c.dishes;
+
+      // Filter by category
+      if (currentCategory !== 'all') {
+        dishes = dishes.filter(d => d.cat === currentCategory);
+      }
+
+      // Filter by diet
+      if (currentDietFilter === 'veg') {
+        dishes = dishes.filter(d => d.is_veg === true);
+      } else if (currentDietFilter === 'nonveg') {
+        dishes = dishes.filter(d => d.is_veg === false);
+      }
+
+      // Filter by search query
+      if (searchQuery) {
+        dishes = dishes.filter(d => {
+          const tEn = (d.title || '').toLowerCase();
+          const tMr = (d.title_mr || '').toLowerCase();
+          const tHi = (d.title_hi || '').toLowerCase();
+          const desc = (d.desc || '').toLowerCase();
+          return tEn.includes(searchQuery) || tMr.includes(searchQuery) || tHi.includes(searchQuery) || desc.includes(searchQuery);
+        });
+      }
+
+      if (dishes.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-full py-12 text-center text-stone-400">
+            <span class="material-symbols-outlined text-4xl block mb-2">restaurant_menu</span>
+            <p class="text-sm font-semibold">No dishes found matching your selection.</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = dishes.map(dish => {
+        const title = currentLanguage === 'mr' ? (dish.title_mr || dish.title) : currentLanguage === 'hi' ? (dish.title_hi || dish.title) : dish.title;
+        const desc = currentLanguage === 'mr' ? (dish.desc_mr || dish.desc) : currentLanguage === 'hi' ? (dish.desc_hi || dish.desc) : dish.desc;
+        const dietBadge = dish.is_veg
+          ? `<span class="diet-box-veg" title="Vegetarian"><span class="veg-dot"></span></span>`
+          : `<span class="diet-box-nonveg" title="Non-Vegetarian"><span class="non-veg-dot"></span></span>`;
+
+        return `
+          <div class="bg-stone-50 border border-stone-200 rounded-xl p-5 hover:border-amber-400 transition-all flex flex-col justify-between shadow-sm hover:shadow-md">
+            <div>
+              <div class="flex items-start justify-between gap-2 mb-2">
+                <div class="flex items-center gap-2">
+                  ${dietBadge}
+                  <h3 class="font-serif text-base font-bold text-stone-900">${title}</h3>
+                </div>
+                <span class="font-serif font-black text-amber-700 text-lg whitespace-nowrap">${c.currency}${dish.price}</span>
+              </div>
+              <p class="text-xs text-stone-600 line-clamp-3 leading-relaxed mb-3">${desc}</p>
+              ${dish.badge ? `<span class="inline-block text-[10px] font-bold uppercase tracking-wider bg-amber-100 text-amber-900 px-2 py-0.5 rounded border border-amber-200">${dish.badge}</span>` : ''}
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-stone-200 flex items-center justify-between">
+              <span class="text-[11px] text-stone-500 font-medium">0% Commission Direct</span>
+              <button onclick="addToOrderCart('${dish.id}', '${dish.title.replace(/'/g, "\\'")}', ${dish.price})" class="bg-amber-500 hover:bg-amber-600 text-stone-950 font-bold px-3 py-1.5 rounded-lg text-xs flex items-center gap-1 transition-colors shadow-sm">
+                <span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+                <span>+ Add to Cart</span>
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // --- 6. 0% COMMISSION WHATSAPP ORDERING CART LOGIC ---
+    function addToOrderCart(id, title, price) {
+      const existing = demoCart.find(i => i.id === id);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        demoCart.push({ id, title, price: Number(price), qty: 1 });
+      }
+      updateCartUI();
+      showToast(`Added "${title}" to your order!`);
+    }
+
+    function updateCartQty(id, delta) {
+      const item = demoCart.find(i => i.id === id);
+      if (item) {
+        item.qty += delta;
+        if (item.qty <= 0) {
+          demoCart = demoCart.filter(i => i.id !== id);
+        }
+      }
+      updateCartUI();
+    }
+
+    function clearDemoCart() {
+      demoCart = [];
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      const c = RESTAURANT_CONCEPTS[currentConceptKey];
+      const totalCount = demoCart.reduce((sum, i) => sum + i.qty, 0);
+      const totalAmount = demoCart.reduce((sum, i) => sum + (i.price * i.qty), 0);
+
+      // Global badge
+      const badge = document.getElementById('global-cart-badge');
+      if (badge) badge.textContent = totalCount;
+
+      // Update Sandbox Cart Items
+      const sandboxContainer = document.getElementById('sandbox-cart-items');
+      if (demoCart.length === 0) {
+        sandboxContainer.innerHTML = `<div class="py-6 text-center text-stone-400 text-xs">Your cart is empty. Add dishes from the digital menu above!</div>`;
+      } else {
+        sandboxContainer.innerHTML = demoCart.map(item => `
+          <div class="flex items-center justify-between bg-stone-900 border border-stone-800 p-2.5 rounded-lg text-xs">
+            <span class="font-semibold text-white">${item.title}</span>
+            <div class="flex items-center gap-3">
+              <span class="text-amber-400 font-bold font-serif">${c.currency}${item.price * item.qty}</span>
+              <div class="flex items-center gap-1 bg-stone-800 px-1.5 py-0.5 rounded border border-stone-700">
+                <button onclick="updateCartQty('${item.id}', -1)" class="text-stone-400 hover:text-white px-1 font-bold">-</button>
+                <span class="font-bold text-white px-1">${item.qty}</span>
+                <button onclick="updateCartQty('${item.id}', 1)" class="text-stone-400 hover:text-white px-1 font-bold">+</button>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // Update Drawer Items
+      const drawerContainer = document.getElementById('drawer-items-list');
+      if (drawerContainer) {
+        if (demoCart.length === 0) {
+          drawerContainer.innerHTML = `<div class="py-12 text-center text-stone-500 text-xs">Your cart is currently empty.</div>`;
+        } else {
+          drawerContainer.innerHTML = demoCart.map(item => `
+            <div class="flex items-center justify-between bg-stone-950 p-2.5 rounded-lg text-xs border border-stone-800">
+              <div>
+                <span class="font-semibold text-white block">${item.title}</span>
+                <span class="text-stone-400 text-[11px]">${c.currency}${item.price} each</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-amber-400 font-bold font-serif">${c.currency}${item.price * item.qty}</span>
+                <div class="flex items-center bg-stone-800 rounded">
+                  <button onclick="updateCartQty('${item.id}', -1)" class="px-2 py-0.5 text-stone-400 hover:text-white">-</button>
+                  <span class="text-white font-bold px-1">${item.qty}</span>
+                  <button onclick="updateCartQty('${item.id}', 1)" class="px-2 py-0.5 text-stone-400 hover:text-white">+</button>
+                </div>
+              </div>
+            </div>
+          `).join('');
+        }
+      }
+
+      // Subtotals & Totals
+      document.getElementById('order-total-amount').textContent = `${c.currency}${totalAmount}`;
+      const drawerSubtotal = document.getElementById('drawer-subtotal');
+      const drawerTotal = document.getElementById('drawer-total');
+      if (drawerSubtotal) drawerSubtotal.textContent = `${c.currency}${totalAmount}`;
+      if (drawerTotal) drawerTotal.textContent = `${c.currency}${totalAmount}`;
+
+      // Live WhatsApp Preview Box
+      const customerName = document.getElementById('order-customer-name')?.value || 'Guest';
+      const orderType = document.getElementById('order-type-select')?.value || 'Home Delivery';
+      const spice = document.getElementById('order-spice-select')?.value || 'Medium';
+      const address = document.getElementById('order-address-input')?.value || 'Local Area';
+
+      const itemsFormatted = demoCart.map(i => `${i.qty}x ${i.title} (${c.currency}${i.price * i.qty})`).join('\n');
+      const previewText = `🍽️ *NEW ORDER — ${c.name.toUpperCase()}*\nCustomer: ${customerName}\nType: ${orderType}\nAddress: ${address}\n--------------------------------\n${itemsFormatted || 'No items selected'}\nSpice: ${spice}\n--------------------------------\n*Total Amount: ${c.currency}${totalAmount} (UPI/Cash)*`;
+      
+      const previewBox = document.getElementById('whatsapp-preview-box');
+      if (previewBox) previewBox.textContent = previewText;
+    }
+
+    function updateCartTotal() {
+      updateCartUI();
+    }
+
+    function dispatchWhatsAppOrder() {
+      if (demoCart.length === 0) {
+        alert('Please add at least one dish to your order cart.');
+        return;
+      }
+      const c = RESTAURANT_CONCEPTS[currentConceptKey];
+      const previewBox = document.getElementById('whatsapp-preview-box');
+      const message = encodeURIComponent(previewBox.textContent);
+      const cleanPhone = c.phone.replace(/[^0-9]/g, '');
+      const waUrl = `https://wa.me/91${cleanPhone}?text=${message}`;
+      window.open(waUrl, '_blank');
+    }
+
+    function toggleCartDrawer() {
+      const drawer = document.getElementById('cart-drawer');
+      const overlay = document.getElementById('cart-drawer-overlay');
+      const isHidden = drawer.classList.contains('translate-x-full');
+      if (isHidden) {
+        drawer.classList.remove('translate-x-full');
+        overlay.classList.remove('hidden');
+      } else {
+        drawer.classList.add('translate-x-full');
+        overlay.classList.add('hidden');
+      }
+    }
+
+    // --- 7. TABLE RESERVATIONS LOGIC ---
+    function selectTimeSlot(slot) {
+      document.getElementById('selected-time-slot').value = slot;
+      document.querySelectorAll('.time-slot-btn').forEach(btn => {
+        if (btn.textContent.trim() === slot) {
+          btn.className = 'time-slot-btn py-2 px-3 border border-amber-500 bg-amber-500 text-stone-950 font-bold rounded-lg text-xs';
+        } else {
+          btn.className = 'time-slot-btn py-2 px-3 border border-stone-300 rounded-lg text-xs font-bold text-stone-700 hover:border-amber-500 hover:bg-amber-50';
+        }
+      });
+    }
+
+    function handleDemoReservation(e) {
+      e.preventDefault();
+      const name = document.getElementById('res-guest-name').value;
+      const date = document.getElementById('res-date-input').value || new Date().toISOString().split('T')[0];
+      const time = document.getElementById('selected-time-slot').value;
+      const party = document.getElementById('res-party-select').value;
+      const area = document.getElementById('res-area-select').value;
+
+      const refCode = '#RES-' + Math.floor(1000 + Math.random() * 9000);
+      document.getElementById('res-modal-ref').textContent = refCode;
+      document.getElementById('res-modal-name').textContent = name;
+      document.getElementById('res-modal-datetime').textContent = `${date} at ${time}`;
+      document.getElementById('res-modal-party').textContent = `${party} Guests (${area})`;
+
+      document.getElementById('res-modal').classList.remove('hidden');
+    }
+
+    function downloadCalendarInvite() {
+      const c = RESTAURANT_CONCEPTS[currentConceptKey];
+      const ref = document.getElementById('res-modal-ref').textContent;
+      const datetime = document.getElementById('res-modal-datetime').textContent;
+      const icsData = [
+        'BEGIN:VCALENDAR',
+        'VERSION:2.0',
+        'PRODID:-//RestoFlow//Table Reservation//EN',
+        'BEGIN:VEVENT',
+        `SUMMARY:Dinner Reservation at ${c.shortName} (${ref})`,
+        `DESCRIPTION:Confirmed dining reservation for your party at ${c.name}.`,
+        `LOCATION:${c.address}`,
+        'STATUS:CONFIRMED',
+        'END:VEVENT',
+        'END:VCALENDAR'
+      ].join('\r\n');
+
+      const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8' });
+      const link = document.createElement('a');
+      link.href = window.URL.createObjectURL(blob);
+      link.setAttribute('download', `reservation-${ref.replace('#', '')}.ics`);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    // --- 8. ROI CALCULATOR ---
+    function calculateROI() {
+      const sales = Number(document.getElementById('roi-slider').value);
+      const lost = Math.round(sales * 0.30);
+      document.getElementById('slider-sales-display').textContent = `₹${sales.toLocaleString('en-IN')}`;
+      document.getElementById('roi-lost-amount').textContent = `₹${lost.toLocaleString('en-IN')} / mo`;
+      document.getElementById('roi-saved-amount').textContent = `₹${lost.toLocaleString('en-IN')} / mo`;
+    }
+
+    // --- 9. STAFF DESK MODAL LOGIC ---
+    function toggleStaffDeskModal() {
+      const modal = document.getElementById('staff-desk-modal');
+      modal.classList.toggle('hidden');
+      if (!modal.classList.contains('hidden')) {
+        renderStaffOrders();
+      }
+    }
+
+    function renderStaffOrders() {
+      const tbody = document.getElementById('staff-orders-tbody');
+      const dummyOrders = [
+        { ref: '#KOL-9812', name: 'Dr. Rahul Mane', items: '2x Jatra Mutton Thali, 2x Solkadhi', amount: '₹1,180', status: 'Cooking' },
+        { ref: '#KOL-9813', name: 'Priyanka Patil', items: '1x Chicken Fry Thali, 1x Pithla Bhakri', amount: '₹640', status: 'In Kitchen' },
+        { ref: '#KOL-9814', name: 'Amitabh Deshmukh', items: '1x Ghee Mutton Fry, 3x Bhakri', amount: '₹550', status: 'Ready' }
+      ];
+      tbody.innerHTML = dummyOrders.map(o => `
+        <tr class="hover:bg-stone-900/60">
+          <td class="p-3 font-bold text-amber-400">${o.ref}</td>
+          <td class="p-3 font-semibold text-white">${o.name}</td>
+          <td class="p-3 text-stone-300">${o.items}</td>
+          <td class="p-3 font-bold text-green-400 font-serif">${o.amount}</td>
+          <td class="p-3"><span class="bg-amber-500/20 text-amber-400 border border-amber-500/40 px-2 py-0.5 rounded text-[10px] font-bold">${o.status}</span></td>
+          <td class="p-3 text-right">
+            <button onclick="this.textContent='Completed'; this.disabled=true; this.className='bg-green-700 text-white text-[10px] px-2 py-1 rounded font-bold';" class="bg-stone-800 hover:bg-stone-700 text-stone-200 border border-stone-600 px-2 py-1 rounded text-[10px] font-bold">
+              Mark Done
+            </button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    // --- 10. TOAST NOTIFICATION ---
+    function showToast(message) {
+      let toast = document.getElementById('app-toast');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'app-toast';
+        toast.className = 'fixed bottom-5 right-5 bg-stone-900 border border-amber-500 text-white px-4 py-2.5 rounded-xl shadow-2xl text-xs z-[100] transition-all transform translate-y-20 opacity-0 flex items-center gap-2';
+        document.body.appendChild(toast);
+      }
+      toast.innerHTML = `<span class="material-symbols-outlined text-green-400 text-sm">check_circle</span><span>${message}</span>`;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 2500);
+    }
+
+    // --- INITIALIZATION ---
+    document.addEventListener('DOMContentLoaded', () => {
+      // Set today's date in reservation picker
+      const dateInput = document.getElementById('res-date-input');
+      if (dateInput) {
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.value = today;
+        dateInput.min = today;
+      }
+      switchConcept('indian');
+    });
+  </script>
 </body>
 </html>

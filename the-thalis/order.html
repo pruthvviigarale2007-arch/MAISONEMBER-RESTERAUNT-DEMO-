@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Order Online — The Thalis · Kolhapuri Delivery &amp; Takeaway</title>
+  
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..800;1,400..800&amp;family=Work+Sans:ital,wght@0,300..700;1,300..700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { red: '#991b1b', crimson: '#7f1d1d', gold: '#d97706', amber: '#f59e0b', cream: '#fffbeb', sand: '#fef3c7', charcoal: '#1c1917' }
+          },
+          fontFamily: { serif: ['Playfair Display', 'serif'], sans: ['Work Sans', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link href="css/custom.css" rel="stylesheet"/>
+</head>
+<body class="bg-brand-cream text-stone-900 font-sans antialiased selection:bg-brand-red selection:text-white">
+
+  <!-- Header -->
+  <header class="bg-brand-cream/95 backdrop-blur sticky top-0 z-50 border-b border-amber-200/80 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 py-3.5 flex justify-between items-center">
+      <a class="flex items-center gap-3" href="index.html">
+        <div class="w-10 h-10 rounded-full bg-brand-red text-amber-300 flex items-center justify-center font-serif text-xl font-black shadow-inner border border-amber-400">
+          थ
+        </div>
+        <div>
+          <span class="font-serif text-xl sm:text-2xl font-black tracking-tight text-brand-red block leading-none">The Thalis</span>
+          <span class="text-[10px] uppercase font-bold tracking-widest text-amber-800">Online Feast Delivery</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden lg:flex items-center space-x-7 text-xs font-semibold uppercase tracking-wider text-stone-800">
+        <a class="hover:text-brand-red transition-colors" href="index.html">Home</a>
+        <a class="hover:text-brand-red transition-colors" href="menu.html">Menu</a>
+        <a class="text-brand-red border-b-2 border-brand-red pb-1" href="order.html">Order Online</a>
+        <a class="hover:text-brand-red transition-colors" href="reservations.html">Reserve Table</a>
+        <a class="hover:text-brand-red transition-colors" href="reviews.html">Reviews (4.6★)</a>
+        <a class="hover:text-brand-red transition-colors" href="contact.html">Contact &amp; Map</a>
+        <a class="text-amber-800 hover:text-brand-red transition-colors" href="admin.html">Staff Desk</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a class="text-xs font-bold text-stone-800 hover:text-brand-red transition-colors flex items-center gap-1" href="tel:07744966966">
+          <span class="material-symbols-outlined text-sm text-brand-red">call</span>
+          <span>077449 66966</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-8 py-10">
+    <div class="text-center max-w-2xl mx-auto space-y-2 mb-10">
+      <span class="text-xs uppercase font-bold tracking-widest text-brand-red">HOT &amp; FRESH DELIVERY</span>
+      <h1 class="font-serif text-3xl sm:text-4xl font-black text-stone-900">Order Your Kolhapuri Feast</h1>
+      <p class="text-xs sm:text-sm text-stone-600">Piping hot thalis with sealed bowls of Tambda &amp; Pandhra rassa delivered across Kolhapur.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- Left Column: Quick Menu Items Selection (7 Cols) -->
+      <div class="lg:col-span-7 space-y-4">
+        <div class="flex justify-between items-center border-b border-amber-200 pb-3">
+          <h2 class="font-serif text-xl font-bold text-stone-900">Choose Your Dishes</h2>
+          <span class="text-xs font-semibold text-amber-800">Fresh from the Chulha</span>
+        </div>
+
+        <div class="space-y-3">
+          <!-- Item 1 -->
+          <div class="bg-white border border-amber-200 rounded-lg p-4 flex justify-between items-center shadow-sm">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="non-veg-badge"><span class="non-veg-badge-dot"></span></span>
+                <span class="font-bold text-sm text-stone-900">Jatra Mutton Thali</span>
+                <span class="text-xs font-bold text-red-700">₹520</span>
+              </div>
+              <p class="text-xs text-stone-500 mt-1">Mutton sukka, mutton fry, unlimited tambda-pandhra rassa, bhakri, rice.</p>
+            </div>
+            <button onclick="addToCart('1', 'Jatra Mutton Thali', 520, 0)" class="bg-red-700 hover:bg-red-800 text-white text-xs font-bold px-3 py-1.5 rounded transition-colors whitespace-nowrap">
+              + Add
+            </button>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="bg-white border border-amber-200 rounded-lg p-4 flex justify-between items-center shadow-sm">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="non-veg-badge"><span class="non-veg-badge-dot"></span></span>
+                <span class="font-bold text-sm text-stone-900">Ghee Mutton Fry</span>
+                <span class="text-xs font-bold text-red-700">₹460</span>
+              </div>
+              <p class="text-xs text-stone-500 mt-1">Pure Gir cow bilona ghee cooked tender mutton with roasted spices.</p>
+            </div>
+            <button onclick="addToCart('3', 'Ghee Mutton Fry', 460, 0)" class="bg-red-700 hover:bg-red-800 text-white text-xs font-bold px-3 py-1.5 rounded transition-colors whitespace-nowrap">
+              + Add
+            </button>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="bg-white border border-amber-200 rounded-lg p-4 flex justify-between items-center shadow-sm">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="non-veg-badge"><span class="non-veg-badge-dot"></span></span>
+                <span class="font-bold text-sm text-stone-900">Chicken Fry Thali</span>
+                <span class="text-xs font-bold text-red-700">₹380</span>
+              </div>
+              <p class="text-xs text-stone-500 mt-1">Country chicken fry, tambda rassa, pandhra rassa, 2 bhakris, rice.</p>
+            </div>
+            <button onclick="addToCart('7', 'Chicken Fry Thali', 380, 0)" class="bg-red-700 hover:bg-red-800 text-white text-xs font-bold px-3 py-1.5 rounded transition-colors whitespace-nowrap">
+              + Add
+            </button>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="bg-white border border-amber-200 rounded-lg p-4 flex justify-between items-center shadow-sm">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="veg-badge"><span class="veg-badge-dot"></span></span>
+                <span class="font-bold text-sm text-stone-900">Veg Pithla Bhakari Thali</span>
+                <span class="text-xs font-bold text-red-700">₹260</span>
+              </div>
+              <p class="text-xs text-stone-500 mt-1">Gram flour pithla, 2 hot jowar bhakris, spicy thecha, onion, curd.</p>
+            </div>
+            <button onclick="addToCart('13', 'Veg Pithla Bhakari Thali', 260, 1)" class="bg-red-700 hover:bg-red-800 text-white text-xs font-bold px-3 py-1.5 rounded transition-colors whitespace-nowrap">
+              + Add
+            </button>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="bg-white border border-amber-200 rounded-lg p-4 flex justify-between items-center shadow-sm">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="veg-badge"><span class="veg-badge-dot"></span></span>
+                <span class="font-bold text-sm text-stone-900">Solkadhi (Chilled Kokum)</span>
+                <span class="text-xs font-bold text-red-700">₹70</span>
+              </div>
+              <p class="text-xs text-stone-500 mt-1">Pure kokum extract with fresh coconut milk and roasted garlic digestif.</p>
+            </div>
+            <button onclick="addToCart('19', 'Solkadhi', 70, 1)" class="bg-red-700 hover:bg-red-800 text-white text-xs font-bold px-3 py-1.5 rounded transition-colors whitespace-nowrap">
+              + Add
+            </button>
+          </div>
+
+          <!-- Item 6 -->
+          <div class="bg-white border border-amber-200 rounded-lg p-4 flex justify-between items-center shadow-sm">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="veg-badge"><span class="veg-badge-dot"></span></span>
+                <span class="font-bold text-sm text-stone-900">Mastani Paan</span>
+                <span class="text-xs font-bold text-red-700">₹60</span>
+              </div>
+              <p class="text-xs text-stone-500 mt-1">Signature sweet meetha paan stuffed with rose gulkand and dry fruits.</p>
+            </div>
+            <button onclick="addToCart('20', 'Mastani Pan', 60, 1)" class="bg-red-700 hover:bg-red-800 text-white text-xs font-bold px-3 py-1.5 rounded transition-colors whitespace-nowrap">
+              + Add
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Cart & Checkout Form (5 Cols) -->
+      <div class="lg:col-span-5 bg-white border-2 border-brand-red rounded-xl p-6 shadow-md space-y-6">
+        <div class="border-b border-amber-200 pb-3 flex justify-between items-baseline">
+          <h3 class="font-serif text-lg font-bold text-brand-red">Your Feast Cart</h3>
+          <span class="text-xs text-stone-500">Live Calculation</span>
+        </div>
+
+        <!-- Selected Items Container -->
+        <div class="space-y-2" id="cart-items-list">
+          <!-- Rendered via app.js -->
+        </div>
+
+        <!-- Customizations & Customer Form -->
+        <form class="space-y-4 pt-2 border-t border-amber-200 text-xs" id="checkout-order-form">
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block font-bold text-stone-800 mb-1">Spice Preference</label>
+              <select id="c-spice" class="w-full bg-amber-50 border border-amber-300 p-2 rounded focus:outline-none focus:border-brand-red text-xs">
+                <option value="Kolhapuri Jhanjhanit (Spicy)">Jhanjhanit (Authentic Spicy)</option>
+                <option value="Medium Spicy">Medium Spicy</option>
+                <option value="Mild (Family Friendly)">Mild (Family Friendly)</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block font-bold text-stone-800 mb-1">Bread Choice</label>
+              <select id="c-bread" class="w-full bg-amber-50 border border-amber-300 p-2 rounded focus:outline-none focus:border-brand-red text-xs">
+                <option value="Jowar Bhakri">Hot Jowar Bhakri</option>
+                <option value="Bajra Bhakri">Bajra Bhakri</option>
+                <option value="Chapati">Soft Chapati</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="flex gap-4 p-2 bg-amber-50 rounded border border-amber-200">
+            <label class="flex items-center gap-1.5 font-bold cursor-pointer">
+              <input type="radio" name="delivery_type" value="delivery" checked class="text-brand-red" />
+              <span>Door Delivery</span>
+            </label>
+            <label class="flex items-center gap-1.5 font-bold cursor-pointer">
+              <input type="radio" name="delivery_type" value="pickup" class="text-brand-red" />
+              <span>Restaurant Pickup</span>
+            </label>
+          </div>
+
+          <div>
+            <label class="block font-bold text-stone-800 mb-1">Your Full Name *</label>
+            <input type="text" id="c-name" required placeholder="e.g. Ramesh Kulkarni" class="w-full bg-amber-50 border border-amber-300 p-2 rounded focus:outline-none focus:border-brand-red text-xs" />
+          </div>
+
+          <div>
+            <label class="block font-bold text-stone-800 mb-1">Mobile Phone Number *</label>
+            <input type="tel" id="c-phone" required placeholder="e.g. 09876543210" class="w-full bg-amber-50 border border-amber-300 p-2 rounded focus:outline-none focus:border-brand-red text-xs" />
+          </div>
+
+          <div>
+            <label class="block font-bold text-stone-800 mb-1">Delivery Address *</label>
+            <textarea id="c-address" rows="2" placeholder="Building, Street, Area in Kolhapur..." class="w-full bg-amber-50 border border-amber-300 p-2 rounded focus:outline-none focus:border-brand-red text-xs"></textarea>
+          </div>
+
+          <div>
+            <label class="block font-bold text-stone-800 mb-1">Payment Method</label>
+            <select id="c-payment" class="w-full bg-amber-50 border border-amber-300 p-2 rounded focus:outline-none focus:border-brand-red text-xs">
+              <option value="UPI on Delivery">Google Pay / PhonePe / UPI on Delivery</option>
+              <option value="Cash on Delivery">Cash on Delivery (COD)</option>
+            </select>
+          </div>
+
+          <!-- Total Bill -->
+          <div class="pt-3 border-t border-amber-200 flex justify-between items-baseline font-bold text-sm">
+            <span class="text-stone-800">Total Payable Amount:</span>
+            <span class="text-lg text-brand-red font-black" id="cart-total">₹0</span>
+          </div>
+
+          <button type="submit" class="w-full bg-brand-red hover:bg-brand-crimson text-white font-bold uppercase tracking-wider py-3.5 rounded shadow-md transition-colors flex items-center justify-center gap-2">
+            <span>Place Order with Hot Rassa</span>
+            <span class="material-symbols-outlined text-sm">local_shipping</span>
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Order Confirmed Modal -->
+  <div class="modal-overlay hidden" id="order-confirmed-modal">
+    <div class="modal-content p-6 sm:p-8 rounded-xl space-y-5 text-center">
+      <div class="w-14 h-14 bg-green-100 text-green-700 rounded-full flex items-center justify-center mx-auto border-2 border-green-500">
+        <span class="material-symbols-outlined text-3xl">check</span>
+      </div>
+      <div>
+        <span class="text-xs uppercase font-bold text-amber-800 tracking-widest">FEAST DISPATCHED</span>
+        <h3 class="font-serif text-2xl font-black text-stone-900 mt-1">Order Confirmed!</h3>
+      </div>
+      <p class="text-xs text-stone-600">
+        Dhanyawad! Your order <strong id="receipt-order-ref" class="text-brand-red text-sm">#KOL-XXXX</strong> has been placed. Our kitchen has started preparing your sizzling thalis with unlimited rassa.
+      </p>
+
+      <div class="bg-amber-100/70 p-4 rounded-lg text-xs space-y-1.5 text-left border border-amber-200">
+        <div class="flex justify-between"><span>Total Amount:</span><strong id="receipt-order-total" class="text-brand-red font-bold">₹0</strong></div>
+        <div class="flex justify-between"><span>Spice Level:</span><span id="receipt-order-spice">—</span></div>
+        <div class="flex justify-between"><span>Bread:</span><span id="receipt-order-bread">—</span></div>
+        <div class="flex justify-between"><span>Estimated Delivery:</span><span class="font-semibold text-green-800">30–40 Minutes</span></div>
+      </div>
+
+      <div class="pt-2">
+        <button onclick="document.getElementById('order-confirmed-modal').classList.add('hidden')" class="bg-brand-red text-white text-xs font-bold px-6 py-2.5 rounded uppercase tracking-wider hover:bg-brand-crimson transition-colors">
+          Back to Restaurant
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-stone-950 text-stone-300 text-xs py-8 mt-16 border-t border-stone-800 text-center">
+    <p class="font-serif font-bold text-amber-400">The Thalis — Kolhapuri Thali</p>
+    <p class="text-stone-400 text-[11px] mt-1">
+      <a href="https://www.google.com/maps/dir/?api=1&destination=The+Thalis+-+Kolhapuri+Thali,+Kadamwadi+Rd,+opp.+to+hotel+lisha,+Laxminarayan+Nagar,+Tarabai+Park,+Kolhapur,+Maharashtra+416003" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 underline underline-offset-2">
+        📍 Kadamwadi Rd, Opp. Hotel Lisha, Tarabai Park, Kolhapur (Get Directions)
+      </a> · Call <a href="tel:07744966966" class="hover:text-amber-400">077449 66966</a>
+    </p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
